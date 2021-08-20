@@ -8,9 +8,6 @@
 
 
 body{
-    display: flex;
-    justify-content: space-between;
-    flex-flow: column nowrap;
     background: #000;
 }
 
@@ -114,7 +111,16 @@ main{
                     #goal{
                         margin: 6px 0;
                         display: grid;
-                        grid-template-rows: 1fr 1fr;                    
+                        grid-template-rows: 1fr 1fr;
+
+                        select{
+                            font-size: 1rem;
+                            padding: 6px;
+                            color: #000;
+                            border: 0;
+                            outline: 0;
+                            border-radius: 6px;
+                        }
                     }
     
                     #pc{
@@ -146,20 +152,8 @@ main{
                     #time{
                         margin: 6px 0;
                         display: grid;
-                        grid-template-columns: 2fr 1fr 2fr;
-    
-                        label{
-                            grid-column: 1/2;
+                        grid-template-columns: auto auto auto;
                         }
-    
-                        input{
-                            grid-column: 2/3;
-                        }
-    
-                        select{
-                            grid-column: 3/4;
-                        }
-                    }
                 }
     
                 .submit{
@@ -169,10 +163,12 @@ main{
                     justify-content: center;
     
                     a{
+                        border: 0;
+                        outline: 0;
                         color: #000;
                         border-radius: 6px;
-                        background: #fff;
-                        padding: 7px 20px 9px 20px;
+                        background: grey;
+                        padding: 9px 20px 9px 20px;
                         text-align: center;
                     }
     
@@ -190,7 +186,6 @@ main{
 
 
 footer{
-    align-content: center;
     border: 1px solid #fff;
     border-radius: 6px;
     background: #202020;

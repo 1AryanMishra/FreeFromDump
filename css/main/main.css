@@ -7,6 +7,16 @@
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
   background: #000;
 }
 
@@ -42,36 +52,71 @@ header #sign_in {
 main {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 2fr 1fr;
-      grid-template-columns: 1fr 2fr 1fr;
-  -ms-grid-rows: 1fr 2fr 1fr;
-      grid-template-rows: 1fr 2fr 1fr;
-  grid-row: auto;
+  -ms-grid-rows: 1fr auto 1fr;
+      grid-template-rows: 1fr auto 1fr;
+  grid-auto-rows: minmax(auto, auto);
 }
 
 main .nav {
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 1;
-  grid-column: 3/4;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
 }
 
-main form {
+main .nav .nav_wrapper {
+  padding-top: 6px;
+  padding-right: 6px;
+}
+
+main .nav .nav_wrapper .nav_line {
+  border-radius: 100px;
+  width: 24px;
+  margin: 4px;
+  border: 2px  solid #fff;
+}
+
+main .nav .nav_wrapper:focus {
   -webkit-box-shadow: 0 0 1em 0 #fff;
           box-shadow: 0 0 1em 0 #fff;
-  border-radius: 6px;
-  padding: 1em;
+}
+
+main .form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.6fr 1fr 0.6fr;
+      grid-template-columns: 0.6fr 1fr 0.6fr;
+  -ms-grid-rows: 0.1fr 1fr 0.1fr;
+      grid-template-rows: 0.1fr 1fr 0.1fr;
+  grid-auto-rows: minmax(auto, auto);
+}
+
+main .form form {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
+  border: 2px solid #fff;
+  -webkit-box-shadow: 0 0 1em 0 #fff;
+          box-shadow: 0 0 1em 0 #fff;
+  border-radius: 6px;
+  padding: 1em;
+  display: -ms-grid;
+  display: grid;
 }
 
-main form .container {
+main .form form .container {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: auto auto auto;
@@ -79,22 +124,22 @@ main form .container {
   grid-auto-rows: minmax(auto, auto);
 }
 
-main form .container .description {
+main .form form .container .description {
   margin: 12px 0;
   margin-top: 6px;
 }
 
-main form .container .description h1 {
+main .form form .container .description h1 {
   font-size: 1rem;
   text-align: center;
 }
 
-main form .container .description p {
+main .form form .container .description p {
   text-align: center;
   font-size: 0.8rem;
 }
 
-main form .container .wrapper {
+main .form form .container .wrapper {
   margin: 12px 0;
   font-size: 0.8rem;
   display: -ms-grid;
@@ -103,7 +148,7 @@ main form .container .wrapper {
       grid-template-rows: repeat(3, 1fr);
 }
 
-main form .container .wrapper #goal {
+main .form form .container .wrapper #goal {
   margin: 6px 0;
   display: -ms-grid;
   display: grid;
@@ -111,7 +156,7 @@ main form .container .wrapper #goal {
       grid-template-rows: 1fr 1fr;
 }
 
-main form .container .wrapper #pc {
+main .form form .container .wrapper #pc {
   margin: 6px 0;
   display: -ms-grid;
   display: grid;
@@ -121,7 +166,7 @@ main form .container .wrapper #pc {
       grid-template-rows: repeat(2, 1fr);
 }
 
-main form .container .wrapper #pc #yes_span {
+main .form form .container .wrapper #pc #yes_span {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
@@ -130,7 +175,7 @@ main form .container .wrapper #pc #yes_span {
   grid-row: 1/2;
 }
 
-main form .container .wrapper #pc #no_span {
+main .form form .container .wrapper #pc #no_span {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
@@ -139,7 +184,7 @@ main form .container .wrapper #pc #no_span {
   grid-column: 1/2;
 }
 
-main form .container .wrapper #pc p {
+main .form form .container .wrapper #pc p {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -153,7 +198,7 @@ main form .container .wrapper #pc p {
   grid-column: 2/3;
 }
 
-main form .container .wrapper #time {
+main .form form .container .wrapper #time {
   margin: 6px 0;
   display: -ms-grid;
   display: grid;
@@ -161,25 +206,25 @@ main form .container .wrapper #time {
       grid-template-columns: 2fr 1fr 2fr;
 }
 
-main form .container .wrapper #time label {
+main .form form .container .wrapper #time label {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
 }
 
-main form .container .wrapper #time input {
+main .form form .container .wrapper #time input {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
 }
 
-main form .container .wrapper #time select {
+main .form form .container .wrapper #time select {
   -ms-grid-column: 3;
   -ms-grid-column-span: 1;
   grid-column: 3/4;
 }
 
-main form .container .submit {
+main .form form .container .submit {
   margin-top: 12px;
   margin-bottom: 6px;
   display: -ms-grid;
@@ -189,7 +234,7 @@ main form .container .submit {
           justify-content: center;
 }
 
-main form .container .submit a {
+main .form form .container .submit a {
   color: #000;
   border-radius: 6px;
   background: #fff;
@@ -197,13 +242,15 @@ main form .container .submit a {
   text-align: center;
 }
 
-main form .container .submit a:focus {
+main .form form .container .submit a:focus {
   -webkit-box-shadow: 0 0 0.5em 0 #fff;
           box-shadow: 0 0 0.5em 0 #fff;
 }
 
 footer {
-  border-top: 1px solid #fff;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  border: 1px solid #fff;
   border-radius: 6px;
   background: #202020;
 }

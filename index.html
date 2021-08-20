@@ -21,11 +21,16 @@
         
         <form>
             <div class="container">
-                <h1>Tell us about your GOAL and AVAILABLE RESOURCES</h1>
+
+                <div class="description">
+                    <p>Tell us about your</p>
+                    <h1>GOAL and AVAILABLE RESOURCES</h1>
+                </div>
+
                 <div class="wrapper">
                 
-                    <div class="fields">
-                        <label>Select your Goal</label>
+                    <div class="fields" id="goal">
+                        <label id="label_for_goal">Select your Goal</label>
                         <select>
                             <option value="WebDev">Web Developer</option>
                             <option value="MobileDev">Mobile Development</option>
@@ -34,14 +39,19 @@
                         </select>
                     </div>
                 
-                    <div class="fields">
-                        <input type="radio" class = "radio" name="have_pc_or_not" value="true" id="Yes"><label>Yes</label>
-                        <input type="radio" class="radio" name="have_pc_or_not" value="false" id="No"><label>No</label>
-                        <p>, I <span id="dont"></span> have Laptop/PC</p>
+                    <div class="fields" id = "pc">
+                        <span id="yes_span">
+
+                            <input type="radio" class = "radio" name="have_pc_or_not" value="true" id="Yes"><label>Yes,</label>
+                        </span>
+                        <span id="no_span">
+                            <input type="radio" class="radio" name="have_pc_or_not" value="false" id="No"><label>No,</label>
+                        </span>
+                        <p>I <span id="dont"></span> have Laptop/PC.</p>
                     </div>
 
-                    <div class="fields">
-                        <label>I have </label>
+                    <div class="fields" id="time">
+                        <label>I have time</label>
                         <input type="number" id="time_number">
                         <select>
                             <option value="days">Days</option>
@@ -52,8 +62,17 @@
                     
                 </div>
 
+                <div class="submit">
+                    <a href="#" id="submit">Get to Point</a>
+                </div>
+
             </div>
         </form>
+
     </main>
+
+    <footer>
+        <p>This site is created by Aryan Mishra.</p>
+    </footer>
 </body>
 </html>

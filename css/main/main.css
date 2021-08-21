@@ -100,7 +100,6 @@ body header .nav .nav_line {
 body main .form form {
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
-  visibility: hidden;
   border: 1px solid blue;
   -webkit-box-shadow: 0 0 1em 0 #fff;
           box-shadow: 0 0 1em 0 #fff;
@@ -240,7 +239,7 @@ body main .form form .container .submit #submit:focus {
 }
 
 body main .form form:focus {
-  visibility: visible;
+  scale: 0;
 }
 
 body footer {

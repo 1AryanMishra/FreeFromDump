@@ -75,7 +75,6 @@ body{
 
             form{
                 transition: 0.5s ease;
-                visibility: hidden;
                 border: 1px solid blue;
                 box-shadow: 0 0 1em 0 #fff;
                 padding: 1em;
@@ -185,7 +184,7 @@ body{
             }
             
             form:focus{
-                visibility: visible;
+                scale: 0;
             }
         }
 

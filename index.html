@@ -27,65 +27,46 @@
 
     <main>
         
+        <form>
+            <div class="description">
+                <p>Tell us about your</p>
+                <h1>GOAL and AVAILABLE RESOURCES</h1>
+            </div>
 
-        <div class="form">
-
-            <form>
-                <div class="container">
-    
-                    <div class="description">
-                        <p>Tell us about your</p>
-                        <h1>GOAL and AVAILABLE RESOURCES</h1>
-                    </div>
-    
-                    <div class="wrapper">
-                    
-                        <div class="fields" id="goal">
-                            <label id="label_for_goal">Select your Goal</label>
-                            <select>
-                                <option value="WebDev">Web Developer</option>
-                                <option value="MobileDev">Mobile Development</option>
-                                <option value="EthicalHacking">Ethical Hacking</option>
-                                <option value="MachineLearning">Machine Learning</option>
-                            </select>
-                        </div>
-                    
-                        <div class="fields" id = "pc">
-
-                            <span class = "radio_span" id="yes_span">
-                                <input type="radio" class = "radio" name="have_pc_or_not" value="true" id="Yes">
-                                <label>Yes,</label>
-                            </span>
-                            <span class = "radio_span" id="no_span">
-                                <input type="radio" class="radio" name="have_pc_or_not" value="false" id="No">
-                                <label>No,</label>
-                            </span>
-
-                            <p>I <span id="dont">don't</span> have Laptop/PC.</p>
-
-                        </div>
-    
-                        <div class="fields" id="time">
-                            <label>I have time</label>
-                            <input type="number" id="time_number">
-                            <select>
-                                <option value="days">Days</option>
-                                <option value="months">Months</option>
-                                <option value="years">Years</option>
-                            </select>
-                        </div>
-                        
-                    </div>
-    
-                    <div class="submit">
-                        <a href="#" id="submit">Get to Point</a>
-                    </div>
-    
+            <div class="wrapper">
+            
+                <div class="fields" id="goal">
+                    <label id="label_for_goal">Select your Goal</label>
+                    <select>
+                        <option value="WebDev">Web Developer</option>
+                        <option value="MobileDev">Mobile Development</option>
+                        <option value="EthicalHacking">Ethical Hacking</option>
+                        <option value="MachineLearning">Machine Learning</option>
+                    </select>
                 </div>
-            </form>
+            
+                <div class="fields" id = "pc">
+                    <input type="checkbox" id="pc_checkbox">
+                    <p>Have Laptop/PC </p>
+                </div>
 
-        </div>
-        
+                <div class="fields" id="time">
+                    <label>Expected Time </label>
+                    <input type="number" id="time_number">
+                    <select>
+                        <option value="days">Days</option>
+                        <option value="months">Months</option>
+                        <option value="years">Years</option>
+                    </select>
+                </div>
+                
+            </div>
+
+            <div class="submit">
+                <a href="#" id="submit">Get to Point</a>
+            </div>
+
+        </form>
 
     </main>
 

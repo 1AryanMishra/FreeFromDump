@@ -128,17 +128,18 @@ body header .nav .nav_box .nav_line {
   width: 30px;
 }
 
-body main .form form {
-  min-height: 100%;
+body main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main form {
   border: 1px solid blue;
   -webkit-box-shadow: 0 0 1em 0 #fff;
           box-shadow: 0 0 1em 0 #fff;
-  padding: 1em;
   max-width: 75%;
   margin: 0 auto;
-}
-
-body main .form form .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -146,25 +147,26 @@ body main .form form .container {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 2rem;
 }
 
-body main .form form .container .description {
+body main form > div {
+  max-width: 90%;
+  margin: 1em auto;
+}
+
+body main form .description {
   text-align: center;
 }
 
-body main .form form .container .description p {
+body main form .description p {
   font-size: 1rem;
 }
 
-body main .form form .container .description h1 {
+body main form .description h1 {
   font-size: 1.4rem;
 }
 
-body main .form form .container .wrapper {
+body main form .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -172,13 +174,14 @@ body main .form form .container .wrapper {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 1rem;
 }
 
-body main .form form .container .wrapper #goal {
+body main form .wrapper > div {
+  max-width: 100%;
+  margin: 0.5em 0;
+}
+
+body main form .wrapper #goal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -186,14 +189,14 @@ body main .form form .container .wrapper #goal {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 0.3em;
 }
 
-body main .form form .container .wrapper #goal #label_for_goal {
+body main form .wrapper #goal #label_for_goal {
   font-size: 1rem;
 }
 
-body main .form form .container .wrapper #goal select {
+body main form .wrapper #goal select {
+  margin-top: 0.25em;
   -webkit-box-shadow: 0 0 1em 0 #fff inset;
           box-shadow: 0 0 1em 0 #fff inset;
   font-size: 1.1rem;
@@ -202,24 +205,11 @@ body main .form form .container .wrapper #goal select {
   color: #000;
 }
 
-body main .form form .container .wrapper #pc {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  gap: 0.5em;
+body main form .wrapper #pc p {
+  display: inline;
 }
 
-body main .form form .container .wrapper #pc .radio_span label {
-  font-size: 1rem;
-}
-
-body main .form form .container .wrapper #pc #dont {
-  display: none;
-}
-
-body main .form form .container .wrapper #time {
+body main form .wrapper #time {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -228,8 +218,9 @@ body main .form form .container .wrapper #time {
   font-size: 1rem;
 }
 
-body main .form form .container .wrapper #time input {
+body main form .wrapper #time input {
   max-width: 25%;
+  margin: 0 auto;
   color: #000;
   background: #909090;
   -webkit-box-shadow: 0 0 1em 0 #fff inset;
@@ -237,14 +228,14 @@ body main .form form .container .wrapper #time input {
   padding: 0.2em;
 }
 
-body main .form form .container .wrapper #time select {
+body main form .wrapper #time select {
   -webkit-box-shadow: 0 0 1em 0 #fff inset;
           box-shadow: 0 0 1em 0 #fff inset;
   color: #000;
   background: #909090;
 }
 
-body main .form form .container .submit {
+body main form .submit {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -252,7 +243,7 @@ body main .form form .container .submit {
       justify-content: space-around;
 }
 
-body main .form form .container .submit #submit {
+body main form .submit #submit {
   font-size: 1.1rem;
   -webkit-box-shadow: 0 0 0.3em 0 #fff inset;
           box-shadow: 0 0 0.3em 0 #fff inset;
@@ -263,19 +254,20 @@ body main .form form .container .submit #submit {
   transition: 0.2s ease;
 }
 
-body main .form form .container .submit #submit:focus {
+body main form .submit #submit:focus {
   scale: 0.92;
   -webkit-box-shadow: 0 0 0.3em 0 #fff;
           box-shadow: 0 0 0.3em 0 #fff;
 }
 
 body footer {
+  padding: 3px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
-  border: 0;
   background: #151515;
   -webkit-box-shadow: 0 0 1em 0 #fff;
           box-shadow: 0 0 1em 0 #fff;
   text-align: center;
+  font-size: 0.7rem;
 }
 /*# sourceMappingURL=main.css.map */

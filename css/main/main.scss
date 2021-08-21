@@ -95,116 +95,106 @@ body{
     }
 
     main{
-        
-        .form{
+        display: flex;
 
-            form{
-                min-height: 100%;
-                border: 1px solid blue;
-                box-shadow: 0 0 1em 0 #fff;
-                padding: 1em;
-                max-width: 75%;
-                margin: 0 auto;
+        form{
+            border: 1px solid blue;
+            box-shadow: 0 0 1em 0 #fff;
+            max-width: 75%;
+            margin: 0 auto;
+            display: flex;
+            flex-flow: column nowrap;
+
+            >div{
+                max-width: 90%;
+                margin: 1em auto;
+            }
+
+            .description{
+                text-align: center;
                 
-                .container{
+                p{
+                    font-size: 1rem;
+                }
+
+                h1{
+                    font-size: 1.4rem;
+                }
+            }
+
+            .wrapper{
+                display: flex;
+                flex-flow: column nowrap;
+
+                >div{
+                    max-width: 100%;
+                    margin: 0.5em 0;
+                }
+
+                #goal{
                     display: flex;
-                    flex-flow: column nowrap;
-                    justify-content: space-between;
-                    gap: 2rem;
+                    flex-direction: column;
 
-                    .description{
-                        text-align: center;
-                        
-                        p{
-                            font-size: 1rem;
-                        }
-
-                        h1{
-                            font-size: 1.4rem;
-                        }
+                    #label_for_goal{
+                        font-size: 1rem;
                     }
 
-                    .wrapper{
-                        display: flex;
-                        flex-flow: column nowrap;
-                        justify-content: space-between;
-                        gap: 1rem;
+                    select{
+                        margin-top: 0.25em;
+                        box-shadow: 0 0 1em 0 #fff inset;
+                        font-size: 1.1rem;
+                        padding-left: 6px;
+                        background: #909090;
+                        color: #000;
+                    }
+                }
 
-                        #goal{
-                            display: flex;
-                            flex-direction: column;
-                            gap: 0.3em;
+                #pc{
 
-                            #label_for_goal{
-                                font-size: 1rem;
-                            }
+                    p{
+                        display: inline;
+                    }
+                }
 
-                            select{
-                                box-shadow: 0 0 1em 0 #fff inset;
-                                font-size: 1.1rem;
-                                padding-left: 6px;
-                                background: #909090;
-                                color: #000;
-                            }
-                        }
+                #time{
+                    display: flex;
+                    justify-content: space-around;
+                    font-size: 1rem;
 
-                        #pc{
-                            display: flex;
-                            justify-content: space-around;
-                            gap: 0.5em;
-
-                            .radio_span{
-                                
-                                label{
-                                    font-size: 1rem;
-                                }
-                            }
-
-                            #dont{
-                                display: none;
-                            }
-                        }
-
-                        #time{
-                            display: flex;
-                            justify-content: space-around;
-                            font-size: 1rem;
-
-                            input{
-                                max-width: 25%;
-                                color: #000;
-                                background: #909090;
-                                box-shadow: 0 0 1em 0 #fff inset;
-                                padding: 0.2em;
-                            }
-
-                            select{
-                                box-shadow: 0 0 1em 0 #fff inset;
-                                color: #000;
-                                background: #909090;
-                            }
-                        }
-
+                    input{
+                        max-width: 25%;
+                        margin: 0 auto;
+                        color: #000;
+                        background: #909090;
+                        box-shadow: 0 0 1em 0 #fff inset;
+                        padding: 0.2em;
                     }
 
-                    .submit{
-                        display: flex;
-                        justify-content: space-around;
-
-                        #submit{
-                            font-size: 1.1rem;
-                            box-shadow: 0 0 0.3em 0 #fff inset;
-                            padding: 0.5rem 1rem;
-                            background: #959595;
-                            text-align: center;
-                            transition: 0.2s ease;
-                        }
-
-                        #submit:focus{
-                            scale: 0.92;
-                            box-shadow: 0 0 0.3em 0 #fff;
-                        }
+                    select{
+                        box-shadow: 0 0 1em 0 #fff inset;
+                        color: #000;
+                        background: #909090;
                     }
+                }
+
+            }
+
+            .submit{
+                display: flex;
+                justify-content: space-around;
+
+                #submit{
+                    font-size: 1.1rem;
+                    box-shadow: 0 0 0.3em 0 #fff inset;
+                    padding: 0.5rem 1rem;
+                    background: #959595;
+                    text-align: center;
+                    transition: 0.2s ease;
+                }
+
+                #submit:focus{
+                    scale: 0.92;
+                    box-shadow: 0 0 0.3em 0 #fff;
                 }
             }
         }
@@ -212,11 +202,12 @@ body{
     }
 
     footer{
+        padding: 3px;
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
-        border: 0;
         background: #151515;
         box-shadow: 0 0 1em 0 #fff;
         text-align: center;
+        font-size: 0.7rem;
     }
 }

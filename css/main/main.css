@@ -142,7 +142,7 @@ body main .form form .container .wrapper {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 0.8em;
+  gap: 1em;
 }
 
 body main .form form .container .wrapper #goal {
@@ -190,9 +190,8 @@ body main .form form .container .wrapper #time {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   font-size: 1rem;
 }
 
@@ -222,11 +221,19 @@ body main .form form .container .submit {
 
 body main .form form .container .submit #submit {
   font-size: 1.1rem;
-  -webkit-box-shadow: 0 0 0.3em 0 #fff;
-          box-shadow: 0 0 0.3em 0 #fff;
+  -webkit-box-shadow: 0 0 0.3em 0 #fff inset;
+          box-shadow: 0 0 0.3em 0 #fff inset;
   padding: 0.5rem 1rem;
   background: #959595;
   text-align: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+body main .form form .container .submit #submit:focus {
+  scale: 0.95;
+  -webkit-box-shadow: 0 0 0.3em 0 #fff;
+          box-shadow: 0 0 0.3em 0 #fff;
 }
 
 body footer {

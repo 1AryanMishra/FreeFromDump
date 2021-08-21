@@ -15,7 +15,7 @@ a{
 }
 
 body{
-    overflow-y: scroll;
+    overflow: visible;
     position: fixed;
     top: 0;
     left: 0;
@@ -247,16 +247,3 @@ body{
         }
     }
 }
-/*
-@media (orientation: landscape){
-    body{
-        main{
-            .data_info{
-                display: inline;
-            }
-            form{
-                margin-left: 0;
-            }
-        }
-    }
-}*/

@@ -239,7 +239,7 @@ body main .form form .container .submit #submit:focus {
 }
 
 body main .form form:focus {
-  scale: 0;
+  scale: 0.2;
 }
 
 body footer {

@@ -7,9 +7,9 @@
   color: #fff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-transition: 10s;
+  transition: 10s;
   border-radius: 6px;
-  -webkit-transition: 5s ease;
-  transition: 5s ease;
 }
 
 a {
@@ -82,26 +82,25 @@ body header .nav {
   display: flex;
 }
 
-body header .nav h2 {
+body header .nav #only_html {
   font-size: 1rem;
   text-align: center;
   margin-top: 1em;
   margin-left: 1em;
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
+  -webkit-transition: 5s ease;
+  transition: 5s ease;
   background: none;
-  color: #fff;
-}
-
-body header .nav h2 #only {
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
   color: #000;
 }
 
-body header .nav h2 #with_css {
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
+body header .nav #with_css {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 1em;
+  margin-left: 1em;
+  -webkit-transition: 5s ease;
+  transition: 5s ease;
+  background: none;
   color: #fff;
 }
 
@@ -265,6 +264,10 @@ body main .form form .container .submit #submit:focus {
   scale: 0.92;
   -webkit-box-shadow: 0 0 0.3em 0 #fff;
           box-shadow: 0 0 0.3em 0 #fff;
+}
+
+body main .form form:hover {
+  scale: 1.1;
 }
 
 body footer {

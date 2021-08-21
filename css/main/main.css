@@ -96,7 +96,7 @@ body header .nav h2 {
 body header .nav h2 #only {
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
-  visibility: hidden;
+  color: #000;
 }
 
 body header .nav h2 #with_css {

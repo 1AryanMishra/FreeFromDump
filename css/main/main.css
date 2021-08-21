@@ -132,13 +132,19 @@ body main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  /*.data_info{
+            border: 1px solid #959595;
+            box-shadow: 0 0 1em 0 #fff inset;
+            padding: 1em;
+            margin-left: auto;
+            display: none;
+        }*/
 }
 
 body main form {
   border: 1px solid blue;
   -webkit-box-shadow: 0 0 1em 0 #fff;
           box-shadow: 0 0 1em 0 #fff;
-  max-width: 75%;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -269,5 +275,14 @@ body footer {
           box-shadow: 0 0 1em 0 #fff;
   text-align: center;
   font-size: 0.7rem;
+}
+
+@media (min-width: 1000px) {
+  body main .data_info {
+    display: inline;
+  }
+  body main form {
+    margin-left: 0;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -36,6 +36,9 @@ body {
 }
 
 body header {
+  left: 0;
+  right: 0;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -83,32 +86,10 @@ body header .nav {
   display: flex;
 }
 
-body header .nav #only_html {
-  font-size: 1rem;
-  text-align: center;
-  margin-top: 1em;
-  margin-left: 1em;
-  -webkit-transition: 5s ease;
-  transition: 5s ease;
-  background: none;
-  color: #000;
-}
-
-body header .nav #with_css {
-  font-size: 1rem;
-  text-align: center;
-  margin-top: 1em;
-  margin-left: 1em;
-  -webkit-transition: 5s ease;
-  transition: 5s ease;
-  background: none;
-  color: #fff;
-}
-
 body header .nav .nav_box {
   margin-left: auto;
-  margin-right: 1em;
-  margin-top: 1em;
+  margin-right: 0.5em;
+  margin-top: 0.5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -275,6 +256,9 @@ body main .form_data_container form .submit #submit:focus {
 }
 
 body footer {
+  left: 0;
+  right: 0;
+  bottom: 0;
   padding: 3px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;

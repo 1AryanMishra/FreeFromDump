@@ -129,7 +129,7 @@ body header .nav .nav_box .nav_line {
 }
 
 body main .form form {
-  min-height: 90%;
+  min-height: 100%;
   border: 1px solid blue;
   -webkit-box-shadow: 0 0 1em 0 #fff;
           box-shadow: 0 0 1em 0 #fff;
@@ -146,9 +146,10 @@ body main .form form .container {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  gap: 2em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 2rem;
 }
 
 body main .form form .container .description {
@@ -174,7 +175,7 @@ body main .form form .container .wrapper {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 1em;
+  gap: 1rem;
 }
 
 body main .form form .container .wrapper #goal {

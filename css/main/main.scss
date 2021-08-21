@@ -99,7 +99,7 @@ body{
         .form{
 
             form{
-                min-height: 90%;
+                min-height: 100%;
                 border: 1px solid blue;
                 box-shadow: 0 0 1em 0 #fff;
                 padding: 1em;
@@ -109,8 +109,8 @@ body{
                 .container{
                     display: flex;
                     flex-flow: column nowrap;
-                    justify-content: space-around;
-                    gap: 2em;
+                    justify-content: space-between;
+                    gap: 2rem;
 
                     .description{
                         text-align: center;
@@ -128,7 +128,7 @@ body{
                         display: flex;
                         flex-flow: column nowrap;
                         justify-content: space-between;
-                        gap: 1em;
+                        gap: 1rem;
 
                         #goal{
                             display: flex;

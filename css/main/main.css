@@ -8,6 +8,8 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 6px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 a {
@@ -98,8 +100,6 @@ body header .nav .nav_line {
 }
 
 body main .form form {
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
   border: 1px solid blue;
   -webkit-box-shadow: 0 0 1em 0 #fff;
           box-shadow: 0 0 1em 0 #fff;
@@ -236,10 +236,6 @@ body main .form form .container .submit #submit:focus {
   scale: 0.92;
   -webkit-box-shadow: 0 0 0.3em 0 #fff;
           box-shadow: 0 0 0.3em 0 #fff;
-}
-
-body main .form form:focus {
-  scale: 1.1;
 }
 
 body footer {

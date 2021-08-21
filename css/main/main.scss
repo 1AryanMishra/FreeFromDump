@@ -7,6 +7,7 @@
     color: #fff;
     box-sizing: border-box;
     border-radius: 6px;
+    transition: 0.5s ease;
 }
 
 a{
@@ -74,7 +75,6 @@ body{
         .form{
 
             form{
-                transition: 0.5s ease;
                 border: 1px solid blue;
                 box-shadow: 0 0 1em 0 #fff;
                 padding: 1em;
@@ -181,10 +181,6 @@ body{
                         }
                     }
                 }
-            }
-            
-            form:focus{
-                scale: 1.1;
             }
         }
 

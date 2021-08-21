@@ -30,7 +30,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  border: 2px solid violet;
 }
 
 body header {

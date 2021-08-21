@@ -132,13 +132,15 @@ body main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /*.data_info{
-            border: 1px solid #959595;
-            box-shadow: 0 0 1em 0 #fff inset;
-            padding: 1em;
-            margin-left: auto;
-            display: none;
-        }*/
+}
+
+body main .data_info {
+  border: 1px solid #959595;
+  -webkit-box-shadow: 0 0 1em 0 #fff inset;
+          box-shadow: 0 0 1em 0 #fff inset;
+  padding: 1em;
+  margin-left: auto;
+  display: none;
 }
 
 body main form {
@@ -146,6 +148,7 @@ body main form {
   -webkit-box-shadow: 0 0 1em 0 #fff;
           box-shadow: 0 0 1em 0 #fff;
   margin: 0 auto;
+  max-width: 75%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

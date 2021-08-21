@@ -25,7 +25,6 @@ body{
     justify-content: space-between;
     flex-flow: column nowrap;
 
-
     header{
         display: flex;
         flex-flow: column nowrap;
@@ -100,10 +99,11 @@ body{
         .form{
 
             form{
+                min-height: 90%;
                 border: 1px solid blue;
                 box-shadow: 0 0 1em 0 #fff;
                 padding: 1em;
-                max-width: 70%;
+                max-width: 75%;
                 margin: 0 auto;
                 
                 .container{
@@ -206,10 +206,6 @@ body{
                         }
                     }
                 }
-            }
-
-            form:hover{
-                scale: 1.1;
             }
         }
 

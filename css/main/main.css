@@ -129,11 +129,12 @@ body header .nav .nav_box .nav_line {
 }
 
 body main .form form {
+  min-height: 90%;
   border: 1px solid blue;
   -webkit-box-shadow: 0 0 1em 0 #fff;
           box-shadow: 0 0 1em 0 #fff;
   padding: 1em;
-  max-width: 70%;
+  max-width: 75%;
   margin: 0 auto;
 }
 
@@ -265,10 +266,6 @@ body main .form form .container .submit #submit:focus {
   scale: 0.92;
   -webkit-box-shadow: 0 0 0.3em 0 #fff;
           box-shadow: 0 0 0.3em 0 #fff;
-}
-
-body main .form form:hover {
-  scale: 1.1;
 }
 
 body footer {

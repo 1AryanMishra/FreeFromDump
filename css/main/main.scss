@@ -77,24 +77,24 @@ body{
                 border: 1px solid blue;
                 box-shadow: 0 0 1em 0 #fff;
                 padding: 1em;
-                max-width: 80%;
+                max-width: 70%;
                 margin: 0 auto;
                 
                 .container{
                     display: flex;
                     flex-flow: column nowrap;
                     justify-content: space-around;
-                    gap: 1.8em;
+                    gap: 2em;
 
                     .description{
                         text-align: center;
                         
                         p{
-                            font-size: 0.9rem;
+                            font-size: 1rem;
                         }
 
                         h1{
-                            font-size: 1.2rem;
+                            font-size: 1.4rem;
                         }
                     }
 
@@ -107,14 +107,14 @@ body{
                         #goal{
                             display: flex;
                             flex-direction: column;
-                            gap: 0.25em;
+                            gap: 0.3em;
 
                             #label_for_goal{
-                                font-size: 0.9em;
+                                font-size: 1rem;
                             }
 
                             select{
-                                font-size: 1rem;
+                                font-size: 1.1rem;
                                 padding-left: 6px;
                                 background: #909090;
                                 color: #000;
@@ -129,7 +129,7 @@ body{
                             .radio_span{
                                 
                                 label{
-                                    font-size: 0.9em;
+                                    font-size: 1rem;
                                 }
                             }
 
@@ -163,9 +163,10 @@ body{
                         justify-content: space-around;
 
                         #submit{
+                            font-size: 1.1rem;
                             box-shadow: 0 0 0.3em 0 #fff;
                             padding: 0.5rem 1rem;
-                            background: grey;
+                            background: #959595;
                             text-align: center;
                         }
                     }

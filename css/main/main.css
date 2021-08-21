@@ -102,7 +102,7 @@ body main .form form {
   -webkit-box-shadow: 0 0 1em 0 #fff;
           box-shadow: 0 0 1em 0 #fff;
   padding: 1em;
-  max-width: 80%;
+  max-width: 70%;
   margin: 0 auto;
 }
 
@@ -116,7 +116,7 @@ body main .form form .container {
           flex-flow: column nowrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  gap: 1.8em;
+  gap: 2em;
 }
 
 body main .form form .container .description {
@@ -124,11 +124,11 @@ body main .form form .container .description {
 }
 
 body main .form form .container .description p {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 body main .form form .container .description h1 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 body main .form form .container .wrapper {
@@ -153,15 +153,15 @@ body main .form form .container .wrapper #goal {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 0.25em;
+  gap: 0.3em;
 }
 
 body main .form form .container .wrapper #goal #label_for_goal {
-  font-size: 0.9em;
+  font-size: 1rem;
 }
 
 body main .form form .container .wrapper #goal select {
-  font-size: 1rem;
+  font-size: 1.1rem;
   padding-left: 6px;
   background: #909090;
   color: #000;
@@ -178,7 +178,7 @@ body main .form form .container .wrapper #pc {
 }
 
 body main .form form .container .wrapper #pc .radio_span label {
-  font-size: 0.9em;
+  font-size: 1rem;
 }
 
 body main .form form .container .wrapper #pc #dont {
@@ -216,10 +216,11 @@ body main .form form .container .submit {
 }
 
 body main .form form .container .submit #submit {
+  font-size: 1.1rem;
   -webkit-box-shadow: 0 0 0.3em 0 #fff;
           box-shadow: 0 0 0.3em 0 #fff;
   padding: 0.5rem 1rem;
-  background: grey;
+  background: #959595;
   text-align: center;
 }
 

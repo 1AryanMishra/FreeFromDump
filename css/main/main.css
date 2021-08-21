@@ -7,6 +7,7 @@
   color: #fff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border-radius: 6px;
 }
 
 a {
@@ -48,8 +49,6 @@ body header .main {
   -webkit-box-shadow: 0 0 1em 0 #fff;
           box-shadow: 0 0 1em 0 #fff;
   background: #151515;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -68,10 +67,9 @@ body header .main #sign_in {
       align-self: center;
   background: rgba(255, 0, 0, 0.8);
   text-align: center;
-  padding: 0.4em 1em 0.5rem 1rem;
-  border-radius: 6px;
-  -webkit-box-shadow: 0 0 0.7em 0 #fff;
-          box-shadow: 0 0 0.7em 0 #fff;
+  padding: 0.4rem 1rem 0.5rem 1rem;
+  -webkit-box-shadow: 0 0 0.3em 0 #fff;
+          box-shadow: 0 0 0.3em 0 #fff;
 }
 
 body header .nav {
@@ -93,14 +91,12 @@ body header .nav .nav_line {
   -webkit-box-shadow: 0 0 0.45em 0 #fff;
           box-shadow: 0 0 0.45em 0 #fff;
   margin: 3px 0;
-  border-radius: 6px;
   border: 3px solid #fff;
   width: 30px;
 }
 
 body main .form form {
   border: 1px solid blue;
-  border-radius: 6px;
   -webkit-box-shadow: 0 0 1em 0 #fff;
           box-shadow: 0 0 1em 0 #fff;
   padding: 1em;
@@ -108,10 +104,125 @@ body main .form form {
   margin: 0 auto;
 }
 
+body main .form form .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 1.8em;
+}
+
+body main .form form .container .description {
+  text-align: center;
+}
+
+body main .form form .container .description p {
+  font-size: 0.9rem;
+}
+
+body main .form form .container .description h1 {
+  font-size: 1.2rem;
+}
+
+body main .form form .container .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0.8em;
+}
+
+body main .form form .container .wrapper #goal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.25em;
+}
+
+body main .form form .container .wrapper #goal #label_for_goal {
+  font-size: 0.9em;
+}
+
+body main .form form .container .wrapper #goal select {
+  font-size: 1rem;
+  padding-left: 6px;
+  background: #909090;
+  color: #000;
+}
+
+body main .form form .container .wrapper #pc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0.5em;
+}
+
+body main .form form .container .wrapper #pc .radio_span label {
+  font-size: 0.9em;
+}
+
+body main .form form .container .wrapper #pc #dont {
+  display: none;
+}
+
+body main .form form .container .wrapper #time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1rem;
+}
+
+body main .form form .container .wrapper #time input {
+  max-width: 25%;
+  color: #000;
+  background: #909090;
+  padding: 0.2em;
+}
+
+body main .form form .container .wrapper #time select {
+  color: #000;
+  background: #909090;
+}
+
+body main .form form .container .submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body main .form form .container .submit #submit {
+  -webkit-box-shadow: 0 0 0.3em 0 #fff;
+          box-shadow: 0 0 0.3em 0 #fff;
+  padding: 0.5rem 1rem;
+  background: grey;
+  text-align: center;
+}
+
 body footer {
   border: 0;
-  border-top-right-radius: 6px;
-  border-top-left-radius: 6px;
   background: #151515;
   -webkit-box-shadow: 0 0 1em 0 #fff;
           box-shadow: 0 0 1em 0 #fff;

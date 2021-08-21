@@ -8,6 +8,8 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 6px;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 a {
@@ -228,12 +230,17 @@ body main .form form .container .submit #submit {
   text-align: center;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  scale: 1;
 }
 
 body main .form form .container .submit #submit:focus {
-  scale: 0.95;
+  scale: 0;
   -webkit-box-shadow: 0 0 0.3em 0 #fff;
           box-shadow: 0 0 0.3em 0 #fff;
+}
+
+body main .form:focus {
+  scale: 0.5;
 }
 
 body footer {

@@ -134,16 +134,21 @@ body main {
   display: flex;
 }
 
-body main .data_info {
-  border: 1px solid #959595;
-  -webkit-box-shadow: 0 0 1em 0 #fff inset;
-          box-shadow: 0 0 1em 0 #fff inset;
+body main .form_data_container {
+  max-width: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main .form_data_container .data_info {
+  max-width: 60%;
   padding: 1em;
-  margin-left: auto;
   display: none;
 }
 
-body main form {
+body main .form_data_container form {
   border: 1px solid blue;
   -webkit-box-shadow: 0 0 1em 0 #fff;
           box-shadow: 0 0 1em 0 #fff;
@@ -158,24 +163,24 @@ body main form {
           flex-flow: column nowrap;
 }
 
-body main form > div {
+body main .form_data_container form > div {
   max-width: 90%;
   margin: 1em auto;
 }
 
-body main form .description {
+body main .form_data_container form .description {
   text-align: center;
 }
 
-body main form .description p {
+body main .form_data_container form .description p {
   font-size: 1rem;
 }
 
-body main form .description h1 {
+body main .form_data_container form .description h1 {
   font-size: 1.4rem;
 }
 
-body main form .wrapper {
+body main .form_data_container form .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -185,12 +190,12 @@ body main form .wrapper {
           flex-flow: column nowrap;
 }
 
-body main form .wrapper > div {
+body main .form_data_container form .wrapper > div {
   max-width: 100%;
   margin: 0.55em 0;
 }
 
-body main form .wrapper #goal {
+body main .form_data_container form .wrapper #goal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -200,11 +205,11 @@ body main form .wrapper #goal {
           flex-direction: column;
 }
 
-body main form .wrapper #goal #label_for_goal {
+body main .form_data_container form .wrapper #goal #label_for_goal {
   font-size: 1rem;
 }
 
-body main form .wrapper #goal select {
+body main .form_data_container form .wrapper #goal select {
   margin-top: 0.3em;
   -webkit-box-shadow: 0 0 1em 0 #fff inset;
           box-shadow: 0 0 1em 0 #fff inset;
@@ -214,11 +219,11 @@ body main form .wrapper #goal select {
   color: #000;
 }
 
-body main form .wrapper #pc p {
+body main .form_data_container form .wrapper #pc p {
   display: inline;
 }
 
-body main form .wrapper #time {
+body main .form_data_container form .wrapper #time {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -227,7 +232,7 @@ body main form .wrapper #time {
   font-size: 1rem;
 }
 
-body main form .wrapper #time input {
+body main .form_data_container form .wrapper #time input {
   max-width: 25%;
   margin: 0 auto;
   color: #000;
@@ -237,14 +242,14 @@ body main form .wrapper #time input {
   padding: 0.2em;
 }
 
-body main form .wrapper #time select {
+body main .form_data_container form .wrapper #time select {
   -webkit-box-shadow: 0 0 1em 0 #fff inset;
           box-shadow: 0 0 1em 0 #fff inset;
   color: #000;
   background: #909090;
 }
 
-body main form .submit {
+body main .form_data_container form .submit {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -252,7 +257,7 @@ body main form .submit {
       justify-content: space-around;
 }
 
-body main form .submit #submit {
+body main .form_data_container form .submit #submit {
   font-size: 1.1rem;
   -webkit-box-shadow: 0 0 0.3em 0 #fff inset;
           box-shadow: 0 0 0.3em 0 #fff inset;
@@ -263,7 +268,7 @@ body main form .submit #submit {
   transition: 0.2s ease;
 }
 
-body main form .submit #submit:focus {
+body main .form_data_container form .submit #submit:focus {
   scale: 0.92;
   -webkit-box-shadow: 0 0 0.3em 0 #fff;
           box-shadow: 0 0 0.3em 0 #fff;
@@ -280,12 +285,34 @@ body footer {
   font-size: 0.7rem;
 }
 
-@media (min-width: 1000px) {
-  body main .data_info {
-    display: inline;
+@media (min-width: 950px) {
+  body main .form_data_container {
+    -webkit-box-shadow: 0 0 1em 0 #fff inset;
+            box-shadow: 0 0 1em 0 #fff inset;
   }
-  body main form {
+  body main .form_data_container .data_info {
+    display: inline;
+    margin-left: auto;
+    margin-right: 0;
+  }
+  body main .form_data_container form {
     margin-left: 0;
+    max-width: 30%;
+    margin-right: auto;
   }
 }
+
+/*
+@media (orientation: landscape){
+    body{
+        main{
+            .data_info{
+                display: inline;
+            }
+            form{
+                margin-left: 0;
+            }
+        }
+    }
+}*/
 /*# sourceMappingURL=main.css.map */

@@ -97,116 +97,119 @@ body{
     main{
         display: flex;
 
-        .data_info{
-            border: 1px solid #959595;
-            box-shadow: 0 0 1em 0 #fff inset;
-            padding: 1em;
-            margin-left: auto;
-            display: none;
-        }
-
-        form{
-            border: 1px solid blue;
-            box-shadow: 0 0 1em 0 #fff;
+        .form_data_container{
+            max-width: 100%;
             margin: 0 auto;
-            max-width: 75%;
             display: flex;
-            flex-flow: column nowrap;
 
-            >div{
-                max-width: 90%;
-                margin: 1em auto;
+            .data_info{
+                max-width: 60%;
+                padding: 1em;
+                display: none;
             }
-
-            .description{
-                text-align: center;
-                
-                p{
-                    font-size: 1rem;
-                }
-
-                h1{
-                    font-size: 1.4rem;
-                }
-            }
-
-            .wrapper{
+            
+            form{
+                border: 1px solid blue;
+                box-shadow: 0 0 1em 0 #fff;
+                margin: 0 auto;
+                max-width: 75%;
                 display: flex;
                 flex-flow: column nowrap;
-
+                
                 >div{
-                    max-width: 100%;
-                    margin: 0.55em 0;
+                    max-width: 90%;
+                    margin: 1em auto;
                 }
-
-                #goal{
-                    display: flex;
-                    flex-direction: column;
-
-                    #label_for_goal{
+                
+                .description{
+                    text-align: center;
+                    
+                    p{
                         font-size: 1rem;
                     }
-
-                    select{
-                        margin-top: 0.3em;
-                        box-shadow: 0 0 1em 0 #fff inset;
-                        font-size: 1.1rem;
-                        padding-left: 6px;
-                        background: #909090;
-                        color: #000;
+    
+                    h1{
+                        font-size: 1.4rem;
                     }
                 }
-
-                #pc{
-
-                    p{
-                        display: inline;
+    
+                .wrapper{
+                    display: flex;
+                    flex-flow: column nowrap;
+    
+                    >div{
+                        max-width: 100%;
+                        margin: 0.55em 0;
                     }
+    
+                    #goal{
+                        display: flex;
+                        flex-direction: column;
+    
+                        #label_for_goal{
+                            font-size: 1rem;
+                        }
+    
+                        select{
+                            margin-top: 0.3em;
+                            box-shadow: 0 0 1em 0 #fff inset;
+                            font-size: 1.1rem;
+                            padding-left: 6px;
+                            background: #909090;
+                            color: #000;
+                        }
+                    }
+    
+                    #pc{
+    
+                        p{
+                            display: inline;
+                        }
+                    }
+    
+                    #time{
+                        display: flex;
+                        justify-content: space-around;
+                        font-size: 1rem;
+    
+                        input{
+                            max-width: 25%;
+                            margin: 0 auto;
+                            color: #000;
+                            background: #909090;
+                            box-shadow: 0 0 1em 0 #fff inset;
+                            padding: 0.2em;
+                        }
+    
+                        select{
+                            box-shadow: 0 0 1em 0 #fff inset;
+                            color: #000;
+                            background: #909090;
+                        }
+                    }
+    
                 }
-
-                #time{
+    
+                .submit{
                     display: flex;
                     justify-content: space-around;
-                    font-size: 1rem;
-
-                    input{
-                        max-width: 25%;
-                        margin: 0 auto;
-                        color: #000;
-                        background: #909090;
-                        box-shadow: 0 0 1em 0 #fff inset;
-                        padding: 0.2em;
+    
+                    #submit{
+                        font-size: 1.1rem;
+                        box-shadow: 0 0 0.3em 0 #fff inset;
+                        padding: 0.5rem 1rem;
+                        background: #959595;
+                        text-align: center;
+                        transition: 0.2s ease;
                     }
-
-                    select{
-                        box-shadow: 0 0 1em 0 #fff inset;
-                        color: #000;
-                        background: #909090;
+    
+                    #submit:focus{
+                        scale: 0.92;
+                        box-shadow: 0 0 0.3em 0 #fff;
                     }
                 }
-
             }
-
-            .submit{
-                display: flex;
-                justify-content: space-around;
-
-                #submit{
-                    font-size: 1.1rem;
-                    box-shadow: 0 0 0.3em 0 #fff inset;
-                    padding: 0.5rem 1rem;
-                    background: #959595;
-                    text-align: center;
-                    transition: 0.2s ease;
-                }
-
-                #submit:focus{
-                    scale: 0.92;
-                    box-shadow: 0 0 0.3em 0 #fff;
-                }
-            }
-        }
-
+        }            
     }
 
     footer{
@@ -222,7 +225,29 @@ body{
 
 
 
-@media(min-width:1000px){
+@media(min-width:950px){
+    body{
+        main{
+
+            .form_data_container{
+                box-shadow: 0 0 1em 0 #fff inset;
+
+                .data_info{
+                    display: inline;
+                    margin-left: auto;
+                    margin-right: 0;
+                }
+                form{
+                    margin-left: 0;
+                    max-width: 30%;
+                    margin-right: auto;
+                }
+            }
+        }
+    }
+}
+/*
+@media (orientation: landscape){
     body{
         main{
             .data_info{
@@ -233,4 +258,4 @@ body{
             }
         }
     }
-}
+}*/

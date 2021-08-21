@@ -23,7 +23,6 @@ body{
     justify-content: space-between;
     flex-flow: column nowrap;
     border: 2px solid violet;
-    gap: 1em;
 
     header{
         display: flex;
@@ -76,7 +75,7 @@ body{
         .form{
 
             form{
-                border: 0;
+                border: 1px solid blue;
                 border-radius: 6px;
                 box-shadow: 0 0 1em 0 #fff;
                 padding: 1em;

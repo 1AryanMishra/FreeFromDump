@@ -31,7 +31,6 @@ body {
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
   border: 2px solid violet;
-  gap: 1em;
 }
 
 body header {
@@ -101,7 +100,7 @@ body header .nav .nav_line {
 }
 
 body main .form form {
-  border: 0;
+  border: 1px solid blue;
   border-radius: 6px;
   -webkit-box-shadow: 0 0 1em 0 #fff;
           box-shadow: 0 0 1em 0 #fff;

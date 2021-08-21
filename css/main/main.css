@@ -46,6 +46,8 @@ body header {
 }
 
 body header .main {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
   -webkit-box-shadow: 0 0 1em 0 #fff;
           box-shadow: 0 0 1em 0 #fff;
   background: #151515;
@@ -100,7 +102,7 @@ body main .form form {
   -webkit-box-shadow: 0 0 1em 0 #fff;
           box-shadow: 0 0 1em 0 #fff;
   padding: 1em;
-  max-width: 70%;
+  max-width: 80%;
   margin: 0 auto;
 }
 
@@ -222,6 +224,8 @@ body main .form form .container .submit #submit {
 }
 
 body footer {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
   border: 0;
   background: #151515;
   -webkit-box-shadow: 0 0 1em 0 #fff;

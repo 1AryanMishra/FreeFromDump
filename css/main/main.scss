@@ -114,6 +114,7 @@ body{
                             }
 
                             select{
+                                box-shadow: 0 0 1em 0 #fff inset;
                                 font-size: 1.1rem;
                                 padding-left: 6px;
                                 background: #909090;
@@ -123,7 +124,7 @@ body{
 
                         #pc{
                             display: flex;
-                            justify-content: space-between;
+                            justify-content: space-around;
                             gap: 0.5em;
 
                             .radio_span{
@@ -147,10 +148,12 @@ body{
                                 max-width: 25%;
                                 color: #000;
                                 background: #909090;
+                                box-shadow: 0 0 1em 0 #fff inset;
                                 padding: 0.2em;
                             }
 
                             select{
+                                box-shadow: 0 0 1em 0 #fff inset;
                                 color: #000;
                                 background: #909090;
                             }

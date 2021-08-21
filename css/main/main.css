@@ -7,8 +7,8 @@
   color: #fff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transition: 10s;
-  transition: 10s;
+  -webkit-transition: 1s;
+  transition: 1s;
   border-radius: 6px;
 }
 

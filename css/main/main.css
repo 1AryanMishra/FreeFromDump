@@ -8,8 +8,8 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 6px;
-  -webkit-transition: 10s ease;
-  transition: 10s ease;
+  -webkit-transition: 5s ease;
+  transition: 5s ease;
 }
 
 a {

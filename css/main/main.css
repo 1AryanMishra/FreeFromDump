@@ -98,8 +98,9 @@ body header .nav .nav_line {
 }
 
 body main .form form {
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  visibility: hidden;
   border: 1px solid blue;
   -webkit-box-shadow: 0 0 1em 0 #fff;
           box-shadow: 0 0 1em 0 #fff;
@@ -228,19 +229,18 @@ body main .form form .container .submit #submit {
   padding: 0.5rem 1rem;
   background: #959595;
   text-align: center;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  scale: 1;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
 }
 
 body main .form form .container .submit #submit:focus {
-  scale: 0;
+  scale: 0.92;
   -webkit-box-shadow: 0 0 0.3em 0 #fff;
           box-shadow: 0 0 0.3em 0 #fff;
 }
 
 body main .form form:focus {
-  scale: 0.5;
+  visibility: visible;
 }
 
 body footer {

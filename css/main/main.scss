@@ -74,7 +74,8 @@ body{
         .form{
 
             form{
-                transition: 0.5s;
+                transition: 0.5s ease;
+                visibility: hidden;
                 border: 1px solid blue;
                 box-shadow: 0 0 1em 0 #fff;
                 padding: 1em;
@@ -172,12 +173,11 @@ body{
                             padding: 0.5rem 1rem;
                             background: #959595;
                             text-align: center;
-                            transition: 0.5s;
-                            scale: 1;
+                            transition: 0.2s ease;
                         }
 
                         #submit:focus{
-                            scale: 0;
+                            scale: 0.92;
                             box-shadow: 0 0 0.3em 0 #fff;
                         }
                     }
@@ -185,7 +185,7 @@ body{
             }
             
             form:focus{
-                scale: 0.5;
+                visibility: visible;
             }
         }
 

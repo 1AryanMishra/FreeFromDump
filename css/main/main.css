@@ -76,8 +76,8 @@ body header .main #sign_in {
   background: rgba(255, 0, 0, 0.8);
   text-align: center;
   padding: 0.4rem 1rem 0.5rem 1rem;
-  -webkit-box-shadow: 0 0 0.3em 0 #fff;
-          box-shadow: 0 0 0.3em 0 #fff;
+  -webkit-box-shadow: 0 0 0.4em 0 #fff;
+          box-shadow: 0 0 0.4em 0 #fff;
 }
 
 body header .nav {
@@ -124,11 +124,126 @@ body main .form_data_container {
 }
 
 body main .form_data_container .data_info {
-  margin: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  margin: 0 auto;
   margin-right: 0;
   max-width: 60%;
-  padding: 1em;
   display: none;
+  text-align: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body main .form_data_container .data_info p {
+  max-width: 90%;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+body main .form_data_container .data_info .sign_in_recommendation {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+body main .form_data_container .data_info .sign_in_recommendation p {
+  font-size: 1rem;
+}
+
+body main .form_data_container .data_info .sign_in_recommendation #sign_in_block {
+  margin: 0.7em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main .form_data_container .data_info .sign_in_recommendation #sign_in_block #sign_in_left {
+  width: 40%;
+  border: 1px solid #fff;
+}
+
+body main .form_data_container .data_info .sign_in_recommendation #sign_in_block a {
+  margin: 0 1em;
+  background: rgba(255, 0, 0, 0.8);
+  text-align: center;
+  padding: 0.4rem 1rem 0.5rem 1rem;
+  -webkit-box-shadow: 0 0 0.4em 0 #fff;
+          box-shadow: 0 0 0.4em 0 #fff;
+}
+
+body main .form_data_container .data_info .sign_in_recommendation #sign_in_block #sign_in_right {
+  width: 40%;
+  border: 1px solid #fff;
+}
+
+body main .form_data_container .data_info .sign_in_recommendation .why_sign_in {
+  max-width: 95%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main .form_data_container .data_info .sign_in_recommendation .why_sign_in .why span {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+body main .form_data_container .data_info .sign_in_recommendation .why_sign_in .why #main {
+  display: block;
+  font-size: 1.4rem;
+}
+
+body main .form_data_container .data_info .sign_in_recommendation .why_sign_in #and_block {
+  margin: 0 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main .form_data_container .data_info .sign_in_recommendation .why_sign_in #and_block #and_top {
+  width: 2px;
+  height: 40%;
+  background: #fff;
+}
+
+body main .form_data_container .data_info .sign_in_recommendation .why_sign_in #and_block #and {
+  margin: 0.25em 0;
+  padding: 0.2em 0.4em;
+  color: #000;
+  background: #959595;
+  -webkit-box-shadow: 0 0 1em 0 #fff inset;
+          box-shadow: 0 0 1em 0 #fff inset;
+}
+
+body main .form_data_container .data_info .sign_in_recommendation .why_sign_in #and_block #and_bottom {
+  width: 2px;
+  height: 40%;
+  background: #fff;
 }
 
 body main .form_data_container form {
@@ -241,11 +356,12 @@ body main .form_data_container form .submit {
 }
 
 body main .form_data_container form .submit #submit {
+  color: #fff;
   font-size: 1.1rem;
-  -webkit-box-shadow: 0 0 0.3em 0 #fff inset;
-          box-shadow: 0 0 0.3em 0 #fff inset;
+  -webkit-box-shadow: 0 0 1em 0 #fff inset;
+          box-shadow: 0 0 1em 0 #fff inset;
   padding: 0.5rem 1rem;
-  background: #959595;
+  background: #909090;
   text-align: center;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
@@ -279,10 +395,11 @@ body footer {
   }
   body main .form_data_container .data_info {
     max-width: 62%;
-    display: inline;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   body main .form_data_container form {
-    margin-left: 0;
     max-width: 32%;
     margin-right: auto;
   }

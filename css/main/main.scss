@@ -51,7 +51,7 @@ body{
                 background: rgba(255, 0, 0, 0.8);
                 text-align: center;
                 padding: 0.4rem 1rem 0.5rem 1rem;
-                box-shadow: 0 0 0.3em 0 #fff;
+                box-shadow: 0 0 0.4em 0 #fff;
             }
         }
 
@@ -86,11 +86,101 @@ body{
             display: flex;
 
             .data_info{
-                margin: auto;
+                flex-flow: column nowrap;
+                margin: 0 auto;
                 margin-right: 0;
                 max-width: 60%;
-                padding: 1em;
                 display: none;
+                text-align: center;
+                justify-content: space-around;
+
+                p{
+                    max-width: 90%;
+                    margin: 0 auto;
+                    font-size: 1.1rem;
+                }
+
+                .sign_in_recommendation{
+                    max-width: 80%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: flex;
+                    flex-flow: column nowrap;
+
+                    p{
+                        font-size: 1rem;
+                    }
+
+                    #sign_in_block{
+                        margin: 0.7em;
+                        display: flex;
+                        align-items: center;
+                        
+                        #sign_in_left{
+                            width: 40%;
+                            border: 1px solid #fff;
+                        }
+
+                        a{
+                            margin: 0 1em;
+                            background: rgba(255, 0, 0, 0.8);
+                            text-align: center;
+                            padding: 0.4rem 1rem 0.5rem 1rem;
+                            box-shadow: 0 0 0.4em 0 #fff;
+                        }
+
+                        #sign_in_right{
+                            width: 40%;
+                            border: 1px solid #fff;
+                        }
+                    }
+
+                    .why_sign_in{
+                        max-width: 95%;
+                        margin: 0 auto;
+                        display: flex;
+
+                        .why{
+                            span{
+                                display: block;
+                                font-size: 0.85rem;
+                                font-weight: bold;
+                            }
+                            #main{
+                                display: block;
+                                font-size: 1.4rem;
+                            }
+                        }
+
+                        #and_block{
+                            margin: 0 0.5em;
+                            display: flex;
+                            flex-flow: column nowrap;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            #and_top{
+                                width: 2px;
+                                height: 40%;
+                                background: #fff;
+                            }
+
+                            #and{
+                                margin: 0.25em 0;
+                                padding: 0.2em 0.4em;
+                                color: #000;
+                                background: #959595;
+                                box-shadow: 0 0 1em 0 #fff inset;
+                            }
+
+                            #and_bottom{
+                                width: 2px;
+                                height: 40%;
+                                background: #fff;
+                            }
+                        }
+                    }
+                }
             }
             
             form{
@@ -180,10 +270,11 @@ body{
                     justify-content: space-around;
     
                     #submit{
+                        color: #fff;
                         font-size: 1.1rem;
-                        box-shadow: 0 0 0.3em 0 #fff inset;
+                        box-shadow: 0 0 1em 0 #fff inset;
                         padding: 0.5rem 1rem;
-                        background: #959595;
+                        background: #909090;
                         text-align: center;
                         transition: 0.2s ease;
                     }
@@ -223,10 +314,9 @@ body{
 
                 .data_info{
                     max-width: 62%;
-                    display: inline;
+                    display: flex;
                 }
                 form{
-                    margin-left: 0;
                     max-width: 32%;
                     margin-right: auto;
                 }

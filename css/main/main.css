@@ -66,10 +66,12 @@ body header .main {
 }
 
 body header .main #logo {
+  color: #fff;
   font-size: 1.5rem;
 }
 
 body header .main #sign_in {
+  color: #fff;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -220,6 +222,7 @@ body main .form_data_container .data_info .sign_in_recommendation #sign_in_block
 }
 
 body main .form_data_container .data_info .sign_in_recommendation #sign_in_block a {
+  color: #fff;
   margin: 0 1em;
   background: rgba(255, 0, 0, 0.8);
   text-align: center;
@@ -432,6 +435,10 @@ body footer {
           box-shadow: 0 0 1em 0 #fff;
   text-align: center;
   font-size: 0.7rem;
+}
+
+body footer p {
+  color: #fff;
 }
 
 @media (min-width: 950px) {

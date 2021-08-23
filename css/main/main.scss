@@ -1,10 +1,16 @@
+$base : #000;
+$baseFont : #fff;
+$boxShadow : #fff;
+$inputFont : #000;
+$buttonFont : #fff;
+
 *{
     outline: 0;
     border: 0;
     margin: 0;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
+    color: $baseFont;
     box-sizing: border-box;
     border-radius: 6px;
 }
@@ -20,7 +26,7 @@ body{
     left: 0;
     bottom: 0;
     right: 0;
-    background: #000;
+    background: $base;
     display: flex;
     justify-content: space-between;
     flex-flow: column nowrap;
@@ -36,22 +42,24 @@ body{
         .main{
             border-top-left-radius: 0;
             border-top-right-radius: 0;
-            box-shadow: 0 0 1em 0 #fff;
+            box-shadow: 0 0 1em 0 $boxShadow;
             background: #151515;
             display: flex;
             justify-content: space-around;
             padding: 0.5em 0;
 
             #logo{
+                color: #fff;
                 font-size: 1.5rem;
             }
     
             #sign_in{
+                color: $buttonFont;
                 align-self: center;
                 background: rgba(255, 0, 0, 0.8);
                 text-align: center;
                 padding: 0.4rem 1rem 0.5rem 1rem;
-                box-shadow: 0 0 0.4em 0 #fff;
+                box-shadow: 0 0 0.4em 0 $boxShadow;
             }
         }
 
@@ -83,7 +91,7 @@ body{
 
                     a:hover{
                         background: #959595;
-                        box-shadow: 0 0 0.5em 0 #fff inset;
+                        box-shadow: 0 0 0.5em 0 $boxShadow inset;
                         
                         li{
                             color: #000;
@@ -102,10 +110,10 @@ body{
                 justify-content: space-around;
                 
                 .nav_line{
-                    box-shadow: 0 0 0.45em 0 #fff;
+                    box-shadow: 0 0 0.45em 0 $boxShadow;
                     margin: 3px 0;
-                    background: #fff;
-                    border: 3px solid #fff;
+                    background: $baseFont;
+                    border: 3px solid $boxShadow;
                     width: 30px;
                 }
             }
@@ -155,23 +163,24 @@ body{
                         #sign_in_left{
                             width: 40%;
                             height: 40%;
-                            border-top: 1px solid #fff;
+                            border-top: 1px solid $baseFont;
                             border-radius: 0;
                             border-top-left-radius: 6px;
                         }
 
                         a{
+                            color: $buttonFont;
                             margin: 0 1em;
                             background: rgba(255, 0, 0, 0.8);
                             text-align: center;
                             padding: 0.4rem 1rem 0.5rem 1rem;
-                            box-shadow: 0 0 0.4em 0 #fff;
+                            box-shadow: 0 0 0.4em 0 $boxShadow;
                         }
 
                         #sign_in_right{
                             width: 40%;
                             height: 40%;
-                            border-top: 1px solid #fff;
+                            border-top: 1px solid $baseFont;
                             border-radius: 0;
                             border-top-right-radius: 6px;
 
@@ -205,21 +214,21 @@ body{
                             #and_top{
                                 width: 2px;
                                 height: 40%;
-                                background: #fff;
+                                background: $baseFont;
                             }
 
                             #and{
                                 margin: 0.25em 0;
                                 padding: 0.2em 0.4em;
-                                color: #000;
+                                color: $base;
                                 background: #959595;
-                                box-shadow: 0 0 1em 0 #fff inset;
+                                box-shadow: 0 0 1em 0 $boxShadow inset;
                             }
 
                             #and_bottom{
                                 width: 2px;
                                 height: 40%;
-                                background: #fff;
+                                background: $baseFont;
                             }
                         }
                     }
@@ -228,7 +237,7 @@ body{
             
             form{
                 border: 1px solid blue;
-                box-shadow: 0 0 1em 0 #fff;
+                box-shadow: 0 0 1em 0 $boxShadow;
                 margin: auto;
                 max-width: 75%;
                 display: flex;
@@ -270,11 +279,11 @@ body{
     
                         select{
                             margin-top: 0.3em;
-                            box-shadow: 0 0 1em 0 #fff inset;
+                            box-shadow: 0 0 1em 0 $boxShadow inset;
                             font-size: 1.1rem;
                             padding-left: 6px;
                             background: #909090;
-                            color: #000;
+                            color: $inputFont;
                         }
                     }
     
@@ -293,15 +302,15 @@ body{
                         input{
                             max-width: 25%;
                             margin: 0 auto;
-                            color: #000;
+                            color: $inputFont;
                             background: #909090;
-                            box-shadow: 0 0 1em 0 #fff inset;
+                            box-shadow: 0 0 1em 0 $boxShadow inset;
                             padding: 0.2em;
                         }
     
                         select{
-                            box-shadow: 0 0 1em 0 #fff inset;
-                            color: #000;
+                            box-shadow: 0 0 1em 0 $boxShadow inset;
+                            color: $inputFont;
                             background: #909090;
                         }
                     }
@@ -313,9 +322,9 @@ body{
                     justify-content: space-around;
     
                     #submit{
-                        color: #fff;
+                        color: $buttonFont;
                         font-size: 1.1rem;
-                        box-shadow: 0 0 1em 0 #fff inset;
+                        box-shadow: 0 0 1em 0 $boxShadow inset;
                         padding: 0.5rem 1rem;
                         background: #909090;
                         text-align: center;
@@ -324,7 +333,7 @@ body{
     
                     #submit:focus{
                         scale: 0.92;
-                        box-shadow: 0 0 0.3em 0 #fff;
+                        box-shadow: 0 0 0.3em 0 $boxShadow;
                     }
                 }
             }
@@ -339,9 +348,13 @@ body{
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
         background: #151515;
-        box-shadow: 0 0 1em 0 #fff;
+        box-shadow: 0 0 1em 0 $boxShadow;
         text-align: center;
         font-size: 0.7rem;
+
+        p{
+            color: #fff;
+        }
     }
 }
 
@@ -370,7 +383,7 @@ body{
 
             .form_data_container{
                 max-width: 90%;
-                box-shadow: 0 0 1em 0 #fff inset;
+                box-shadow: 0 0 1em 0 $boxShadow inset;
 
                 .data_info{
                     max-width: 62%;

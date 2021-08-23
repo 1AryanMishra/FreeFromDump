@@ -82,10 +82,12 @@ body{
 
         .form_data_container{
             max-width: 100%;
-            margin: 0 auto;
+            margin: auto;
             display: flex;
 
             .data_info{
+                margin: auto;
+                margin-right: 0;
                 max-width: 60%;
                 padding: 1em;
                 display: none;
@@ -94,7 +96,7 @@ body{
             form{
                 border: 1px solid blue;
                 box-shadow: 0 0 1em 0 #fff;
-                margin: 0 auto;
+                margin: auto;
                 max-width: 75%;
                 display: flex;
                 flex-flow: column nowrap;
@@ -216,19 +218,47 @@ body{
         main{
 
             .form_data_container{
+                max-width: 90%;
                 box-shadow: 0 0 1em 0 #fff inset;
 
                 .data_info{
+                    max-width: 62%;
                     display: inline;
-                    margin-left: auto;
-                    margin-right: 0;
                 }
                 form{
                     margin-left: 0;
-                    max-width: 30%;
+                    max-width: 32%;
                     margin-right: auto;
                 }
             }
+        }
+    }
+}
+
+
+@media (min-width:1150px){
+    body{
+        main{
+            .form_data_container{
+                max-width: 100%;
+
+                .data_info{
+                    max-width: 60%;
+                }
+
+                form{
+                    max-width: 30%;
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width:400px){
+    body{
+        main{
+            margin: 2em;
         }
     }
 }

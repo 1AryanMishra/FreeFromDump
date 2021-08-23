@@ -117,13 +117,15 @@ body main {
 
 body main .form_data_container {
   max-width: 100%;
-  margin: 0 auto;
+  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 body main .form_data_container .data_info {
+  margin: auto;
+  margin-right: 0;
   max-width: 60%;
   padding: 1em;
   display: none;
@@ -133,7 +135,7 @@ body main .form_data_container form {
   border: 1px solid blue;
   -webkit-box-shadow: 0 0 1em 0 #fff;
           box-shadow: 0 0 1em 0 #fff;
-  margin: 0 auto;
+  margin: auto;
   max-width: 75%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -271,18 +273,36 @@ body footer {
 
 @media (min-width: 950px) {
   body main .form_data_container {
+    max-width: 90%;
     -webkit-box-shadow: 0 0 1em 0 #fff inset;
             box-shadow: 0 0 1em 0 #fff inset;
   }
   body main .form_data_container .data_info {
+    max-width: 62%;
     display: inline;
-    margin-left: auto;
-    margin-right: 0;
   }
   body main .form_data_container form {
     margin-left: 0;
-    max-width: 30%;
+    max-width: 32%;
     margin-right: auto;
+  }
+}
+
+@media (min-width: 1150px) {
+  body main .form_data_container {
+    max-width: 100%;
+  }
+  body main .form_data_container .data_info {
+    max-width: 60%;
+  }
+  body main .form_data_container form {
+    max-width: 30%;
+  }
+}
+
+@media (min-width: 400px) {
+  body main {
+    margin: 2em;
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -10,9 +10,15 @@ body {
   --buttonBoxShadow: #fff;
   --inputBg: #909090;
   --footerFont: #fff;
+  --themeBoxShadow: 0 0 2em 0 #000 inset;
+  --themeBg: #fff;
+  --themeFont: #000;
 }
 
 body.dark {
+  --themeFont: #fff;
+  --themeBoxShadow: 0 0 1em 0 #fff inset;
+  --themeBg: #000;
   --buttonFont: #fff;
   --inputFont: #000;
   --headerBg: #909090;
@@ -172,8 +178,8 @@ body header .nav .nav_box {
 }
 
 body header .nav .nav_box .nav_line {
-  -webkit-box-shadow: 0 0 0.45em 0 var(--boxShadow);
-          box-shadow: 0 0 0.45em 0 var(--boxShadow);
+  -webkit-box-shadow: 0 0 0.15em 0 var(--boxShadow);
+          box-shadow: 0 0 0.15em 0 var(--boxShadow);
   margin: 3px 0;
   background: var(--headerBg);
   border: 3px solid var(--boxShadow);
@@ -453,13 +459,18 @@ body main .form_data_container form .submit #submit:focus {
 }
 
 body #switch {
+  color: var(--themeFont);
+  margin-left: auto;
+  margin-right: 1em;
+  margin-bottom: 1em;
   -webkit-transition: 1s;
   transition: 1s;
   width: 48px;
   height: 48px;
+  -webkit-box-shadow: var(--themeBoxShadow);
+          box-shadow: var(--themeBoxShadow);
   border-radius: 100%;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#000));
-  background-image: linear-gradient(#fff, #000);
+  background: var(--themeBg);
 }
 
 body footer {

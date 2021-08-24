@@ -82,8 +82,8 @@ body header {
 body header .main {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  -webkit-box-shadow: 0 0 1em 0 var(--inputBoxShadow) inset;
-          box-shadow: 0 0 1em 0 var(--inputBoxShadow) inset;
+  -webkit-box-shadow: 0 0 1em 0 var(--boxShadow) inset;
+          box-shadow: 0 0 1em 0 var(--boxShadow) inset;
   background: var(--headerBg);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -175,7 +175,7 @@ body header .nav .nav_box .nav_line {
   -webkit-box-shadow: 0 0 0.45em 0 var(--boxShadow);
           box-shadow: 0 0 0.45em 0 var(--boxShadow);
   margin: 3px 0;
-  background: var(--baseFont);
+  background: var(--headerBg);
   border: 3px solid var(--boxShadow);
   width: 30px;
 }

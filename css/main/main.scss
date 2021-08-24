@@ -9,12 +9,13 @@ body{
     --inputBoxShadow : #fff;
     --buttonBoxShadow : #fff;
     --inputBg: #909090;
+    --footerFont : #fff;
 }
 
 body.dark{
     --buttonFont : #fff;
     --inputFont : #000;
-    --headerBg : #151515;
+    --headerBg : #909090;
     --logoFont : #fff;
     --base : #000;
     --baseFont : #fff;
@@ -22,6 +23,7 @@ body.dark{
     --inputBoxShadow : #fff;
     --buttonBoxShadow : #fff;
     --inputBg: #909090;
+    --footerFont : #151515;
 }
 
 
@@ -363,6 +365,14 @@ body{
         }            
     }
 
+    #switch{
+        transition: 1s;
+        width: 48px;
+        height: 48px;
+        border-radius: 100%;
+        background-image: linear-gradient(#fff, #000);
+    }
+
     footer{
         left: 0;
         right: 0;
@@ -371,29 +381,12 @@ body{
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
         background: var(--headerBg);
-        box-shadow: 0 0 1em 0 var(--boxShadow);
-        text-align: center;
-        display: flex;
-        justify-content: space-around;  
+        box-shadow: 0 0 1em 0 var(--boxShadow) inset;
         font-size: 1rem;
 
         p{
-            color: var(--logoFont);
-        }
-
-        #toggle{
-            display: flex;
-            justify-content: space-between;
-            overflow: hidden;
-            
-
-            #switch{
-                transition: 1s;
-                width: 48px;
-                height: 48px;
-                border-radius: 100%;
-                background-image: linear-gradient(#fff, #000);
-            }
+            text-align: center;
+            color: var(--footerFont);
         }
     }
 }

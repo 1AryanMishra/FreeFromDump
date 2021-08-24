@@ -5,12 +5,13 @@ var theme = index.getElementById("switch");
 
 theme.addEventListener("click", () => {
     document.body.classList.toggle("dark");
-    theme.style.transform = "rotate3d(1, 1, 1, 360deg)"
     if(theme.value == "Light"){
+        theme.style.transform = "rotateZ(360deg)";
         theme.value = "Dark";
         theme.style.color = "#000";
     }
     else{
+        theme.style.transform = "rotateZ(-360deg)";
         theme.value = "Light";
         theme.style.color = "#fff";
     }

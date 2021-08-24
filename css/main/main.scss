@@ -10,9 +10,13 @@ body{
     --buttonBoxShadow : #fff;
     --inputBg: #909090;
     --footerFont : #fff;
+    --themeBoxShadow : 0 0 2em 0 #000 inset;
+    --themeBg : #fff;
 }
 
 body.dark{
+    --themeBoxShadow : 0 0 1em 0 #fff inset;
+    --themeBg : #000;
     --buttonFont : #fff;
     --inputFont : #000;
     --headerBg : #909090;
@@ -366,11 +370,16 @@ body{
     }
 
     #switch{
+        color: #000;
+        margin-left: auto;
+        margin-right: 1em;
+        margin-bottom: 1em;
         transition: 1s;
         width: 48px;
         height: 48px;
+        box-shadow: var(--themeBoxShadow);
         border-radius: 100%;
-        background-image: linear-gradient(#fff, #000);
+        background: var(--themeBg);
     }
 
     footer{

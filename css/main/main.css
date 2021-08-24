@@ -359,11 +359,11 @@ body main .form_data_container form .wrapper #goal #label_for_goal {
 
 body main .form_data_container form .wrapper #goal select {
   margin-top: 0.3em;
-  -webkit-box-shadow: 0 0 1em 0 #151515 inset;
-          box-shadow: 0 0 1em 0 #151515 inset;
+  -webkit-box-shadow: 0 0 1em 0 #fff inset;
+          box-shadow: 0 0 1em 0 #fff inset;
   font-size: 1.1rem;
   padding-left: 6px;
-  background: #fff;
+  background: #909090;
   color: #000;
 }
 
@@ -384,17 +384,17 @@ body main .form_data_container form .wrapper #time input {
   max-width: 25%;
   margin: 0 auto;
   color: #000;
-  background: #fff;
-  -webkit-box-shadow: 0 0 1em 0 #151515 inset;
-          box-shadow: 0 0 1em 0 #151515 inset;
+  background: #909090;
+  -webkit-box-shadow: 0 0 1em 0 #fff inset;
+          box-shadow: 0 0 1em 0 #fff inset;
   padding: 0.2em;
 }
 
 body main .form_data_container form .wrapper #time select {
-  -webkit-box-shadow: 0 0 1em 0 #151515 inset;
-          box-shadow: 0 0 1em 0 #151515 inset;
+  -webkit-box-shadow: 0 0 1em 0 #fff inset;
+          box-shadow: 0 0 1em 0 #fff inset;
   color: #000;
-  background: #fff;
+  background: #909090;
 }
 
 body main .form_data_container form .submit {

@@ -1,31 +1,20 @@
 var index = document;
+var submit = index.getElementById("submit");
 
-const themeColors = {
-    dark:{
-            DinputFont : "#000",
-            DheaderBg : "#151515",
-            DlogoFont : "#fff",
-            Dbase : "#000",
-            DbaseFont : "#fff",
-            DboxShadow : "#fff",
-            inputBoxShadow : "#909090",
-            buttonBoxShadow : "#fff",
-            inputBg: "#fff"
-        },
 
-    white : {
-            WinputFont : "#fff",
-            Wbase : "#d4d8dc",
-            WbaseFont : "blue",
-            WheaderBg : "rgba(255, 255, 255, 0.4)",
-            WlogoFont : "blue",
-            WboxShadow : "#000",
-            inputBoxShadow : "#909090",
-            buttonBoxShadow : "#fff",
-            inputBg: "#fff"
-        }
-    }
-    
+var data;
 
-var darkSwitch = index.getElementById("switch");
-console.log(themeColors.dark.Dbase);
+
+function formAction(){
+    var time = index.getElementById("time_number").value + index.getElementById("time_format").value;
+    var field = index.getElementById("field").value;
+    data = {
+        goal : field,
+        time : time
+    };
+    localStorage.clear();
+    localStorage.setItem('data', JSON.stringify(data));
+    console.log(JSON.parse(localStorage.getItem('data')));
+}
+
+submit.addEventListener("click", formAction);

@@ -1,3 +1,177 @@
-body{
+$buttonFont : #fff;
+$inputFont : #000;
+$headerBg : #151515;
+$logoFont : #fff;
+$base : #000;
+$baseFont : #fff;
+$boxShadow : #fff;
+$inputBoxShadow : #fff;
+$buttonBoxShadow : #fff;
+$inputBg: #909090;
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0;
+    color: #fff;
     background: #000;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+}
+
+body{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: 2s;
+    flex-direction: column;
+    display: flex;
+
+    .sign_in{
+        color: $buttonFont;
+        align-self: center;
+        background: rgba(255, 0, 0, 0.8);
+        text-align: center;
+        padding: 0.4rem 1rem 0.5rem 1rem;
+        box-shadow: 0 0 0.4em 0 $boxShadow;
+    }
+
+    header{
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-flow: column nowrap;
+
+        #logo_container{
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            box-shadow: 0 0 1em 0 $inputBoxShadow inset;
+            background: $inputBg;
+            padding: 0.5em 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+            #logo{
+                padding: 0.2em 0.5em;
+                box-shadow: 0 0 1em 0 $inputBoxShadow;
+                background: rgba($color: #909090, $alpha: 0);
+                color: $logoFont;
+                font-size: 1.5rem;
+            }
+
+        }
+
+        nav{
+            display: flex;
+
+            ul{
+                display: none;
+                margin-left: auto;
+                margin-right: 1em;
+                margin-top: 1em;
+
+                li{
+                    margin: 0 1em;
+                    list-style: none;
+                }
+            }
+
+            #mob_nav{
+                transition: 1s;
+                margin-left: auto;
+                margin-right: 1em;
+                margin-top: 1em;
+                display: flex;
+                flex-flow: column nowrap;
+
+                .nav_bar{
+                    border: 3px solid #fff;
+                    width: 25px;
+                    background: #fff;
+                }
+
+                #mid{
+                    margin: 5px;
+                }
+            }
+        }
+    }
+
+
+
+    main{
+        margin: auto;
+        display: flex;
+        flex-flow: column nowrap;
+
+        #filter{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            #filter_part{
+                display: flex;
+                justify-content: space-around;
+                transition: 1s;
+
+                #filter_icon{
+                    display: flex;
+                    flex-direction: column;
+                    width: 25px;
+                    justify-content: space-around;
+                    
+                    .filter_bar{
+                        width: 100%;
+                        padding: 2px;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        position: relative;
+
+                        .fbar{
+                            margin: auto;
+                            width: 100%;
+                            border: 1.5px solid #fff;
+                            background: #fff;
+                        }
+
+                        .toggle{
+                            background: #fff;
+                            position: absolute;
+                            border: 3px solid #fff;
+                            top: 1;
+                        }
+
+                        #top_toggle{
+                            transition: 1s ease;
+                            transform: translateX(-4px);
+                        }
+
+                        #mid_toggle{
+                            transform: translateX(-4px);
+                        }
+
+                        #bottom_toggle{
+                            transform: translateX(6px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    footer{
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
 }

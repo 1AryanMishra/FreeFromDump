@@ -12,9 +12,11 @@ body{
     --footerFont : #fff;
     --themeBoxShadow : 0 0 2em 0 #000 inset;
     --themeBg : #fff;
+    --themeFont : #000;
 }
 
 body.dark{
+    --themeFont : #fff;
     --themeBoxShadow : 0 0 1em 0 #fff inset;
     --themeBg : #000;
     --buttonFont : #fff;
@@ -370,7 +372,7 @@ body{
     }
 
     #switch{
-        color: #000;
+        color: var(--themeFont);
         margin-left: auto;
         margin-right: 1em;
         margin-bottom: 1em;

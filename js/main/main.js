@@ -8,12 +8,10 @@ theme.addEventListener("click", () => {
     if(theme.value == "Light"){
         theme.style.transform = "rotateZ(360deg)";
         theme.value = "Dark";
-        theme.style.color = "#000";
     }
     else{
         theme.style.transform = "rotateZ(-360deg)";
         theme.value = "Light";
-        theme.style.color = "#fff";
     }
 
 })

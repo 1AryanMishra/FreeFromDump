@@ -1,24 +1,13 @@
-$DinputFont : #000;
-$DheaderBg : #151515;
-$DlogoFont : #fff;
-$Dbase : #000;
-$DbaseFont : #fff;
-$DboxShadow : #fff;
-
-$WinputFont : #fff;
-$Wbase : #d4d8dc;
-$WbaseFont : blue;
-$WheaderBg : rgba(255, 255, 255, 0.4);
-$WlogoFont : blue;
-$WboxShadow : #000;
-
-$base : $Wbase;
-$baseFont : $WbaseFont;
-$boxShadow : $WboxShadow;
-$inputFont : $WinputFont;
 $buttonFont : #fff;
-$headerBg: $WheaderBg;
-$logoFont: $WlogoFont;
+$inputFont : #000;
+$headerBg : #151515;
+$logoFont : #fff;
+$base : #000;
+$baseFont : #fff;
+$boxShadow : #fff;
+$inputBoxShadow : #151515;
+$buttonBoxShadow : #fff;
+$inputBg: #fff;
 
 *{
     outline: 0;
@@ -295,10 +284,10 @@ body{
     
                         select{
                             margin-top: 0.3em;
-                            box-shadow: 0 0 1em 0 $boxShadow inset;
+                            box-shadow: 0 0 1em 0 $inputBoxShadow inset;
                             font-size: 1.1rem;
                             padding-left: 6px;
-                            background: #909090;
+                            background: $inputBg;
                             color: $inputFont;
                         }
                     }
@@ -319,15 +308,15 @@ body{
                             max-width: 25%;
                             margin: 0 auto;
                             color: $inputFont;
-                            background: #909090;
-                            box-shadow: 0 0 1em 0 $boxShadow inset;
+                            background: $inputBg;
+                            box-shadow: 0 0 1em 0 $inputBoxShadow inset;
                             padding: 0.2em;
                         }
     
                         select{
-                            box-shadow: 0 0 1em 0 $boxShadow inset;
+                            box-shadow: 0 0 1em 0 $inputBoxShadow inset;
                             color: $inputFont;
-                            background: #909090;
+                            background: $inputBg;
                         }
                     }
     
@@ -340,7 +329,7 @@ body{
                     #submit{
                         color: $buttonFont;
                         font-size: 1.1rem;
-                        box-shadow: 0 0 1em 0 $boxShadow inset;
+                        box-shadow: 0 0 1em 0 $buttonBoxShadow inset;
                         padding: 0.5rem 1rem;
                         background: #909090;
                         text-align: center;
@@ -398,16 +387,6 @@ body{
                     width: 2rem;
                     height: 1rem;
                     background: #000;
-                }
-
-                input:checked{
-                    $base : $Dbase;
-                    $baseFont : $DbaseFont;
-                    $boxShadow : $DboxShadow;
-                    $inputFont : $DinputFont;
-                    $buttonFont : #fff;
-                    $headerBg: $DheaderBg;
-                    $logoFont: $DlogoFont;
                 }
             }
         }

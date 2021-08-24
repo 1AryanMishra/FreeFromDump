@@ -10,12 +10,20 @@ body{
     --buttonBoxShadow : #fff;
     --inputBg: #909090;
     --footerFont : #fff;
+
     --themeBoxShadow : 0 0 2em 0 #000 inset;
     --themeBg : #fff;
     --themeFont : #000;
+
+    --navBg : #909090;
+    --navBoxShadow : 0 0 1em 0 #151515 inset;
 }
 
 body.dark{
+
+    --navBg : #151515;
+    --navBoxShadow : 0 0 1em 0 #fff inset;
+
     --themeFont : #fff;
     --themeBoxShadow : 0 0 1em 0 #fff inset;
     --themeBg : #000;
@@ -98,6 +106,8 @@ body{
             display: flex;
 
             #nav_section{
+                background: var(--navBg);
+                box-shadow: var(--navBoxShadow);
                 margin-right: 1em;
                 margin-top: 0.5em;
                 display: none;

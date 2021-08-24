@@ -16,9 +16,36 @@ theme.addEventListener("click", () => {
 
 })
 
+var nav = index.getElementById("nav_open_btn");
+
+var nav_open = false;
+
+function showNav(){
+    nav_open = true;
+    index.getElementById("nav").style.flexDirection = "column";
+    index.getElementById("nav_section").style.display = "flex";
+    index.getElementById("nav_section").style.order = "1";
+    index.getElementById("nav_section").style.marginRight = "0";
+}
+
+function hideNav(){
+    nav_open = false;
+    index.getElementById("nav").style.flexDirection = "row";
+    index.getElementById("nav_section").style.display = "none";
+}
+
+nav.addEventListener("click", () => {
+    if(nav_open){
+        hideNav();
+    }
+    else{
+        showNav();
+    }
+})
+
+
+
 var data;
-
-
 function formAction(){
     var time = index.getElementById("time_number").value + index.getElementById("time_format").value;
     var field = index.getElementById("field").value;

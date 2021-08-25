@@ -20,8 +20,26 @@ var nav = index.getElementById("nav_open_btn");
 
 var nav_open = false;
 
+function navBoxAnimation(){
+    if(nav_open){
+        index.querySelector("#top_nav_bar").style.transform = "translateY(12px)";
+        index.getElementById("mid_nav_bar").style.display = "none";
+        index.querySelector("#bottom_nav_bar").style.transform = "translateY(-12px)";
+        index.querySelector("#top_nav_bar").style.transform += "rotateZ(45deg)";
+        index.querySelector("#bottom_nav_bar").style.transform = "rotateZ(-45deg)";
+    }
+    else{
+        index.querySelector("#top_nav_bar").style.transform = "translateY(0px)";
+        index.querySelector("#bottom_nav_bar").style.transform = "translateY(0px)";
+        index.querySelector("#top_nav_bar").style.transform = "rotateZ(0deg)";
+        index.querySelector("#bottom_nav_bar").style.transform = "rotateZ(0deg)";
+        index.getElementById("mid_nav_bar").style.display = "block";
+    }
+}
+
 function showNav(){
     nav_open = true;
+    navBoxAnimation();
     index.getElementById("nav").style.flexDirection = "column";
     index.getElementById("nav_section").style.display = "flex";
     index.getElementById("nav_section").style.order = "1";
@@ -30,6 +48,7 @@ function showNav(){
 
 function hideNav(){
     nav_open = false;
+    navBoxAnimation();
     index.getElementById("nav").style.flexDirection = "row";
     index.getElementById("nav_section").style.display = "none";
 }

@@ -42,6 +42,7 @@ body.dark{
 
 
 *{
+    transition: 1s;
     outline: 0;
     border: 0;
     margin: 0;
@@ -58,11 +59,10 @@ a{
 
 
 body{
-    transition: 1s;
     position: absolute;
     top: 0;
-    left: 0;
     bottom: 0;
+    left: 0;
     right: 0;
     background: var(--base);
     display: flex;
@@ -70,9 +70,7 @@ body{
     flex-direction: column;
 
     header{
-        left: 0;
-        right: 0;
-        top: 0;
+        margin-bottom: auto;
         display: flex;
         flex-flow: column nowrap;
         justify-content: space-between;
@@ -108,13 +106,12 @@ body{
             #nav_section{
                 background: var(--navBg);
                 box-shadow: var(--navBoxShadow);
-                margin-right: 1em;
+                margin-right: 2em;
                 margin-top: 0.5em;
                 display: none;
                 margin-left: auto;
 
                 ul{
-                    margin-left: auto;
                     display: flex;
                     flex-direction: column;
 
@@ -124,7 +121,6 @@ body{
 
                         li{
                             font-size: 1.1rem;
-                            margin: 0 1em;
                             list-style: none;
                         }
                     }
@@ -382,6 +378,7 @@ body{
     }
 
     #switch{
+        margin-top: auto;
         color: var(--themeFont);
         margin-left: auto;
         margin-right: 1em;
@@ -395,9 +392,6 @@ body{
     }
 
     footer{
-        left: 0;
-        right: 0;
-        bottom: 0;
         padding: 3px;
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;

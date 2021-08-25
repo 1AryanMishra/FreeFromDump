@@ -17,9 +17,13 @@ body{
 
     --navBg : #909090;
     --navBoxShadow : 0 0 1em 0 #151515 inset;
+
+    --navBorderCol : var(--headerBg);
 }
 
 body.dark{
+
+    --navBorderCol : #fff;
 
     --navBg : #151515;
     --navBoxShadow : 0 0 1em 0 #fff inset;
@@ -145,8 +149,8 @@ body{
                 .nav_line{
                     box-shadow: 0 0 0.15em 0 var(--boxShadow);
                     margin: 3px 0;
-                    background: var(--headerBg);
-                    border: 3px solid var(--boxShadow);
+                    background: var(--navBorderCol);
+                    border: 3px solid var(--navBorderCol);
                     width: 30px;
                 }
             }

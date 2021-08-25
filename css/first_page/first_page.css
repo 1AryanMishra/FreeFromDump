@@ -1,1 +1,268 @@
-/* No CSS *//*# sourceMappingURL=first_page.css.map */
+* {
+  list-style: none;
+  text-decoration: none;
+}
+
+img {
+  margin: auto;
+  max-width: 100%;
+}
+
+body {
+  --buttonFont: #fff;
+  --inputFont: #000;
+  --headerBg: #909090;
+  --logoFont: #fff;
+  --base: rgb(225, 220, 225);
+  --baseFont: blue;
+  --boxShadow: #000;
+  --inputBoxShadow: #fff;
+  --buttonBoxShadow: #fff;
+  --inputBg: #909090;
+  --footerFont: #fff;
+  --themeBoxShadow: 0 0 2em 0 #000 inset;
+  --themeBg: #fff;
+  --themeFont: #000;
+  --navBg: #909090;
+  --navBoxShadow: 0 0 1em 0 #151515 inset;
+  --navBorderCol: var(--headerBg);
+}
+
+body.dark {
+  --navBorderCol: #fff;
+  --navBg: #151515;
+  --navBoxShadow: 0 0 1em 0 #fff inset;
+  --themeFont: #fff;
+  --themeBoxShadow: 0 0 1em 0 #fff inset;
+  --themeBg: #000;
+  --buttonFont: #fff;
+  --inputFont: #000;
+  --headerBg: #909090;
+  --logoFont: #fff;
+  --base: #000;
+  --baseFont: #fff;
+  --boxShadow: #fff;
+  --inputBoxShadow: #fff;
+  --buttonBoxShadow: #fff;
+  --inputBg: #909090;
+  --footerFont: #151515;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main #container {
+  -webkit-box-shadow: 0 0 1em 0 var(--boxShadow) inset;
+          box-shadow: 0 0 1em 0 var(--boxShadow) inset;
+  padding: 2em 0;
+  max-width: 90%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main #container #filter {
+  width: 100%;
+  margin: auto;
+  padding: 0 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main #container #filter #filter_part {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main #container #filter #filter_part #filter_icon {
+  width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+main #container #filter #filter_part #filter_icon .filter_bar {
+  border: 2px solid #fff;
+  width: 100%;
+}
+
+main #container #filter #sign_in_suggestion {
+  margin: 1em 0;
+}
+
+main #container #levels {
+  -webkit-box-shadow: 0 0 1em 0 var(--boxShadow);
+          box-shadow: 0 0 1em 0 var(--boxShadow);
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main #container #levels .level {
+  margin: auto;
+  margin-bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main #container #levels .level h1 {
+  margin: 1em;
+  font-size: 2rem;
+}
+
+main #container #levels .level .resources {
+  -webkit-box-shadow: 0 0 1em 0 var(--boxShadow) inset;
+          box-shadow: 0 0 1em 0 var(--boxShadow) inset;
+  margin: 0;
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main #container #levels .level .resources .resource_identity {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main #container #levels .level .resources .resource_identity .resource_logo {
+  max-width: 10%;
+}
+
+main #container #levels .level .resources .resource_identity .resource_name {
+  font-size: 1.5rem;
+}
+
+main #container #levels .level .resources .resource_intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main #container #levels .level .resources .resource_intro .images {
+  -webkit-box-shadow: 0 0 1em 0 var(--boxShadow) inset;
+          box-shadow: 0 0 1em 0 var(--boxShadow) inset;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  grid-auto-columns: minmax(2fr, auto);
+}
+
+main #container #levels .level .resources .resource_intro .images .main_img {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-column: 1/5;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  grid-row: 1/3;
+}
+
+main #container #levels .level .resources .resource_intro .images .suggested_img {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  grid-row: 3/5;
+}
+
+main #container #levels .level .resources .resource_intro .description {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main #container #levels .level .resources .resource_intro .description p {
+  font-size: 1rem;
+}
+
+main #container #levels .level .resources .resource_intro .description .required_knowledge .required_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 1150px) {
+  body main #container #levels .level .resources .resource_intro {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  body main #container #levels .level .resources .resource_intro .images {
+    max-width: 60%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  body main #container #levels #intermediate .resources .resource_intro .description {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+/*# sourceMappingURL=first_page.css.map */

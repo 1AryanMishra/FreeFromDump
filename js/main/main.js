@@ -21,19 +21,23 @@ var nav = index.getElementById("nav_open_btn");
 var nav_open = false;
 
 function navBoxAnimation(){
+    const top = index.querySelector("#top_nav_bar");
+    const mid = index.querySelector("#mid_nav_bar");
+    const bottom = index.querySelector("#bottom_nav_bar");
+
     if(nav_open){
-        index.querySelector("#top_nav_bar").style.transform = "translateY(12px)";
-        index.getElementById("mid_nav_bar").style.display = "none";
-        index.querySelector("#bottom_nav_bar").style.transform = "translateY(-12px)";
-        index.querySelector("#top_nav_bar").style.transform += "rotateZ(45deg)";
-        index.querySelector("#bottom_nav_bar").style.transform = "rotateZ(-45deg)";
+        top.style.transform = "translateY(12px)";
+        mid.style.display = "none";
+        bottom.style.transform = "translateY(-12px)";
+        top.style.transform += "rotateZ(45deg)";
+        bottom.style.transform = "rotateZ(-45deg)";
     }
     else{
-        index.querySelector("#top_nav_bar").style.transform = "translateY(0px)";
-        index.querySelector("#bottom_nav_bar").style.transform = "translateY(0px)";
-        index.querySelector("#top_nav_bar").style.transform = "rotateZ(0deg)";
-        index.querySelector("#bottom_nav_bar").style.transform = "rotateZ(0deg)";
-        index.getElementById("mid_nav_bar").style.display = "block";
+        top.style.transform = "translateY(0px)";
+        bottom.style.transform = "translateY(0px)";
+        top.style.transform = "rotateZ(0deg)";
+        bottom.style.transform = "rotateZ(0deg)";
+        mid.style.display = "block";
     }
 }
 

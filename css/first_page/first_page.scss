@@ -62,17 +62,17 @@ main{
     display: flex;
 
     #container{
-        box-shadow: 0 0 1em 0 var(--boxShadow) inset;
-        padding: 2em 0;
         max-width: 90%;
-        margin: auto;
+        margin: 2em auto;
         display: flex;
         flex-direction: column;
 
         #filter{
+            box-shadow: 0 0 1em var(--boxShadow);
             width: 100%;
             margin: auto;
-            padding: 0 2em;
+            margin-bottom: 2em;
+            padding: 1em;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -101,14 +101,14 @@ main{
         }
 
         #levels{
-            box-shadow: 0 0 1em 0 var(--boxShadow);
             max-width: 100%;
             display: flex;
             flex-direction: column;
             
             .level{
+                box-shadow: 0 0 1em 0 var(--boxShadow) inset;
                 margin: auto;
-                margin-bottom: 0;
+                margin-bottom: 2em;
                 display: flex;
                 flex-direction: column;
 
@@ -118,7 +118,7 @@ main{
                 }
 
                 .resources{
-                    box-shadow: 0 0 1em 0 var(--boxShadow) inset;
+                    box-shadow: 0 0 1em 0 var(--boxShadow);
                     margin: 0;
                     padding: 1em;
                     display: flex;

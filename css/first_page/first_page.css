@@ -55,11 +55,8 @@ main {
 }
 
 main #container {
-  -webkit-box-shadow: 0 0 1em 0 var(--boxShadow) inset;
-          box-shadow: 0 0 1em 0 var(--boxShadow) inset;
-  padding: 2em 0;
   max-width: 90%;
-  margin: auto;
+  margin: 2em auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,9 +67,12 @@ main #container {
 }
 
 main #container #filter {
+  -webkit-box-shadow: 0 0 1em var(--boxShadow);
+          box-shadow: 0 0 1em var(--boxShadow);
   width: 100%;
   margin: auto;
-  padding: 0 2em;
+  margin-bottom: 2em;
+  padding: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -121,8 +121,6 @@ main #container #filter #sign_in_suggestion {
 }
 
 main #container #levels {
-  -webkit-box-shadow: 0 0 1em 0 var(--boxShadow);
-          box-shadow: 0 0 1em 0 var(--boxShadow);
   max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -134,8 +132,10 @@ main #container #levels {
 }
 
 main #container #levels .level {
+  -webkit-box-shadow: 0 0 1em 0 var(--boxShadow) inset;
+          box-shadow: 0 0 1em 0 var(--boxShadow) inset;
   margin: auto;
-  margin-bottom: 0;
+  margin-bottom: 2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -151,8 +151,8 @@ main #container #levels .level h1 {
 }
 
 main #container #levels .level .resources {
-  -webkit-box-shadow: 0 0 1em 0 var(--boxShadow) inset;
-          box-shadow: 0 0 1em 0 var(--boxShadow) inset;
+  -webkit-box-shadow: 0 0 1em 0 var(--boxShadow);
+          box-shadow: 0 0 1em 0 var(--boxShadow);
   margin: 0;
   padding: 1em;
   display: -webkit-box;

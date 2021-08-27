@@ -1,3 +1,3 @@
-import db from 'db';
+import db from './db';
 
-console.log(db);
+console.log(db[0]);

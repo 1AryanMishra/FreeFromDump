@@ -121,7 +121,7 @@ main #container #filter #sign_in_suggestion {
 }
 
 main #container #levels {
-  max-width: 100%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -146,7 +146,7 @@ main #container #levels .level {
 }
 
 main #container #levels .level h1 {
-  margin: 1em;
+  padding: 1rem;
   font-size: 1.5rem;
 }
 
@@ -164,25 +164,10 @@ main #container #levels .level .resources {
           flex-direction: column;
 }
 
-main #container #levels .level .resources .resource_identity {
-  margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-main #container #levels .level .resources .resource_identity .resource_logo {
-  max-width: 10%;
-}
-
-main #container #levels .level .resources .resource_identity .resource_name {
+main #container #levels .level .resources .resource_name {
+  text-align: center;
   font-size: 1.5rem;
+  margin-bottom: 0.7rem;
 }
 
 main #container #levels .level .resources .resource_intro {
@@ -193,36 +178,44 @@ main #container #levels .level .resources .resource_intro {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 main #container #levels .level .resources .resource_intro .images {
+  width: 70%;
+  margin: auto;
   -webkit-box-shadow: 0 0 1em 0 var(--boxShadow) inset;
           box-shadow: 0 0 1em 0 var(--boxShadow) inset;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main #container #levels .level .resources .resource_intro .images .player {
+  border: 2px solid black;
+  width: 100%;
+  min-height: 70%;
   margin: auto;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
-  grid-auto-columns: minmax(2fr, auto);
 }
 
-main #container #levels .level .resources .resource_intro .images .main_img {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 4;
-  grid-column: 1/5;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  grid-row: 1/3;
-}
-
-main #container #levels .level .resources .resource_intro .images .suggested_img {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 2;
-  grid-row: 3/5;
+main #container #levels .level .resources .resource_intro .images .suggested_container {
+  width: 100%;
+  height: 30%;
+  border: 2px solid black;
 }
 
 main #container #levels .level .resources .resource_intro .description {
   margin: auto;
+  margin-top: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -232,18 +225,30 @@ main #container #levels .level .resources .resource_intro .description {
           flex-direction: column;
 }
 
-main #container #levels .level .resources .resource_intro .description p {
+main #container #levels .level .resources .resource_intro .description .platform {
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+}
+
+main #container #levels .level .resources .resource_intro .description .some_text {
   font-size: 1rem;
 }
 
-main #container #levels .level .resources .resource_intro .description .required_knowledge .required_list {
+main #container #levels .level .resources .resource_intro .description .prerequisites {
+  font-size: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main #container #levels .level .resources .resource_intro .description .prerequisites li {
+  margin: auto;
 }
 
 @media (min-width: 1150px) {

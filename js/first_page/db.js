@@ -1,4 +1,4 @@
-export default{
+export default(
     [
         {
             html : {
@@ -342,4 +342,4 @@ export default{
             }
         }
     ]
-}
+);

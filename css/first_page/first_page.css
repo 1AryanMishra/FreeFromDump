@@ -153,8 +153,7 @@ main #container #levels .level h1 {
 main #container #levels .level .resources {
   -webkit-box-shadow: 0 0 1em 0 var(--boxShadow);
           box-shadow: 0 0 1em 0 var(--boxShadow);
-  margin: 0;
-  padding: 1em;
+  padding: 1em 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -184,6 +183,9 @@ main #container #levels .level .resources .resource_intro {
 }
 
 main #container #levels .level .resources .resource_intro .images {
+  -webkit-box-shadow: 0 0 1em var(--boxShadow);
+          box-shadow: 0 0 1em var(--boxShadow);
+  margin: 0 0.2em;
   -webkit-box-flex: 4;
       -ms-flex: 4;
           flex: 4;
@@ -216,7 +218,7 @@ main #container #levels .level .resources .resource_intro .images .suggested_con
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  min-height: 5em;
+  min-height: 7em;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -230,6 +232,9 @@ main #container #levels .level .resources .resource_intro .images .suggested_con
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 main #container #levels .level .resources .resource_intro .images .suggested_container ul li {
@@ -254,8 +259,7 @@ main #container #levels .level .resources .resource_intro .description {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
-  margin: auto;
-  margin-top: 1rem;
+  margin: 0.5em 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -316,6 +320,49 @@ main #container #levels .level .resources .resource_intro .description .prerequi
   margin: auto;
 }
 
+@media (min-width: 550px) {
+  body main #container #levels .level .resources .resource_intro .images .suggested_container {
+    min-height: 8em;
+  }
+  body main #container #levels .level .resources .resource_intro .images .suggested_container ul li {
+    min-width: 40%;
+  }
+}
+
+@media (min-width: 750px) {
+  body main #container #levels .level .resources .resource_intro .images .suggested_container {
+    min-height: 10em;
+  }
+  body main #container #levels .level .resources .resource_intro .images .suggested_container ul li {
+    min-width: 35%;
+  }
+}
+
+@media (min-width: 950px) {
+  body main #container #levels .level .resources .resource_intro {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  body main #container #levels .level .resources .resource_intro .images {
+    margin-right: 1em;
+    max-width: 60%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  body main #container #levels .level .resources .resource_intro .images .suggested_container {
+    min-height: 10em;
+  }
+  body main #container #levels .level .resources .resource_intro .images .suggested_container ul li {
+    min-width: 45%;
+  }
+  body main #container #levels #intermediate .images {
+    margin-left: 1em;
+  }
+}
+
 @media (min-width: 1150px) {
   body main #container #levels .level .resources .resource_intro {
     -webkit-box-orient: horizontal;
@@ -328,6 +375,12 @@ main #container #levels .level .resources .resource_intro .description .prerequi
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
+  }
+  body main #container #levels .level .resources .resource_intro .images .suggested_container {
+    min-height: 10em;
+  }
+  body main #container #levels .level .resources .resource_intro .images .suggested_container ul li {
+    min-width: 35%;
   }
   body main #container #levels #intermediate .resources .resource_intro .description {
     -webkit-box-ordinal-group: 2;

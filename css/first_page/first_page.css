@@ -240,6 +240,11 @@ main #container #levels .level .resources .resource_intro .images .suggested_con
           box-shadow: 0 0 1em var(--boxShadow);
 }
 
+main #container #levels .level .resources .resource_intro .images .suggested_container ul li a {
+  width: 100%;
+  height: 100%;
+}
+
 main #container #levels .level .resources .resource_intro .images .suggested_container ul li a img {
   width: 100%;
   height: 100%;

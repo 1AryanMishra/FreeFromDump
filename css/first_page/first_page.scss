@@ -154,14 +154,11 @@ main{
                                 width: 100%;
                                 box-shadow: 0 0 1em var(--boxShadow) inset;
                                 display: flex;
-                                min-height: 7em;
                                 align-items: center;
-                                position: relative;
                                 overflow: hidden;
                                 overflow-x: scroll;
                                 
                                 ul{
-                                    position: absolute;
                                     display: flex;
                                     align-items: center;
 
@@ -241,54 +238,6 @@ main{
 
 
 
-@media (min-width:550px){
-    body{
-        
-        main{
-
-            #container{
-
-                #levels{
-
-                    .level{
-
-                        .resources{
-
-                            .resource_intro{
-
-                                .images{
-
-                                    .suggested_container{
-                                        min-height: 8em;
-
-                                        ul{
-
-                                            li{
-                                                min-width: 40%;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
 @media (min-width:750px){
     body{
         
@@ -303,115 +252,6 @@ main{
                         .resources{
 
                             .resource_intro{
-
-                                .images{
-
-                                    .suggested_container{
-                                        min-height: 10em;
-
-                                        ul{
-
-                                            li{
-                                                min-width: 35%;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (min-width:950px){
-    body{
-        
-        main{
-
-            #container{
-
-                #levels{
-
-                    .level{
-
-                        .resources{
-
-                            .resource_intro{
-                                flex-direction: row;
-
-                                .images{
-                                    margin-right: 1em;
-                                    max-width: 60%;
-                                    order: 1;
-
-                                    .suggested_container{
-                                        min-height: 10em;
-
-                                        ul{
-
-                                            li{
-                                                min-width: 45%;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    #intermediate{
-                        .images{
-                            margin-left: 1em;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-
-
-
-
-@media (min-width:1150px){
-    body{
-        
-        main{
-
-            #container{
-
-                #levels{
-
-                    .level{
-
-                        .resources{
-
-                            .resource_intro{
                                 flex-direction: row;
 
                                 .images{
@@ -419,12 +259,11 @@ main{
                                     order: 1;
 
                                     .suggested_container{
-                                        min-height: 10em;
 
                                         ul{
 
                                             li{
-                                                min-width: 35%;
+                                                min-width: 40%;
                                             }
                                         }
                                     }

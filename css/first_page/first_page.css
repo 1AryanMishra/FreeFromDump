@@ -55,7 +55,7 @@ main {
 }
 
 main #container {
-  max-width: 90%;
+  max-width: 100%;
   margin: 2em auto;
   display: -webkit-box;
   display: -ms-flexbox;

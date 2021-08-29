@@ -184,8 +184,9 @@ main #container #levels .level .resources .resource_intro {
 }
 
 main #container #levels .level .resources .resource_intro .images {
-  width: 70%;
-  margin: auto;
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
   -webkit-box-shadow: 0 0 1em 0 var(--boxShadow) inset;
           box-shadow: 0 0 1em 0 var(--boxShadow) inset;
   display: -webkit-box;
@@ -201,19 +202,36 @@ main #container #levels .level .resources .resource_intro .images {
 }
 
 main #container #levels .level .resources .resource_intro .images .player {
-  border: 2px solid black;
-  width: 100%;
-  min-height: 70%;
-  margin: auto;
+  -webkit-box-shadow: 0 0 1em var(--boxShadow);
+          box-shadow: 0 0 1em var(--boxShadow);
 }
 
 main #container #levels .level .resources .resource_intro .images .suggested_container {
-  width: 100%;
-  height: 30%;
-  border: 2px solid black;
+  -webkit-box-shadow: 0 0 1em var(--boxShadow) inset;
+          box-shadow: 0 0 1em var(--boxShadow) inset;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+main #container #levels .level .resources .resource_intro .images .suggested_container scr
+img {
+  -webkit-box-shadow: 0 0 1em var(--boxShadow);
+          box-shadow: 0 0 1em var(--boxShadow);
+  width: 4em;
+  margin: 1em 0.5em;
+}
+
+main #container #levels .level .resources .resource_intro .images .suggested_container img:hover {
+  scale: 1.2;
 }
 
 main #container #levels .level .resources .resource_intro .description {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
   margin: auto;
   margin-top: 1rem;
   display: -webkit-box;

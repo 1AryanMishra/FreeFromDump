@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  border: 2px solid red;
+}
+
+body #container {
+  margin: 2em;
+  border: 2px solid blue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body #container #player {
+  margin: auto;
+  max-width: 100%;
+}
+
+body #container #player img {
+  max-width: 100%;
+}
+
+body #container #images_container {
+  max-width: 100rem;
+  margin: auto;
+  border: 2px solid black;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  grid-auto-columns: minmax(1fr, auto);
+  overflow-x: scroll;
+}
+
+body #container #images_container .image {
+  max-width: 100%;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  margin: 0 0.5em;
+}
+
+body #container #images_container .image img {
+  max-width: 100%;
+}
+/*# sourceMappingURL=rough.css.map */

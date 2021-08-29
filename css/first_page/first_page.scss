@@ -153,19 +153,18 @@ main{
                                 width: 100%;
                                 box-shadow: 0 0 1em var(--boxShadow) inset;
                                 display: flex;
-                                min-height: 4em;
+                                min-height: 5em;
                                 align-items: center;
                                 position: relative;
                                 overflow: hidden;
                                 overflow-x: scroll;
                                 
                                 ul{
-                                    margin: auto 0;
                                     position: absolute;
                                     display: flex;
 
                                     li{
-                                        min-width: 40%;
+                                        min-width: 50%;
                                         display: inline-block;
                                         margin: auto 0.5em;
                                         box-shadow: 0 0 1em var(--boxShadow);
@@ -177,15 +176,7 @@ main{
                                                 height: 100%;
                                             }
                                         }
-
-                                        a:focus{
-                                            img{
-                                                scale: 2;
-                                            }
-                                        }
                                     }
-
-
                                 }
                             }
                         }

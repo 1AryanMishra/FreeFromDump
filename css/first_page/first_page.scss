@@ -118,8 +118,8 @@ main{
                 }
 
                 .resources_area{
-                    min-width: 100%;
-                    box-shadow: 0 0 1em var(--boxShadow) inset;
+                    width: 100%;
+                    box-shadow: 0 0 1em var(--boxShadow);
                     display: flex;
                     align-items: center;
                     overflow: hidden;
@@ -131,7 +131,7 @@ main{
                         margin-right: 2em;
 
                         .resource_data{
-                            box-shadow: 0 0 1em 0 var(--boxShadow);
+                            box-shadow: 0 0 1em 0 var(--boxShadow) inset;
                             padding: 1em 0;
                             display: flex;
                             flex-direction: column;

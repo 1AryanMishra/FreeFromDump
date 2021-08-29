@@ -149,9 +149,9 @@ main #container #levels .level h1 {
 }
 
 main #container #levels .level .resources_area {
-  min-width: 100%;
-  -webkit-box-shadow: 0 0 1em var(--boxShadow) inset;
-          box-shadow: 0 0 1em var(--boxShadow) inset;
+  width: 100%;
+  -webkit-box-shadow: 0 0 1em var(--boxShadow);
+          box-shadow: 0 0 1em var(--boxShadow);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -169,8 +169,8 @@ main #container #levels .level .resources_area li {
 }
 
 main #container #levels .level .resources_area li .resource_data {
-  -webkit-box-shadow: 0 0 1em 0 var(--boxShadow);
-          box-shadow: 0 0 1em 0 var(--boxShadow);
+  -webkit-box-shadow: 0 0 1em 0 var(--boxShadow) inset;
+          box-shadow: 0 0 1em 0 var(--boxShadow) inset;
   padding: 1em 0;
   display: -webkit-box;
   display: -ms-flexbox;

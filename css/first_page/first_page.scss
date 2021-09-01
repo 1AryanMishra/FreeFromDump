@@ -59,14 +59,14 @@ body.dark{
 
 
 main{
-    margin: 2em auto;
+    padding: 1em 0;
     width: 100%;
     display: flex;
     overflow-x: hidden;
-
+    
     #container{
         margin: auto;
-        width: 95%;
+        width: 90%;
         flex-direction: column;
 
         #filter{
@@ -129,9 +129,8 @@ main{
 
                     li{
                         scroll-snap-align: start;
+                        margin: 0 0.5em;
                         min-width: 100%;
-                        margin: auto;
-                        margin-right: 1em;
 
                         .resource_data{
                             box-shadow: 0 0 1em 0 var(--boxShadow) inset;

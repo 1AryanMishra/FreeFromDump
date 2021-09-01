@@ -49,7 +49,7 @@ body.dark {
 }
 
 main {
-  margin: 2em auto;
+  padding: 1em 0;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -59,7 +59,7 @@ main {
 
 main #container {
   margin: auto;
-  width: 95%;
+  width: 90%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -165,9 +165,8 @@ main #container #levels .level .resources_area {
 
 main #container #levels .level .resources_area li {
   scroll-snap-align: start;
+  margin: 0 0.5em;
   min-width: 100%;
-  margin: auto;
-  margin-right: 1em;
 }
 
 main #container #levels .level .resources_area li .resource_data {

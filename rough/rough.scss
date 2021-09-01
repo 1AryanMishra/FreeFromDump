@@ -1,0 +1,11 @@
+body{
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+
+    #container{
+        border: 5px solid black;
+        scroll-snap-align: start;
+        display: grid;
+        grid-template-columns: repeat(6, 100%);
+    }
+}

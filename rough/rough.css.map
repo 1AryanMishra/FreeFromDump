@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAA;EACA,UAAU,EAAE,MAAM;EAClB,gBAAgB,EAAE,WAAW;CAQhC;;AAVD,AAII,IAJA,CAIA,UAAU,CAAA;EACN,MAAM,EAAE,eAAe;EACvB,iBAAiB,EAAE,KAAK;EACxB,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,eAAe;CACzC",
+    "sources": [
+        "rough.scss"
+    ],
+    "names": [],
+    "file": "rough.css"
+}

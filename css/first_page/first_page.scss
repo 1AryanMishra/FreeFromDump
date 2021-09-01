@@ -59,12 +59,14 @@ body.dark{
 
 
 main{
+    margin: 2em auto;
+    width: 100%;
     display: flex;
+    overflow-x: hidden;
 
     #container{
-        width: 90%;
-        margin: 2em auto;
-        display: flex;
+        margin: auto;
+        width: 95%;
         flex-direction: column;
 
         #filter{
@@ -102,33 +104,34 @@ main{
 
         #levels{
             width: 100%;
+            margin: auto;
             display: flex;
             flex-direction: column;
             
             .level{
                 box-shadow: 0 0 1em 0 var(--boxShadow) inset;
-                margin: auto;
-                max-width: 100%;
+                margin: auto 0;
+                width: 100%;
                 flex-direction: column;
-                overflow: hidden;
-
+                
                 h1{
                     padding: 1rem;
                     font-size: 1.5rem;
                 }
-
+                
                 .resources_area{
                     width: 100%;
                     box-shadow: 0 0 1em var(--boxShadow);
                     display: flex;
                     align-items: center;
-                    overflow: hidden;
                     overflow-x: scroll;
+                    scroll-snap-type: x mandatory;
 
                     li{
+                        scroll-snap-align: start;
                         min-width: 100%;
-                        display: inline-block;
-                        margin-right: 2em;
+                        margin: auto;
+                        margin-right: 1em;
 
                         .resource_data{
                             box-shadow: 0 0 1em 0 var(--boxShadow) inset;
@@ -169,13 +172,17 @@ main{
                                         display: flex;
                                         align-items: center;
                                         overflow: hidden;
-                                        overflow-x: scroll;
                                         
                                         ul{
+                                            overflow: hidden;
+                                            overflow-x: scroll;
+                                            scroll-snap-type: x mandatory;
                                             display: flex;
+                                            justify-content: space-between;
                                             align-items: center;
-        
+                                            
                                             li{
+                                                scroll-snap-align: start;
                                                 min-width: 50%;
                                                 display: inline-block;
                                                 margin: auto 0.5em;
@@ -243,7 +250,7 @@ main{
             }
 
             #intermediate{
-                margin:2em auto;
+                margin:2em 0;
             }
         }
     }

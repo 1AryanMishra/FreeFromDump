@@ -4,7 +4,6 @@
 }
 
 
-
 img{
     margin: auto;
     max-width: 100%;
@@ -58,7 +57,7 @@ body.dark{
 }
 
 
-main{
+.main_container{
     width:100%;
     padding: 1em 0;
     display: flex;
@@ -265,7 +264,7 @@ main{
 @media (min-width:750px){
     body{
         
-        main{
+        .main_container{
 
             #container{
 

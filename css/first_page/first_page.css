@@ -48,7 +48,7 @@ body.dark {
   --footerFont: #151515;
 }
 
-main {
+.main_container {
   width: 100%;
   padding: 1em 0;
   display: -webkit-box;
@@ -57,7 +57,7 @@ main {
   overflow-x: hidden;
 }
 
-main #container {
+.main_container #container {
   margin: auto;
   width: 90%;
   -webkit-box-orient: vertical;
@@ -66,7 +66,7 @@ main #container {
           flex-direction: column;
 }
 
-main #container #filter {
+.main_container #container #filter {
   -webkit-box-shadow: 0 0 1em var(--boxShadow);
           box-shadow: 0 0 1em var(--boxShadow);
   width: 100%;
@@ -84,7 +84,7 @@ main #container #filter {
       justify-content: space-around;
 }
 
-main #container #filter #filter_part {
+.main_container #container #filter #filter_part {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,7 +97,7 @@ main #container #filter #filter_part {
           justify-content: space-between;
 }
 
-main #container #filter #filter_part #filter_icon {
+.main_container #container #filter #filter_part #filter_icon {
   width: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -111,16 +111,16 @@ main #container #filter #filter_part #filter_icon {
           justify-content: space-evenly;
 }
 
-main #container #filter #filter_part #filter_icon .filter_bar {
+.main_container #container #filter #filter_part #filter_icon .filter_bar {
   border: 2px solid #fff;
   width: 100%;
 }
 
-main #container #filter #sign_in_suggestion {
+.main_container #container #filter #sign_in_suggestion {
   margin: 1em 0;
 }
 
-main #container #levels {
+.main_container #container #levels {
   width: 100%;
   margin: auto;
   display: -webkit-box;
@@ -132,7 +132,7 @@ main #container #levels {
           flex-direction: column;
 }
 
-main #container #levels .level {
+.main_container #container #levels .level {
   -webkit-box-shadow: 0 0 1em 0 var(--boxShadow) inset;
           box-shadow: 0 0 1em 0 var(--boxShadow) inset;
   margin: auto 0;
@@ -143,12 +143,12 @@ main #container #levels .level {
           flex-direction: column;
 }
 
-main #container #levels .level h1 {
+.main_container #container #levels .level h1 {
   padding: 1rem;
   font-size: 1.5rem;
 }
 
-main #container #levels .level .resources_area {
+.main_container #container #levels .level .resources_area {
   width: 100%;
   -webkit-box-shadow: 0 0 1em var(--boxShadow);
           box-shadow: 0 0 1em var(--boxShadow);
@@ -163,13 +163,13 @@ main #container #levels .level .resources_area {
       scroll-snap-type: x mandatory;
 }
 
-main #container #levels .level .resources_area li {
+.main_container #container #levels .level .resources_area li {
   scroll-snap-align: start;
   margin: 0 0.5em;
   min-width: 100%;
 }
 
-main #container #levels .level .resources_area li .resource_data {
+.main_container #container #levels .level .resources_area li .resource_data {
   -webkit-box-shadow: 0 0 1em 0 var(--boxShadow) inset;
           box-shadow: 0 0 1em 0 var(--boxShadow) inset;
   padding: 1em 0;
@@ -182,13 +182,13 @@ main #container #levels .level .resources_area li .resource_data {
           flex-direction: column;
 }
 
-main #container #levels .level .resources_area li .resource_data .resource_name {
+.main_container #container #levels .level .resources_area li .resource_data .resource_name {
   text-align: center;
   font-size: 1.5rem;
   margin-bottom: 0.7rem;
 }
 
-main #container #levels .level .resources_area li .resource_data .resource_intro {
+.main_container #container #levels .level .resources_area li .resource_data .resource_intro {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -201,7 +201,7 @@ main #container #levels .level .resources_area li .resource_data .resource_intro
           justify-content: space-between;
 }
 
-main #container #levels .level .resources_area li .resource_data .resource_intro .images {
+.main_container #container #levels .level .resources_area li .resource_data .resource_intro .images {
   -webkit-box-shadow: 0 0 1em var(--boxShadow);
           box-shadow: 0 0 1em var(--boxShadow);
   margin: 0 0.2em;
@@ -220,17 +220,17 @@ main #container #levels .level .resources_area li .resource_data .resource_intro
           justify-content: space-between;
 }
 
-main #container #levels .level .resources_area li .resource_data .resource_intro .images .player {
+.main_container #container #levels .level .resources_area li .resource_data .resource_intro .images .player {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-main #container #levels .level .resources_area li .resource_data .resource_intro .images .player img {
+.main_container #container #levels .level .resources_area li .resource_data .resource_intro .images .player img {
   width: 100%;
 }
 
-main #container #levels .level .resources_area li .resource_data .resource_intro .images .suggested_container {
+.main_container #container #levels .level .resources_area li .resource_data .resource_intro .images .suggested_container {
   width: 100%;
   -webkit-box-shadow: 0 0 1em var(--boxShadow) inset;
           box-shadow: 0 0 1em var(--boxShadow) inset;
@@ -243,7 +243,7 @@ main #container #levels .level .resources_area li .resource_data .resource_intro
   overflow: hidden;
 }
 
-main #container #levels .level .resources_area li .resource_data .resource_intro .images .suggested_container ul {
+.main_container #container #levels .level .resources_area li .resource_data .resource_intro .images .suggested_container ul {
   overflow: hidden;
   overflow-x: scroll;
   -ms-scroll-snap-type: x mandatory;
@@ -259,7 +259,7 @@ main #container #levels .level .resources_area li .resource_data .resource_intro
           align-items: center;
 }
 
-main #container #levels .level .resources_area li .resource_data .resource_intro .images .suggested_container ul li {
+.main_container #container #levels .level .resources_area li .resource_data .resource_intro .images .suggested_container ul li {
   scroll-snap-align: start;
   min-width: 50%;
   display: inline-block;
@@ -268,17 +268,17 @@ main #container #levels .level .resources_area li .resource_data .resource_intro
           box-shadow: 0 0 1em var(--boxShadow);
 }
 
-main #container #levels .level .resources_area li .resource_data .resource_intro .images .suggested_container ul li a {
+.main_container #container #levels .level .resources_area li .resource_data .resource_intro .images .suggested_container ul li a {
   width: 100%;
   height: 100%;
 }
 
-main #container #levels .level .resources_area li .resource_data .resource_intro .images .suggested_container ul li a img {
+.main_container #container #levels .level .resources_area li .resource_data .resource_intro .images .suggested_container ul li a img {
   width: 100%;
   height: 100%;
 }
 
-main #container #levels .level .resources_area li .resource_data .resource_intro .description {
+.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
@@ -292,7 +292,7 @@ main #container #levels .level .resources_area li .resource_data .resource_intro
           flex-direction: column;
 }
 
-main #container #levels .level .resources_area li .resource_data .resource_intro .description .provider {
+.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .provider {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -304,15 +304,15 @@ main #container #levels .level .resources_area li .resource_data .resource_intro
       justify-content: space-around;
 }
 
-main #container #levels .level .resources_area li .resource_data .resource_intro .description .provider .provider_logo {
+.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .provider .provider_logo {
   max-width: 15%;
 }
 
-main #container #levels .level .resources_area li .resource_data .resource_intro .description .provider .provider_logo img {
+.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .provider .provider_logo img {
   max-width: 100%;
 }
 
-main #container #levels .level .resources_area li .resource_data .resource_intro .description .provider .provider_name {
+.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .provider .provider_name {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -322,11 +322,11 @@ main #container #levels .level .resources_area li .resource_data .resource_intro
   font-size: 1.3rem;
 }
 
-main #container #levels .level .resources_area li .resource_data .resource_intro .description .some_text {
+.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .some_text {
   font-size: 1rem;
 }
 
-main #container #levels .level .resources_area li .resource_data .resource_intro .description .prerequisites {
+.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .prerequisites {
   font-size: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -339,35 +339,35 @@ main #container #levels .level .resources_area li .resource_data .resource_intro
       flex-wrap: wrap;
 }
 
-main #container #levels .level .resources_area li .resource_data .resource_intro .description .prerequisites li {
+.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .prerequisites li {
   margin: auto;
 }
 
-main #container #levels #intermediate {
+.main_container #container #levels #intermediate {
   margin: 2em 0;
 }
 
 @media (min-width: 750px) {
-  body main #container #levels .level .resources_area .resources .resource_data .resource_intro {
+  body .main_container #container #levels .level .resources_area .resources .resource_data .resource_intro {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  body main #container #levels .level .resources_area .resources .resource_data .resource_intro .images {
+  body .main_container #container #levels .level .resources_area .resources .resource_data .resource_intro .images {
     margin-right: 1em;
     max-width: 60%;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
   }
-  body main #container #levels .level .resources_area .resources .resource_data .resource_intro .images .suggested_container ul li {
+  body .main_container #container #levels .level .resources_area .resources .resource_data .resource_intro .images .suggested_container ul li {
     min-width: 40%;
   }
-  body main #container #levels #intermediate .resources .resource_intro .images {
+  body .main_container #container #levels #intermediate .resources .resource_intro .images {
     margin-left: 1em;
   }
-  body main #container #levels #intermediate .resources .resource_intro .description {
+  body .main_container #container #levels #intermediate .resources .resource_intro .description {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;

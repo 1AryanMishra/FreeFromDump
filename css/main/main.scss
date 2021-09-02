@@ -63,9 +63,8 @@ a{
 
 
 body{
-    border: 3px solid black;
     width: 100%;
-    min-height: 100vmax;
+    min-height: 100vh;
     background: var(--base);
     display: flex;
     justify-content: space-between;

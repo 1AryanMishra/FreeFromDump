@@ -63,8 +63,9 @@ a{
 
 
 body{
+    border: 3px solid black;
     width: 100%;
-    min-height: 100vh;
+    min-height: 100vmax;
     background: var(--base);
     display: flex;
     justify-content: space-between;
@@ -103,8 +104,9 @@ body{
 
 
         .nav{
+            margin-bottom: 1em;
             display: flex;
-
+            
             #nav_section{
                 background: var(--navBg);
                 box-shadow: var(--navBoxShadow);
@@ -116,11 +118,11 @@ body{
                 ul{
                     display: flex;
                     flex-direction: column;
-
+                    
                     a{
                         transition: 0.5s;
                         padding: 0.5em;
-
+                        
                         li{
                             font-size: 1.1rem;
                             list-style: none;
@@ -415,10 +417,10 @@ body{
 
         header{
             .nav{
-
+                
                 #nav_section{
                     display: flex;
-
+                    
                     ul{
                         flex-direction: row;
                     }

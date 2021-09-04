@@ -131,7 +131,7 @@ body.dark{
                         box-shadow: 0 0 1em var(--boxShadow) inset;
                         scroll-snap-align: center;
                         margin: 0 0.5em;
-                        min-width: 95%;
+                        min-width: 100%;
 
                         .resource_name{
                             text-align: center;
@@ -151,7 +151,7 @@ body.dark{
                             .resource_details{
                                 border-right: 2px solid var(--boxShadow);
                                 scroll-snap-align: center;
-                                min-width: 90%;
+                                min-width: 100%;
                                 display: flex;
                                 flex-direction: column;
                                 margin: auto 0.5em;
@@ -287,13 +287,13 @@ body.dark{
                         .resources_area{
 
                             .resources{
-                                min-width: 98%;
+                                min-width: 100%;
 
                                 .resource_container{
 
                                     .resource_details{
                                         flex-direction: row;
-                                        min-width: 95%;
+                                        min-width: 100%;
 
                                         .demo_player{
                                             flex: 3;

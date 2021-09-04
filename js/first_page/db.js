@@ -2,7 +2,9 @@ export default(
     [
         [
             {
-                course : "html",
+                course : "HTML",
+
+                length : 5,
 
                 thumbnail : [
                     'images/resources/beginner/html/courses/f',

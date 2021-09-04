@@ -1,92 +1,70 @@
-import db from '../first_page/db.js';
-
-const resource_name = `<h2 class = "resource_name">HTML</h2>`;
+import db from '../first_page/db1.js';
 
 
+function prerequisites(prereq){
+    var prereq_list = `<ul class="prerequisites">Prerequisites : `;
+    prereq.forEach((p) => {
+        prereq_list += `<li>${p}</li>`
+    })
+    prereq_list += "</ul>";
+    return prereq_list;
+}
 
 
+function description(desc, prereq){
+    return (
+        `<section class="description">
+            <div class="provider">
+                <div class="provider_logo"><img src="" alt="ChannelDp"></div>
+                <div class="provider_name"><h3>ChannelTitle</h3></div>
+            </div>
+            <p class="some_text">${desc}</p>
+            ${prerequisites(prereq)}
+            <div class = "course_action">
+                <button class = "is_fav" id = "html">!Fav</button>
+                <button class = "add_to_list">Watch later</button>
+            </div>
+        </section>`
+    )
+}
 
-const provider_logo = `<div class="provider_logo"><img src="../images/resources/beginner/html/logos/traversy.jpg"></div>`;
-const provider_name = `<div class="provider_name"><h3>Resource Provider</h3></div>`;
 
-const provider = `<div class="provider">
-${provider_logo}
-${provider_name}
-</div>`;
-
-
-const some_text = `<p class="some_text">Some text about the resource selected above to play in player section.</p>`;
-const prerequisites = `<ul class="prerequisites">
-<li>Some prerequisites to follow before taking this course.</li>
-<li>Like this</li>
-<li>And this</li>
-</ul>`;
-
-
-
-const is_fav = `<button class = "is_fav" id = "html">!Fav</button>`;
-const add_to_list = `<button class = "add_to_list">Watch later</button>`
-
-const course_action = `<div class = "course_action">
-${is_fav}
-${add_to_list}
-</div>`;
-
-const description = `<section class="description">
-${provider}
-${some_text}
-${prerequisites}
-${course_action}
-</section>`;
-
+function resource_container(course_detail){
+    return (
+        `<li class = "resource_details">
+            <img class = "demo_player" src="../images/resources/beginner/html/courses/g.jpg" alt="4">
+            ${description(course_detail.description, course_detail.prerequisites)}
+        </li>`
+    )
+}
 
 
 
+function resources(db){
+    var resource_list = `<li class="resources">`;
+    resource_list += `<h2 class = "resource_name">${db.course}</h2>
+    <section class="resource_container">`;
+    for(var i = 0; i<db.resources.length; i++){
+        resource_list += resource_container(db.resources[i]);
+    }
+    resource_list += "</section></li>";
+    return resource_list;
+}
 
 
 
-
-const resource_container = `<section class="resource_container">
-    <li class = "resource_details" id="first_link">
-        <img class = "demo_player" src="../images/resources/beginner/html/courses/t1.jpg" alt="1">
-        ${description}
-    </li>
-
-    <li class = "resource_details">
-        <img class = "demo_player" src="../images/resources/beginner/html/courses/t1.jpg" alt="1">
-        ${description}
-    </li>
-
-    <li class = "resource_details">
-        <img class = "demo_player" src="../images/resources/beginner/html/courses/t3.jpg" alt="1">
-        ${description}
-    </li>
-
-    <li class = "resource_details">
-        <img class = "demo_player" src="../images/resources/beginner/html/courses/f.jpg" alt="1">
-        ${description}
-    </li>
-
-    <li class = "resource_details" id="last_link">
-        <img class = "demo_player" src="../images/resources/beginner/html/courses/g.jpg" alt="4">
-        ${description}
-    </li>
-</section>`;
+function resource_area(db){
+    var resources_area_part = "";
+    for(var i = 0; i < db.length; i++){
+        resources_area_part += resources(db[i]);
+    }
+    return resources_area_part;
+}
 
 
 
+var levels = document.querySelectorAll(".resources_area");
 
-
-const resources = `<li class="resources">
-${resource_name}
-${resource_container}
-</li>`;
-
-
-var beginner_level = document.querySelectorAll(".resources_area");
-
-beginner_level.forEach(element => {
-    element.innerHTML = `${resources} ${resources}`;
-});
-
-
+for(var i = 0; i < levels.length; i++){
+    levels[i].innerHTML = `${resource_area(db[i])}`;
+}

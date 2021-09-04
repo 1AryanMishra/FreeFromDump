@@ -84,7 +84,8 @@ body.dark{
                 justify-content: space-between;
 
                 #filter_icon{
-                    width: 30px;
+                    margin: auto;
+                    max-width: 30px;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-evenly;

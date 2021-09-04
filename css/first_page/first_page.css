@@ -166,45 +166,21 @@ body.dark {
       scroll-snap-type: x mandatory;
 }
 
-.main_container #container #levels .level .resources_area li {
-  scroll-snap-align: start;
+.main_container #container #levels .level .resources_area .resources {
+  -webkit-box-shadow: 0 0 1em var(--boxShadow) inset;
+          box-shadow: 0 0 1em var(--boxShadow) inset;
+  scroll-snap-align: center;
   margin: 0 0.5em;
-  min-width: 100%;
+  min-width: 95%;
 }
 
-.main_container #container #levels .level .resources_area li .resource_data {
-  -webkit-box-shadow: 0 0 1em 0 var(--boxShadow) inset;
-          box-shadow: 0 0 1em 0 var(--boxShadow) inset;
-  padding: 1em 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.main_container #container #levels .level .resources_area li .resource_data .resource_name {
+.main_container #container #levels .level .resources_area .resources .resource_name {
   text-align: center;
   font-size: 1.5rem;
-  margin-bottom: 0.7rem;
+  margin: 0.5rem 0;
 }
 
-.main_container #container #levels .level .resources_area li .resource_data .resource_intro {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.main_container #container #levels .level .resources_area li .resource_data .resource_intro .suggested_container {
+.main_container #container #levels .level .resources_area .resources .resource_container {
   -webkit-box-shadow: 0 0 1em var(--boxShadow);
           box-shadow: 0 0 1em var(--boxShadow);
   overflow: hidden;
@@ -222,26 +198,26 @@ body.dark {
           align-items: center;
 }
 
-.main_container #container #levels .level .resources_area li .resource_data .resource_intro .suggested_container li {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details {
+  border-right: 2px solid var(--boxShadow);
   scroll-snap-align: center;
   min-width: 90%;
-  display: inline-block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: auto 0.5em;
-  -webkit-box-shadow: 0 0 1em var(--boxShadow);
-          box-shadow: 0 0 1em var(--boxShadow);
 }
 
-.main_container #container #levels .level .resources_area li .resource_data .resource_intro .suggested_container li a {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .demo_player {
   width: 100%;
   height: 100%;
 }
 
-.main_container #container #levels .level .resources_area li .resource_data .resource_intro .suggested_container li a img {
-  width: 100%;
-  height: 100%;
-}
-
-.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description {
   margin: 0.5em 1em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -252,7 +228,7 @@ body.dark {
           flex-direction: column;
 }
 
-.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .provider {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .provider {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -264,15 +240,15 @@ body.dark {
       justify-content: space-around;
 }
 
-.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .provider .provider_logo {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .provider .provider_logo {
   max-width: 15%;
 }
 
-.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .provider .provider_logo img {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .provider .provider_logo img {
   max-width: 100%;
 }
 
-.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .provider .provider_name {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .provider .provider_name {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -282,11 +258,11 @@ body.dark {
   font-size: 1.3rem;
 }
 
-.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .some_text {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .some_text {
   font-size: 1rem;
 }
 
-.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .prerequisites {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .prerequisites {
   font-size: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -299,11 +275,11 @@ body.dark {
       flex-wrap: wrap;
 }
 
-.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .prerequisites li {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .prerequisites li {
   margin: auto;
 }
 
-.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .course_action {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action {
   margin-top: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -312,7 +288,7 @@ body.dark {
       justify-content: space-around;
 }
 
-.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .course_action .is_fav {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action .is_fav {
   border-radius: 100%;
   color: var(--buttonFont);
   font-size: 1em;
@@ -325,13 +301,13 @@ body.dark {
   transition: 0.2s ease;
 }
 
-.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .course_action .is_fav:focus, .main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .course_action .is_fav:hover {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action .is_fav:focus, .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action .is_fav:hover {
   -webkit-box-shadow: 0 0 1em 0 red;
           box-shadow: 0 0 1em 0 red;
   background: rgba(255, 0, 0, 0.8);
 }
 
-.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .course_action .add_to_list {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action .add_to_list {
   color: var(--buttonFont);
   font-size: 1.1rem;
   -webkit-box-shadow: 0 0 1em 0 var(--buttonBoxShadow) inset;
@@ -343,7 +319,7 @@ body.dark {
   transition: 0.2s ease;
 }
 
-.main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .course_action .add_to_list:focus, .main_container #container #levels .level .resources_area li .resource_data .resource_intro .description .course_action .add_to_list:hover {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action .add_to_list:focus, .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action .add_to_list:hover {
   -webkit-box-shadow: 0 0 1em 0 rgba(0, 0, 255, 0.5);
           box-shadow: 0 0 1em 0 rgba(0, 0, 255, 0.5);
   background: rgba(0, 0, 255, 0.5);
@@ -371,27 +347,28 @@ body.dark {
   margin: 2em 0;
 }
 
-@media (min-width: 750px) {
-  body .main_container #container #levels .level .resources_area .resources .resource_data .resource_intro {
+@media (min-width: 900px) {
+  body .main_container #container #levels .level .resources_area .resources {
+    min-width: 98%;
+  }
+  body .main_container #container #levels .level .resources_area .resources .resource_container .resource_details {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    min-width: 95%;
   }
-  body .main_container #container #levels .level .resources_area .resources .resource_data .resource_intro .suggested_container {
-    margin-right: 1em;
-    max-width: 60%;
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
+  body .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .demo_player {
+    -webkit-box-flex: 3;
+        -ms-flex: 3;
+            flex: 3;
   }
-  body .main_container #container #levels .level .resources_area .resources .resource_data .resource_intro .suggested_container li {
-    min-width: 90%;
+  body .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description {
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
   }
-  body .main_container #container #levels #intermediate .resources .resource_intro .images {
-    margin-left: 1em;
-  }
-  body .main_container #container #levels #intermediate .resources .resource_intro .description {
+  body .main_container #container #levels #intermediate .resources .resource_container .resource_details .demo_player {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;

@@ -3,29 +3,6 @@ import db from '../first_page/db.js';
 const resource_name = `<h2 class = "resource_name">HTML</h2>`;
 
 
-const suggested_container = `<section class="suggested_container">
-    <li id="first_link">
-        <a href="#"><img src="../images/resources/beginner/html/courses/t1.jpg" alt="1"></a>
-    </li>
-
-    <li>
-        <a href="#"><img src="../images/resources/beginner/html/courses/t1.jpg" alt="1"></a>
-    </li>
-
-    <li>
-        <a href="#"><img src="../images/resources/beginner/html/courses/t3.jpg" alt="1"></a>
-    </li>
-
-    <li>
-        <a href="#"><img src="../images/resources/beginner/html/courses/f.jpg" alt="1"></a>
-    </li>
-
-    <li id="last_link">
-        <a href="#"><img src="../images/resources/beginner/html/courses/g.jpg" alt="4"></a>
-    </li>
-</section>`;
-
-
 
 
 
@@ -65,23 +42,44 @@ ${course_action}
 
 
 
-const resource_intro = `<div class="resource_intro">
-${suggested_container}
-${description}
-</div>`;
 
 
 
 
-const resource_data = `<div class="resource_data">
-${resource_name}
-${resource_intro}
-</div>`;
+const resource_container = `<section class="resource_container">
+    <li class = "resource_details" id="first_link">
+        <img class = "demo_player" src="../images/resources/beginner/html/courses/t1.jpg" alt="1">
+        ${description}
+    </li>
+
+    <li class = "resource_details">
+        <img class = "demo_player" src="../images/resources/beginner/html/courses/t1.jpg" alt="1">
+        ${description}
+    </li>
+
+    <li class = "resource_details">
+        <img class = "demo_player" src="../images/resources/beginner/html/courses/t3.jpg" alt="1">
+        ${description}
+    </li>
+
+    <li class = "resource_details">
+        <img class = "demo_player" src="../images/resources/beginner/html/courses/f.jpg" alt="1">
+        ${description}
+    </li>
+
+    <li class = "resource_details" id="last_link">
+        <img class = "demo_player" src="../images/resources/beginner/html/courses/g.jpg" alt="4">
+        ${description}
+    </li>
+</section>`;
+
+
 
 
 
 const resources = `<li class="resources">
-${resource_data}
+${resource_name}
+${resource_container}
 </li>`;
 
 

@@ -3,9 +3,7 @@ import db from '../first_page/db.js';
 const resource_name = `<h2 class = "resource_name">HTML</h2>`;
 
 
-const player = `<section class="player"><img src="../images/resources/beginner/html/courses/t1.jpg" alt="the selected one to play"></section>`;
 const suggested_container = `<section class="suggested_container">
-    <ul>
     <li id="first_link">
         <a href="#"><img src="../images/resources/beginner/html/courses/t1.jpg" alt="1"></a>
     </li>
@@ -25,13 +23,8 @@ const suggested_container = `<section class="suggested_container">
     <li id="last_link">
         <a href="#"><img src="../images/resources/beginner/html/courses/g.jpg" alt="4"></a>
     </li>
-</ul>
 </section>`;
 
-const images = `<section class = "images">
-${player}
-${suggested_container}
-</section>`;
 
 
 
@@ -52,17 +45,28 @@ const prerequisites = `<ul class="prerequisites">
 <li>And this</li>
 </ul>`;
 
+
+
+const is_fav = `<button class = "is_fav" id = "html">!Fav</button>`;
+const add_to_list = `<button class = "add_to_list">Watch later</button>`
+
+const course_action = `<div class = "course_action">
+${is_fav}
+${add_to_list}
+</div>`;
+
 const description = `<section class="description">
 ${provider}
 ${some_text}
 ${prerequisites}
+${course_action}
 </section>`;
 
 
 
 
 const resource_intro = `<div class="resource_intro">
-${images}
+${suggested_container}
 ${description}
 </div>`;
 
@@ -86,3 +90,5 @@ var beginner_level = document.querySelectorAll(".resources_area");
 beginner_level.forEach(element => {
     element.innerHTML = `${resources} ${resources}`;
 });
+
+

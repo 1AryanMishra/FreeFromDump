@@ -93,6 +93,11 @@
 .main_container #container #levels .level h1 {
   padding: 1rem;
   font-size: 1.5rem;
+  border-bottom: 1px solid #909090;
+}
+
+.main_container #container #levels .level .guide_text {
+  padding: 1em;
 }
 
 .main_container #container #levels .level .resources_area {

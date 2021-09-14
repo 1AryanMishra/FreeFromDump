@@ -11,12 +11,12 @@ function prerequisites(prereq){
 }
 
 
-function description(desc, prereq){
+function description(logo, title, desc, prereq){
     return (
         `<section class="description">
             <div class="provider">
-                <div class="provider_logo"><img src="" alt="ChannelDp"></div>
-                <div class="provider_name"><h3>ChannelTitle</h3></div>
+                <div class="provider_logo"><img src="${logo}" alt="ChannelDp"></div>
+                <div class="provider_name"><h3>${title}</h3></div>
             </div>
             <p class="some_text">${desc}</p>
             ${prerequisites(prereq)}
@@ -36,7 +36,7 @@ function resource_container(course_detail){
     return (
         `<li class = "resource_details">
             <img class = "demo_player" src = "../images/resources/beginner/css/courses/f.jpg" alt = "course demo player">
-            ${description(course_detail.description, course_detail.prerequisites)}
+            ${description(course_detail.logo, course_detail.title, course_detail.description, course_detail.prerequisites)}
         </li>`
     )
 }

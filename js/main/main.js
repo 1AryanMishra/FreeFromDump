@@ -1,84 +1,68 @@
-var index = document;
-var submit = index.getElementById("submit");
+const submit = document.getElementById("submit");
 
-var theme = index.getElementById("switch");
+const goal = document.getElementById("field");
+const goal_msg = document.querySelector("#goal_msg");
 
-theme.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    if(theme.value == "Light"){
-        theme.style.transform = "rotateZ(360deg)";
-        theme.value = "Dark";
-    }
-    else{
-        theme.style.transform = "rotateZ(-360deg)";
-        theme.value = "Light";
-    }
+const pc_checkbox = document.querySelector("#pc_checkbox");
 
-})
+const time_number = document.getElementById("time_number");
+const time_format = document.getElementById("time_format");
+const time_msg = document.querySelector("#time_msg");
 
-var nav = index.getElementById("nav_open_btn");
 
-var nav_open = false;
 
-function navBoxAnimation(){
-    const top = index.querySelector("#top_nav_bar");
-    const mid = index.querySelector("#mid_nav_bar");
-    const bottom = index.querySelector("#bottom_nav_bar");
+function resetForm(){
+    
+    goal_msg.textContent = "Select your Goal";
+    goal.value = "none";
 
-    if(nav_open){
-        top.style.transform = "translateY(12px)";
-        mid.style.display = "none";
-        bottom.style.transform = "translateY(-12px)";
-        top.style.transform += "rotateZ(45deg)";
-        bottom.style.transform = "rotateZ(-45deg)";
-    }
-    else{
-        top.style.transform = "translateY(0px)";
-        bottom.style.transform = "translateY(0px)";
-        top.style.transform = "rotateZ(0deg)";
-        bottom.style.transform = "rotateZ(0deg)";
-        mid.style.display = "block";
-    }
+    pc_checkbox.checked = false;
+
+    time_number.value = "";
+    time_format.value = 'd';
+    time_msg.textContent = "Expected Time";
 }
 
-function showNav(){
-    nav_open = true;
-    navBoxAnimation();
-    index.getElementById("nav").style.flexDirection = "column";
-    index.getElementById("nav_section").style.display = "flex";
-    index.getElementById("nav_section").style.order = "1";
-    index.getElementById("nav_section").style.marginRight = "0";
-}
-
-function hideNav(){
-    nav_open = false;
-    navBoxAnimation();
-    index.getElementById("nav").style.flexDirection = "row";
-    index.getElementById("nav_section").style.display = "none";
-}
-
-nav.addEventListener("click", () => {
-    if(nav_open){
-        hideNav();
-    }
-    else{
-        showNav();
-    }
-})
 
 
-
-var data;
 function formAction(){
-    var time = index.getElementById("time_number").value + index.getElementById("time_format").value;
-    var field = index.getElementById("field").value;
-    data = {
-        goal : field,
-        time : time
+    var t = 1;
+    var g = 1;
+
+    const data = {
+        goal : goal.value,
+        pc_checkbox_state : pc_checkbox.checked,
+        time : time_number.value + time_format.value
     };
-    localStorage.clear();
-    localStorage.setItem('data', JSON.stringify(data));
-    console.log(JSON.parse(localStorage.getItem('data')));
+
+    if(data.goal == "none"){
+        goal_msg.style.color = "rgb(255, 0, 0)";
+        goal_msg.textContent = "Please choose one field from the Drop-Down to proceed.";
+        g = 0;
+    }
+    else{
+        goal_msg.style.color = "var(--baseFont)";
+        goal_msg.textContent = `Thank You!, we will get you best for ${data.goal}`;
+    }
+
+    if(data.time == "Days" || data.time == "0Days"){
+        time_msg.style.color = 'rgb(255, 0, 0)';
+        time_msg.textContent = "Please Input what time you expect this course should take.";
+        t = 0;
+        return;
+    }
+    else{
+        time_msg.style.color = 'var(--baseFont)';
+        time_msg.textContent = `Thank You!, you will get The Best in ${time_number.value + " " + time_format.value}`;
+    }
+
+    if(t == 1 && g == 1){
+        submit.href = "pages/first_page.html";
+        localStorage.clear();
+        localStorage.setItem('data', JSON.stringify(data));
+        resetForm();
+        return;
+    }
 }
 
 submit.addEventListener("click", formAction);

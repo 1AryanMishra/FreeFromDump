@@ -51,6 +51,7 @@
 .main_container #container #filter #filter_part #filter_icon .filter_bar {
   margin: 3px 0;
   border: 2px solid #fff;
+  background: #fff;
   width: 24px;
 }
 

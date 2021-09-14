@@ -200,7 +200,7 @@ body main .form_data_container form .wrapper #goal {
           flex-direction: column;
 }
 
-body main .form_data_container form .wrapper #goal #label_for_goal {
+body main .form_data_container form .wrapper #goal #goal_msg {
   font-size: 1rem;
 }
 
@@ -229,15 +229,17 @@ body main .form_data_container form .wrapper #time {
 
 body main .form_data_container form .wrapper #time input {
   max-width: 25%;
-  margin: 0 auto;
+  margin: auto;
   color: var(--inputFont);
   background: var(--inputBg);
   -webkit-box-shadow: 0 0 1em 0 var(--inputBoxShadow) inset;
           box-shadow: 0 0 1em 0 var(--inputBoxShadow) inset;
-  padding: 0.2em;
+  padding: 0.2rem;
 }
 
 body main .form_data_container form .wrapper #time select {
+  margin: auto;
+  padding: 0.2rem;
   -webkit-box-shadow: 0 0 1em 0 var(--inputBoxShadow) inset;
           box-shadow: 0 0 1em 0 var(--inputBoxShadow) inset;
   color: var(--inputFont);

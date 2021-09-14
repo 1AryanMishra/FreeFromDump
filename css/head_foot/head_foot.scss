@@ -19,6 +19,10 @@ body{
     --navBoxShadow : 0 0 1em 0 #151515 inset;
 
     --navBorderCol : var(--headerBg);
+
+    --SwitchBg : #fff;
+    --SwitchBoxShadow : 0 0 2em #000 inset;
+    --SwitchFont : #000;
 }
 
 body.dark{
@@ -42,6 +46,10 @@ body.dark{
     --buttonBoxShadow : #fff;
     --inputBg: #909090;
     --footerFont : #151515;
+
+    --SwitchBg : #000;
+    --SwitchBoxShadow : 0 0 1em #fff inset;
+    --SwitchFont : #fff;
 }
 
 
@@ -165,16 +173,16 @@ body{
 
     #switch{
         margin-top: auto;
-        color: var(--themeFont);
+        color: var(--SwitchFont);
         margin-left: auto;
         margin-right: 1em;
         margin-bottom: 1em;
         transition: 1s;
         width: 48px;
         height: 48px;
-        box-shadow: var(--themeBoxShadow);
+        box-shadow: var(--SwitchBoxShadow);
         border-radius: 100%;
-        background: var(--themeBg);
+        background: var(--SwitchBg);
     }
 
 

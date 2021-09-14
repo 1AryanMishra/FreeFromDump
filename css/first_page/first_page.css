@@ -98,7 +98,8 @@ body.dark {
 }
 
 .main_container #container #filter #filter_part #filter_icon {
-  width: 30px;
+  margin: auto;
+  max-width: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

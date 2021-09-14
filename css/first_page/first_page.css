@@ -1,53 +1,3 @@
-* {
-  list-style: none;
-  text-decoration: none;
-}
-
-img {
-  margin: auto;
-  max-width: 100%;
-}
-
-body {
-  --buttonFont: #fff;
-  --inputFont: #000;
-  --headerBg: #909090;
-  --logoFont: #fff;
-  --base: rgb(225, 220, 225);
-  --baseFont: blue;
-  --boxShadow: #000;
-  --inputBoxShadow: #fff;
-  --buttonBoxShadow: #fff;
-  --inputBg: #909090;
-  --footerFont: #fff;
-  --themeBoxShadow: 0 0 2em 0 #000 inset;
-  --themeBg: #fff;
-  --themeFont: #000;
-  --navBg: #909090;
-  --navBoxShadow: 0 0 1em 0 #151515 inset;
-  --navBorderCol: var(--headerBg);
-}
-
-body.dark {
-  --navBorderCol: #fff;
-  --navBg: #151515;
-  --navBoxShadow: 0 0 1em 0 #fff inset;
-  --themeFont: #fff;
-  --themeBoxShadow: 0 0 1em 0 #fff inset;
-  --themeBg: #000;
-  --buttonFont: #fff;
-  --inputFont: #000;
-  --headerBg: #909090;
-  --logoFont: #fff;
-  --base: #000;
-  --baseFont: #fff;
-  --boxShadow: #fff;
-  --inputBoxShadow: #fff;
-  --buttonBoxShadow: #fff;
-  --inputBg: #909090;
-  --footerFont: #151515;
-}
-
 .main_container {
   width: 100%;
   padding: 1em 0;
@@ -88,33 +38,21 @@ body.dark {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .main_container #container #filter #filter_part #filter_icon {
-  margin: auto;
-  max-width: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  margin-left: auto;
 }
 
 .main_container #container #filter #filter_part #filter_icon .filter_bar {
+  margin: 3px 0;
   border: 2px solid #fff;
-  width: 100%;
+  width: 24px;
+}
+
+.main_container #container #filter #filter_part #filter_icon:focus, .main_container #container #filter #filter_part #filter_icon:hover {
+  -webkit-box-shadow: 0 0 1em var(--boxShadow);
+          box-shadow: 0 0 1em var(--boxShadow);
 }
 
 .main_container #container #filter #sign_in_suggestion {
@@ -154,8 +92,6 @@ body.dark {
 
 .main_container #container #levels .level .resources_area {
   width: 100%;
-  -webkit-box-shadow: 0 0 1em var(--boxShadow);
-          box-shadow: 0 0 1em var(--boxShadow);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -168,8 +104,8 @@ body.dark {
 }
 
 .main_container #container #levels .level .resources_area .resources {
-  -webkit-box-shadow: 0 0 1em var(--boxShadow) inset;
-          box-shadow: 0 0 1em var(--boxShadow) inset;
+  -webkit-box-shadow: 0 0 0.5em var(--boxShadow) inset;
+          box-shadow: 0 0 0.5em var(--boxShadow) inset;
   scroll-snap-align: center;
   margin: 0 0.5em;
   min-width: 100%;
@@ -184,6 +120,7 @@ body.dark {
 .main_container #container #levels .level .resources_area .resources .resource_container {
   -webkit-box-shadow: 0 0 1em var(--boxShadow);
           box-shadow: 0 0 1em var(--boxShadow);
+  border-right: 2px solid var(--boxShadow);
   overflow: hidden;
   overflow-x: scroll;
   -ms-scroll-snap-type: x mandatory;
@@ -200,7 +137,6 @@ body.dark {
 }
 
 .main_container #container #levels .level .resources_area .resources .resource_container .resource_details {
-  border-right: 2px solid var(--boxShadow);
   scroll-snap-align: center;
   min-width: 100%;
   display: -webkit-box;

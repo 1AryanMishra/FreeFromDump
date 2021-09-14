@@ -1,62 +1,3 @@
-*{
-    list-style: none;
-    text-decoration: none;
-}
-
-
-img{
-    margin: auto;
-    max-width: 100%;
-}
-
-
-body{
-    --buttonFont : #fff;
-    --inputFont : #000;
-    --headerBg : #909090;
-    --logoFont : #fff;
-    --base : rgb(225, 220, 225);
-    --baseFont : blue;
-    --boxShadow : #000;
-    --inputBoxShadow : #fff;
-    --buttonBoxShadow : #fff;
-    --inputBg: #909090;
-    --footerFont : #fff;
-
-    --themeBoxShadow : 0 0 2em 0 #000 inset;
-    --themeBg : #fff;
-    --themeFont : #000;
-
-    --navBg : #909090;
-    --navBoxShadow : 0 0 1em 0 #151515 inset;
-
-    --navBorderCol : var(--headerBg);
-}
-
-body.dark{
-
-    --navBorderCol : #fff;
-
-    --navBg : #151515;
-    --navBoxShadow : 0 0 1em 0 #fff inset;
-
-    --themeFont : #fff;
-    --themeBoxShadow : 0 0 1em 0 #fff inset;
-    --themeBg : #000;
-    --buttonFont : #fff;
-    --inputFont : #000;
-    --headerBg : #909090;
-    --logoFont : #fff;
-    --base : #000;
-    --baseFont : #fff;
-    --boxShadow : #fff;
-    --inputBoxShadow : #fff;
-    --buttonBoxShadow : #fff;
-    --inputBg: #909090;
-    --footerFont : #151515;
-}
-
-
 .main_container{
     width:100%;
     padding: 1em 0;
@@ -80,20 +21,19 @@ body.dark{
 
             #filter_part{
                 display: flex;
-                flex-direction: row;
-                justify-content: space-between;
 
                 #filter_icon{
-                    margin: auto;
-                    max-width: 30px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-evenly;
+                    margin-left: auto;
 
                     .filter_bar{
+                        margin: 3px 0;
                         border: 2px solid #fff;
-                        width: 100%;
+                        width: 24px;
                     }
+                }
+
+                #filter_icon:focus, #filter_icon:hover{
+                    box-shadow: 0 0 1em var(--boxShadow);
                 }
             }
 
@@ -122,14 +62,13 @@ body.dark{
                 
                 .resources_area{
                     width: 100%;
-                    box-shadow: 0 0 1em var(--boxShadow);
                     display: flex;
                     align-items: center;
                     overflow-x: scroll;
                     scroll-snap-type: x mandatory;
 
                     .resources{
-                        box-shadow: 0 0 1em var(--boxShadow) inset;
+                        box-shadow: 0 0 0.5em var(--boxShadow) inset;
                         scroll-snap-align: center;
                         margin: 0 0.5em;
                         min-width: 100%;
@@ -142,6 +81,7 @@ body.dark{
     
                         .resource_container{
                             box-shadow: 0 0 1em var(--boxShadow);
+                            border-right: 2px solid var(--boxShadow);
                             overflow: hidden;
                             overflow-x: scroll;
                             scroll-snap-type: x mandatory;
@@ -150,7 +90,6 @@ body.dark{
                             align-items: center;
                             
                             .resource_details{
-                                border-right: 2px solid var(--boxShadow);
                                 scroll-snap-align: center;
                                 min-width: 100%;
                                 display: flex;

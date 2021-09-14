@@ -1,3 +1,7 @@
+* {
+  list-style: none;
+}
+
 .main_container {
   width: 100%;
   padding: 1em 0;
@@ -91,6 +95,8 @@
 }
 
 .main_container #container #levels .level .resources_area {
+  -webkit-box-shadow: 0 0 1em var(--boxShadow);
+          box-shadow: 0 0 1em var(--boxShadow);
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;

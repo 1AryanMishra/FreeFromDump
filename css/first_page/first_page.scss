@@ -1,3 +1,7 @@
+*{
+    list-style: none;
+}
+
 .main_container{
     width:100%;
     padding: 1em 0;
@@ -61,6 +65,7 @@
                 }
                 
                 .resources_area{
+                    box-shadow: 0 0 1em var(--boxShadow);
                     width: 100%;
                     display: flex;
                     align-items: center;

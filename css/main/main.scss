@@ -152,7 +152,7 @@ body{
                         display: flex;
                         flex-direction: column;
     
-                        #label_for_goal{
+                        #goal_msg{
                             font-size: 1rem;
                         }
     
@@ -180,14 +180,16 @@ body{
     
                         input{
                             max-width: 25%;
-                            margin: 0 auto;
+                            margin: auto;
                             color: var(--inputFont);
                             background: var(--inputBg);
                             box-shadow: 0 0 1em 0 var(--inputBoxShadow) inset;
-                            padding: 0.2em;
+                            padding: 0.2rem;
                         }
     
                         select{
+                            margin: auto;
+                            padding: 0.2rem;
                             box-shadow: 0 0 1em 0 var(--inputBoxShadow) inset;
                             color: var(--inputFont);
                             background: var(--inputBg);

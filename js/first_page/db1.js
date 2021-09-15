@@ -10,7 +10,7 @@ export default (
                         logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
                         channelLink : "https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA",
                         title : "Traversy Media",
-                        description : "This video is absolute beginner-friendly and touches every basic of thing of HTML and breakdowns every topic very easily",
+                        description : "This video is absolute beginner-friendly and touches every basic of HTML and breakdowns every topic very easily.",
                         prerequisites : ["No prerequisites"]
                     },
                     {
@@ -162,39 +162,76 @@ export default (
 
                 resources : [
                     {
-                        videoId : "hdI2bqOjy3c",
-                        logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
-                        title : "Traversy Media",
-                        description : "This is some description about the resource on the given topic.",
-                        prerequisites : ["No prerequisites"]
+                        videoId : "TLlGhogq56Y",
+                        logo : "https://yt3.ggpht.com/ytc/AKedOLRxS2W0dkrbJErKUdm-q-ZHp6QGMnBIIkiNKF38nw=s88-c-k-c0x00ffffff-no-rj",
+                        title : "Mike Dane",
+                        channelLink : "https://www.youtube.com/c/GiraffeAcademy",
+                        description : "Very Powerful JS Crash Course in less than 50mins. Really gives you enough confidence in the language to start your own static site project by None Other Than MIKE DANE.",
+                        prerequisites : ["HTML", "CSS"]
                     },
                     {
-                        videoId : "PkZNo7MFNFg",
+                        videoId : "hdI2bqOjy3c",
                         logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA",
                         title : "Traversy Media",
-                        description : "This is some description about the resource on the given topic.",
+                        description : "This resource provides the basic knowledge of JavaScript for Absolute Beginners with every Step-wise Guidence.",
                         prerequisites : ["No prerequisites"]
                     },
                     {
                         videoId : "qXulbm0SWpc",
-                        logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
-                        title : "Traversy Media",
-                        description : "This is some description about the resource on the given topic.",
+                        logo : "https://yt3.ggpht.com/ytc/AKedOLRkU2-RDemsCSaVVsPwc-yxtWruCB1Gr2VIgQKOKg=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ",
+                        title : "freeCodeCamp.org",
+                        description : "This is another Great video in HINDI. Guided at every Step. Just always try to maintain Curiousity and keep experimenting and practicing.",
                         prerequisites : ["No prerequisites"]
                     },
                     {
-                        videoId : "3PHXvlpOkf4",
+                        videoId : "0ik6X4DJKCc",
                         logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA",
                         title : "Traversy Media",
-                        description : "This is some description about the resource on the given topic.",
-                        prerequisites : ["HTML", "CSS"]
+                        description : "This resource is Part I of Four Part Series focused on DOM and DOM Manipulation from beginner to advanced level in DOM Manipulation.",
+                        prerequisites : ["HTML", "CSS", "JS"]
                     },
                     {
-                        videoId : "Kp3HGwlXwCk",
+                        videoId : "mPd2aJXCZ2g",
                         logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA",
                         title : "Traversy Media",
-                        description : "This is some description about the resource on the given topic.",
-                        prerequisites : ["HTML", "CSS", "HTML", "CSS", "HTML", "CSS", "HTML", "CSS", "HTML"]
+                        description : "This resource is Part II of Four Part Series focused on DOM and DOM Manipulation from beginner to advanced level in DOM Manipulation.",
+                        prerequisites : ["HTML", "CSS", "Fundamentals of JS"]
+                    },
+                    {
+                        videoId : "wK2cBMcDTss",
+                        logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA",
+                        title : "Traversy Media",
+                        description : "This resource is Part III of Four Part Series focused on DOM and DOM Manipulation from beginner to advanced level in DOM Manipulation.",
+                        prerequisites : ["HTML", "CSS", "Fundamentals of JS"]
+                    },
+                    {
+                        videoId : "i37KVt_IcXw",
+                        logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA",
+                        title : "Traversy Media",
+                        description : "This resource is Part IV of Four Part Series focused on DOM and DOM Manipulation from beginner to advanced level in DOM Manipulation.",
+                        prerequisites : ["HTML", "CSS", "Fundamentals of JS"]
+                    },
+                    {
+                        videoId : "y17RuWkWdn8",
+                        logo : "https://yt3.ggpht.com/ytc/AKedOLQpvSjzSCSo8ZKCjBZS7TRX7omb_kyQirh2zgEY=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw",
+                        title : "Web Dev Simplified",
+                        description : "This resource attempts to explain DOM Manipulation in 18 minutes and very well manages to achieve it. Still would recommend to watch it at own pace and comfortable Playback Speed.",
+                        prerequisites : ["HTML", "CSS", "JS"]
+                    },
+                    {
+                        videoId : "v7rSSy8CaYE",
+                        logo : "https://yt3.ggpht.com/ytc/AKedOLQpvSjzSCSo8ZKCjBZS7TRX7omb_kyQirh2zgEY=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw",
+                        title : "Web Dev Simplified",
+                        description : "This resource is focused on DOM and DOM Traversal Techniques and provides with some Tips&Tricks. Very on Point video.",
+                        prerequisites : ["HTML", "CSS", "JS"]
                     }
                 ]
             }

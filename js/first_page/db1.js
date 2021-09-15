@@ -76,11 +76,11 @@ export default (
                         prerequisites : ["HTML", "CSS"]
                     },
                     {
-                        videoId : "_-aDOAMmDH",
+                        videoId : "N5wpD9Ov_To",
                         logo : "https://yt3.ggpht.com/ytc/AKedOLT1tLx7BgAa7_SHaXE0hDRjQu1BRihsEDZ3lmUUcg=s88-c-k-c0x00ffffff-no-rj",
                         channelLink : "https://www.youtube.com/channel/UCJZv4d5rbIKd4QHMPkcABCw",
                         title : "Kevin Powell",
-                        description : "This resource tries to provide clearence on the stling unit topic for ems and rems.",
+                        description : "This resource tries to provide clearence on the styling unit topic for ems and rems.",
                         prerequisites : ["HTML", "CSS"]
                     },
                     {
@@ -239,22 +239,70 @@ export default (
 
         [
             {
-                course : "GIT",
+                course : "Git & GitHub",
 
                 resources : [
                     {
-                        videoId : "pQN-pnXPaVg",
-                        logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
-                        title : "Traversy Media",
-                        description : "This is some description about the resource on the given topic.",
+                        videoId : "RGOj5yH7evk",
+                        logo : "https://yt3.ggpht.com/ytc/AKedOLRkU2-RDemsCSaVVsPwc-yxtWruCB1Gr2VIgQKOKg=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ",
+                        title : "freeCodeCamp.org",
+                        description : "This resource provides every point necessary to start working with Git & GitHub. Very on-point video. Practice and own research of trial and errors must be done along to comfortably grasp the topic.",
                         prerequisites : ["No prerequisites"]
                     },
                     {
-                        videoId : "PlxWf493en4",
+                        videoId : "SWYqp7iY_Tc",
                         logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA",
                         title : "Traversy Media",
-                        description : "This is some description about the resource on the given topic.",
+                        description : "This example based resource by Traversy Media also focuses on the every basic functionalities of Git & GitHub.",
                         prerequisites : ["No prerequisites"]
+                    },
+                    {
+                        videoId : "8JJ101D3knE",
+                        logo : "https://yt3.ggpht.com/ytc/AKedOLQ09D8wVCdgWoCN3IPrvVKWi48-R2QZ_yJkCmKh-A=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UCWv7vMbMWH4-V0ZXdmDpPBA",
+                        title : "Programming with Mosh",
+                        description : "If none of before recommendations followed, this resource must be watched at Playback Speed of 0.5x or 0.75x. Else, this resource provides with the best explainations and detailed view of WHY & HOW.",
+                        prerequisites : ["No prerequisites"]
+                    },
+                    {
+                        videoId : "IHaTbJPdB-s",
+                        logo : "https://yt3.ggpht.com/ytc/AKedOLQpvSjzSCSo8ZKCjBZS7TRX7omb_kyQirh2zgEY=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw",
+                        title : "Web Dev Simplified",
+                        description : "This resource covers every basics needed to get started with Git & GitHub in least time possible. Still would recommend to watch at own comfortable Playback Speed.",
+                        prerequisites : ["HTML", "CSS", "JS"]
+                    }
+                ]
+            },
+            {
+                course : "JSON",
+                
+                resources : [
+                    {
+                        videoId : "gIxLDYvfGcQ",
+                        logo : "https://yt3.ggpht.com/ytc/AKedOLRxS2W0dkrbJErKUdm-q-ZHp6QGMnBIIkiNKF38nw=s88-c-k-c0x00ffffff-no-rj",
+                        title : "Mike Dane",
+                        channelLink : "https://www.youtube.com/c/GiraffeAcademy",
+                        description : "The only person who can give you full confidence over the topic in less than 5 mins. Very on-point and perfect explaination by The Man Himself MIKE DANE.",
+                        prerequisites : ["JavaScript"]
+                    },
+                    {
+                        videoId : "wI1CWzNtE-M",
+                        logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA",
+                        title : "Traversy Media",
+                        description : "This example based resource by Traversy Media also focuses on every point necessary.",
+                        prerequisites : ["JavaScript"]
+                    },
+                    {
+                        videoId : "iiADhChRriM",
+                        logo : "https://yt3.ggpht.com/ytc/AKedOLQpvSjzSCSo8ZKCjBZS7TRX7omb_kyQirh2zgEY=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw",
+                        title : "Web Dev Simplified",
+                        description : "This resource covers every basics of JSON.",
+                        prerequisites : ["JavaScript"]
                     }
                 ]
             },
@@ -263,80 +311,90 @@ export default (
 
                 resources : [
                     {
-                        videoId : "1Rs2ND1ryYc",
-                        logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
-                        title : "Traversy Media",
-                        description : "This is some description about the resource on the given topic.",
+                        videoId : "XGa4onZP66Q",
+                        logo : "https://yt3.ggpht.com/ytc/AKedOLTyYyoVRhy94ZBqI9r0T9EkGsVo3JtWCXoUy8ZA=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UCBwmMxybNva6P_5VmxjzwqA",
+                        title : "Apna College",
+                        description : `This video only on this channel achieved to explain a topic perfectly as for beginner level as rest are never on point and always require prior knowledge of the topic which only they will repeat again.`,
                         prerequisites : ["JavaScript", "JSON"]
                     },
                     {
-                        videoId : "ieTHC78giGQ",
+                        videoId : "Q-BpqyOT3a8",
                         logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA",
                         title : "Traversy Media",
-                        description : "This is some description about the resource on the given topic.",
-                        prerequisites : ["JavaScript", "JSON"]
-                    },
-                    {
-                        videoId : "srvUrASNj0s",
-                        logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
-                        title : "Traversy Media",
-                        description : "This is some description about the resource on the given topic.",
-                        prerequisites : ["JavaScript", "JSON"]
-                    },
-                    {
-                        videoId : "yfoY53QXEnI",
-                        logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
-                        title : "Traversy Media",
-                        description : "This is some description about the resource on the given topic.",
-                        prerequisites : ["JavaScript", "JSON"]
-                    },
-                    {
-                        videoId : "1PnVor36_40",
-                        logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
-                        title : "Traversy Media",
-                        description : "This is some description about the resource on the given topic.",
+                        description : `As the creator said "I am not a sophisticated guy and i like things spelt out without nonsense", that was exactly perfect as this resource has great analogy for topic and is perfectly on-point. This clear doubts as APIs v/s RESTapis v/s RESTFULapis.`,
                         prerequisites : ["JavaScript", "JSON"]
                     }
                 ]
             },
             {
-                course : "Firebase",
+                course : "Free Static Hosting",
 
                 resources : [
                     {
-                        videoId : "hdI2bqOjy3c",
-                        logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
-                        title : "Traversy Media",
-                        description : "This is some description about the resource on the given topic.",
-                        prerequisites : ["JavaScript", "HTML", "CSS", "JSON", "API"]
+                        videoId : "XG8nJDWu3a0",
+                        logo : "https://yt3.ggpht.com/ytc/AKedOLSIriDn5YiAJ_tutId6CcB1DtVgGW3T8MZPcdJ0=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UCMzabFudT_ntxlueP9R-3Vg",
+                        title : "Netlify",
+                        description : "This resource is from Netlify itself explaining how to host your site for free.",
+                        prerequisites : ["A created Static Website to host"]
                     },
                     {
-                        videoId : "PkZNo7MFNFg",
+                        videoId : "bjVUqvcCnxM",
                         logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA",
                         title : "Traversy Media",
-                        description : "This is some description about the resource on the given topic.",
-                        prerequisites : ["JavaScript", "HTML", "CSS", "JSON", "API"]
+                        description : "This resource is focused on deployment of your static website with help of tools such as Git & GitHub.",
+                        prerequisites : ["A created Static Website to host"]
                     },
                     {
-                        videoId : "qXulbm0SWpc",
+                        videoId : "6ElQ689HRcY",
                         logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA",
                         title : "Traversy Media",
-                        description : "This is some description about the resource on the given topic.",
-                        prerequisites : ["JavaScript", "HTML", "CSS", "JSON", "API"]
+                        description : "A form Submission Example based explaination on how to host your site for free literally in seconds on Netlify.",
+                        prerequisites : ["A created Static Website to host"]
                     },
                     {
-                        videoId : "3PHXvlpOkf4",
-                        logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
-                        title : "Traversy Media",
-                        description : "This is some description about the resource on the given topic.",
-                        prerequisites : ["JavaScript", "HTML", "CSS", "JSON", "API"]
+                        videoId : "rQvOAnNvcNQ",
+                        logo : "https://yt3.ggpht.com/ytc/AKedOLQV7AS-uSmgD7Rl7QsmhazGjn2XQGNIkqYUislhbQ=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UCP4bf6IHJJQehibu6ai__cg",
+                        title : "Firebase",
+                        description : "This resource is from firebase itself not very detailed but explains the new methods to work with firebase as most of the resources available worked on older codes. Newest implementations can be found on the firebase documentation.",
+                        prerequisites : ["HTML", "CSS", "JSON", "API", "A little feel of Database"]
                     },
                     {
-                        videoId : "Kp3HGwlXwCk",
+                        videoId : "q5J5ho7YUhA",
+                        logo : "https://yt3.ggpht.com/ytc/AKedOLTcIl6kKt3lEPJEySUf_hpHiKDKiFeo9eWPReLysQ=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA",
+                        title : "Fireship",
+                        description : "This resource is from one of the experienced developer in firebase. Despite all of the methods used are deprecated, you still can learn methods to download firebase tools and link database like firestore or RealTime DB and deployment from your localhost to firebase hosting platform.",
+                        prerequisites : ["HTML", "CSS", "JavaScript", "JSON", "API"]
+                    },
+                    {
+                        videoId : "QLVzozWDYAs",
+                        logo : "https://yt3.ggpht.com/ytc/AKedOLQV7AS-uSmgD7Rl7QsmhazGjn2XQGNIkqYUislhbQ=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UCP4bf6IHJJQehibu6ai__cg",
+                        title : "Firebase",
+                        description : "This resource is from firebase itself not very detailed but good explaination on the hosting of site through GitHub with older syntax. Newest implementations can be found on the firebase documentation.",
+                        prerequisites : ["HTML", "CSS", "JSON", "API", "A little feel of Database", "Git & GitHub"]
+                    },
+                    {
+                        videoId : "SKXkC4SqtRk",
                         logo : "https://yt3.ggpht.com/ytc/AKedOLSxHOOxxa9Af8Bfb2XMop3lm4tor9bViWiC-d5aaw=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA",
                         title : "Traversy Media",
-                        description : "This is some description about the resource on the given topic.",
-                        prerequisites : ["JavaScript", "HTML", "CSS", "JSON", "API"]
+                        description : "A detailed explaination and example based guidence to GitHub Pages Free Hosting Platform.",
+                        prerequisites : ["HTML", "CSS", "JavaScript", "JSON", "API"]
+                    },
+                    {
+                        videoId : "QyFcl_Fba-k",
+                        logo : "https://yt3.ggpht.com/ytc/AKedOLT3v89U-2iVX-78hqPk1-lBIduTcljrKLIH9YJg1A=s88-c-k-c0x00ffffff-no-rj",
+                        channelLink : "https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg",
+                        title : "The Net Ninja",
+                        description : "Lovely resource from a lovely creator. Must checkout this channel for more.",
+                        prerequisites : ["HTML", "CSS", "JavaScript", "JSON", "API"]
                     }
                 ]
             }

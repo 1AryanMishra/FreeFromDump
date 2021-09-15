@@ -11,11 +11,11 @@ function prerequisites(prereq){
 }
 
 
-function description(logo, title, desc, prereq){
+function description(link, logo, title, desc, prereq){
     return (
         `<section class="description">
             <div class="provider">
-                <div class="provider_logo"><img src="${logo}" alt="ChannelDp"></div>
+                <div class="provider_logo"><a href="${link}" target = "_blank"><img src="${logo}" alt="ChannelDp"></a></div>
                 <div class="provider_name"><h3>${title}</h3></div>
             </div>
             <p class="some_text">${desc}</p>
@@ -30,13 +30,12 @@ function description(logo, title, desc, prereq){
 
 
 // To be added in resource_container before description
-//<iframe class = "demo_player" src="https://www.youtube.com/embed/${course_detail.videoId}?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 function resource_container(course_detail){
     return (
         `<li class = "resource_details">
-            <img class = "demo_player" src = "../images/resources/beginner/css/courses/f.jpg" alt = "course demo player">
-            ${description(course_detail.logo, course_detail.title, course_detail.description, course_detail.prerequisites)}
+            <iframe class = "demo_player" src="https://www.youtube.com/embed/${course_detail.videoId}?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            ${description(course_detail.channelLink, course_detail.logo, course_detail.title, course_detail.description, course_detail.prerequisites)}
         </li>`
     )
 }

@@ -1,4 +1,20 @@
-import db from '../first_page/db1.js';
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyCwOB_ZLwC9lXOwVwYAVm9gNRN3WbwoGYE",
+authDomain: "freefromdump-777de.firebaseapp.com",
+projectId: "freefromdump-777de",
+storageBucket: "freefromdump-777de.appspot.com",
+messagingSenderId: "127420406329",
+appId: "1:127420406329:web:3341e7d741f87468a04be8",
+measurementId: "G-W7S4W6BMY4"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore();
+
+const fieldData = await getDoc(doc(db, "fields", "webdev"));
 
 
 function prerequisites(prereq){
@@ -66,10 +82,16 @@ function resource_area(db){
     return resources_area_part;
 }
 
+const beginnerArea = document.querySelector("#beginner_level_rendering");
+const intermediateArea = document.querySelector("#intermediate_level_rendering")
+const expertArea = document.querySelector("#expert_level_rendering")
 
 
-var levels = document.querySelectorAll(".resources_area");
+const beginnerData = fieldData.data().beginner;
+const intermediateData = fieldData.data().intermediate;
+const expertData = fieldData.data().expert;
 
-for(var i = 0; i < levels.length; i++){
-    levels[i].innerHTML = `${resource_area(db[i])}`;
-}
+beginnerData.forEach((f) => {
+    beginnerArea.innerHTML += resource_area(f);
+})
+

@@ -73,15 +73,6 @@ function resources(db){
 }
 
 
-
-function resource_area(db){
-    var resources_area_part = "";
-    for(var i = 0; i < db.length; i++){
-        resources_area_part += resources(db[i]);
-    }
-    return resources_area_part;
-}
-
 const beginnerArea = document.querySelector("#beginner_level_rendering");
 const intermediateArea = document.querySelector("#intermediate_level_rendering")
 const expertArea = document.querySelector("#expert_level_rendering")
@@ -92,6 +83,13 @@ const intermediateData = fieldData.data().intermediate;
 const expertData = fieldData.data().expert;
 
 beginnerData.forEach((f) => {
-    beginnerArea.innerHTML += resource_area(f);
-})
+    beginnerArea.innerHTML += `${resources(f)}`;
+});
 
+intermediateData.forEach((f) => {
+    intermediateArea.innerHTML += `${resources(f)}`;
+});
+
+expertData.forEach((f) => {
+    expertArea.innerHTML += `${resources(f)}`;
+});

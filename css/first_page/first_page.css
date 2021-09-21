@@ -164,7 +164,6 @@
 
 .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .demo_player {
   width: 100%;
-  height: 100%;
 }
 
 .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description {
@@ -311,14 +310,8 @@
     min-width: 100%;
   }
   body .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .demo_player {
-    -webkit-box-flex: 3;
-        -ms-flex: 3;
-            flex: 3;
-  }
-  body .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description {
-    -webkit-box-flex: 2;
-        -ms-flex: 2;
-            flex: 2;
+    max-width: 100%;
+    min-height: 100%;
   }
   body .main_container #container #levels #intermediate .resources .resource_container .resource_details .demo_player {
     -webkit-box-ordinal-group: 2;

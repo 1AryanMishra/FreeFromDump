@@ -110,7 +110,6 @@
 
                                 .demo_player{
                                     width: 100%;
-                                    height: 100%;
                                 }
 
                                 .description{
@@ -239,22 +238,19 @@
                     .level{
 
                         .resources_area{
-
+                            
                             .resources{
                                 min-width: 100%;
-
+                                
                                 .resource_container{
-
+                                    
                                     .resource_details{
                                         flex-direction: row;
                                         min-width: 100%;
-
+                                        
                                         .demo_player{
-                                            flex: 3;
-                                        }
-
-                                        .description{
-                                            flex: 2;
+                                            max-width: 100%;
+                                            min-height: 100%;
                                         }
                                     }
                                 }

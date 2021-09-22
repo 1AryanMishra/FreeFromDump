@@ -1,3 +1,8 @@
+import db from '../../database/firestore.js'
+import { collection, getDoc } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
+
+
+
 const submit = document.getElementById("submit");
 
 const goal = document.getElementById("field");
@@ -59,7 +64,7 @@ function formAction(){
     if(t == 1 && g == 1){
         submit.href = "pages/first_page.html";
         localStorage.clear();
-        localStorage.setItem('data', JSON.stringify(data));
+        localStorage.setItem('goal', JSON.stringify(data.goal));
         resetForm();
         return;
     }

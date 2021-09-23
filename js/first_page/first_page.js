@@ -1,10 +1,10 @@
 import db from '../../database/firestore.js'
-//import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
+import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 
 
 const SelectedField = JSON.parse(localStorage.getItem('goal'));
 
-//const fieldData = await getDoc(doc(db, "fields", `${SelectedField}`));
+const fieldData = await getDoc(doc(db, "fields", `${SelectedField}`));
 
 
 function prerequisites(prereq){

@@ -133,6 +133,7 @@
 
                                 .demo_player{
                                     width: 100%;
+                                    min-height: 56%;
                                 }
 
                                 .more_data_demo_player{
@@ -152,9 +153,9 @@
                                         
                                         .provider_logo{
                                             max-width: 15%;
-                                            border-radius: 100%;
-        
+                                            
                                             img{
+                                                border-radius: 100%;
                                                 max-width: 100%;
                                             }
                                         }
@@ -318,8 +319,8 @@
                                         min-width: 100%;
                                         
                                         .demo_player{
-                                            max-width: 100%;
-                                            min-height: 100%;
+                                            width: 64%;
+                                            min-height: 36%;
                                         }
 
                                         .more_data_demo_player{

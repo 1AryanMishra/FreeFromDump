@@ -190,6 +190,7 @@
 
 .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .demo_player {
   width: 100%;
+  min-height: 56%;
 }
 
 .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .more_data_demo_player {
@@ -223,10 +224,10 @@
 
 .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .provider .provider_logo {
   max-width: 15%;
-  border-radius: 100%;
 }
 
 .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .provider .provider_logo img {
+  border-radius: 100%;
   max-width: 100%;
 }
 
@@ -391,8 +392,8 @@
     min-width: 100%;
   }
   body .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .demo_player {
-    max-width: 100%;
-    min-height: 100%;
+    width: 64%;
+    min-height: 36%;
   }
   body .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .more_data_demo_player {
     -webkit-box-shadow: 0 0 10em var(--MoreDataBoxShadow) inset;

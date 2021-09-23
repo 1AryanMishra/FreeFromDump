@@ -3,6 +3,7 @@ import { collection, getDoc } from "https://www.gstatic.com/firebasejs/9.0.2/fir
 
 
 
+
 const submit = document.getElementById("submit");
 
 const goal = document.getElementById("field");

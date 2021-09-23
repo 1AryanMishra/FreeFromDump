@@ -3,8 +3,6 @@ import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-f
 
 
 const SelectedField = JSON.parse(localStorage.getItem('goal'));
-console.log(typeof(SelectedField), SelectedField);
-
 
 const fieldData = await getDoc(doc(db, "fields", `${SelectedField}`));
 

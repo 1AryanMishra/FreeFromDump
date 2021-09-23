@@ -79,6 +79,20 @@
                     overflow-x: scroll;
                     scroll-snap-type: x mandatory;
 
+                    .more_data_resources{
+                        order: 1;
+                        position: relative;
+
+                        .fetching_data_text{
+                            border: 2px solid yellowgreen;
+                            outline: 0;
+                            padding: 0.5rem;
+                            position: absolute;
+                            top: 25%;
+                            left: 31%;
+                        }
+                    }
+
                     .resources{
                         box-shadow: 0 0 0.5em var(--boxShadow) inset;
                         scroll-snap-align: center;
@@ -90,6 +104,15 @@
                             font-size: 1.5rem;
                             margin: 0.5rem 0;
                         }
+
+                        .more_data_resource_name{
+                            margin: 0.65rem auto;
+                            max-width: fit-content;
+                            padding: 1rem 5rem;
+                            box-shadow: 0 0 1.5rem var(--MoreDataBoxShadow) inset;
+                        }
+
+                        
     
                         .resource_container{
                             box-shadow: 0 0 1em var(--boxShadow);
@@ -112,6 +135,11 @@
                                     width: 100%;
                                 }
 
+                                .more_data_demo_player{
+                                    box-shadow: 0 0 7em var(--MoreDataBoxShadow) inset;
+                                    padding: 5em 0;
+                                }
+
                                 .description{
                                     margin:  0.5em 1em;
                                     display: flex;
@@ -124,10 +152,18 @@
                                         
                                         .provider_logo{
                                             max-width: 15%;
+                                            border-radius: 100%;
         
                                             img{
                                                 max-width: 100%;
                                             }
+                                        }
+
+                                        .more_data_provider_logo{
+                                            margin: auto;
+                                            max-width: fit-content;
+                                            padding: 1.25rem;
+                                            box-shadow: 0 0 1.25rem var(--MoreDataBoxShadow) inset;
                                         }
         
                                         .provider_name{
@@ -135,12 +171,26 @@
                                             align-items: center;
                                             font-size: 1.3rem;
                                         }
+
+                                        .more_data_provider_name{
+                                            margin: 0.65rem auto;
+                                            max-width: fit-content;
+                                            padding: 0.65rem 5rem;
+                                            box-shadow: 0 0 1rem var(--MoreDataBoxShadow) inset;
+                                        }
                                     }
         
                                     .some_text{
                                         color: #909090;
                                         padding: 1rem 0;
                                         font-size: 1rem;
+                                    }
+
+                                    .more_data_some_text{
+                                        margin: 0.5rem auto;
+                                        max-width: fit-content;
+                                        padding: 3rem 9rem;
+                                        box-shadow: 0 0 4rem var(--MoreDataBoxShadow) inset;
                                     }
         
                                     .prerequisites{
@@ -152,6 +202,13 @@
                                         li{
                                             margin: auto;
                                         }
+                                    }
+
+                                    .more_data_prerequisites{
+                                        margin: 0 auto;
+                                        max-width: fit-content;
+                                        padding: 1.2rem 6rem;
+                                        box-shadow: 0 0 1.7rem var(--MoreDataBoxShadow) inset;
                                     }
 
                                     .course_action{
@@ -192,6 +249,10 @@
                                     }
                                 }
                             }
+                        }
+
+                        .more_data_resource_container{
+                            overflow-x: hidden;
                         }
                     }
                 }
@@ -238,6 +299,14 @@
                     .level{
 
                         .resources_area{
+
+                            .more_data_resources{
+
+                                .fetching_data_text{
+                                    top: 50%;
+                                    left: 44%;
+                                }
+                            }
                             
                             .resources{
                                 min-width: 100%;
@@ -251,6 +320,22 @@
                                         .demo_player{
                                             max-width: 100%;
                                             min-height: 100%;
+                                        }
+
+                                        .more_data_demo_player{
+                                            box-shadow: 0 0 10em var(--MoreDataBoxShadow) inset;
+                                            margin: auto;
+                                            max-width: 60%;
+                                            padding: 10em 0;
+                                        }
+
+                                        .more_data_description{
+                                            margin: 1rem auto;
+
+                                            .more_data_some_text{
+                                                padding: 5rem 10em;
+                                                box-shadow: 0 0 5rem var(--MoreDataBoxShadow) inset;
+                                            }
                                         }
                                     }
                                 }

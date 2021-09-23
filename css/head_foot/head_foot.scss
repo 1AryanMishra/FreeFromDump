@@ -23,9 +23,12 @@ body{
     --SwitchBg : #fff;
     --SwitchBoxShadow : 0 0 2em #000 inset;
     --SwitchFont : #000;
+
+    --MoreDataBoxShadow : #999999;
 }
 
 body.dark{
+    --MoreDataBoxShadow : #909090;
 
     --navBorderCol : #fff;
 

@@ -110,6 +110,7 @@ html {
 }
 
 .main_container #container #levels .level .for_scroll_btns .prev_btn {
+  display: none;
   z-index: 1;
   cursor: pointer;
   -webkit-box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
@@ -143,6 +144,7 @@ html {
 }
 
 .main_container #container #levels .level .for_scroll_btns .next_btn {
+  display: none;
   z-index: 1;
   cursor: pointer;
   -webkit-box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
@@ -186,7 +188,7 @@ html {
       -ms-flex-align: center;
           align-items: center;
   overflow-x: scroll;
-  scrollbar-width: none;
+  scrollbar-width: thin;
   -ms-scroll-snap-type: x mandatory;
       scroll-snap-type: x mandatory;
 }
@@ -237,6 +239,7 @@ html {
   border-right: 2px solid var(--boxShadow);
   overflow: hidden;
   overflow-x: scroll;
+  scrollbar-width: thin;
   -ms-scroll-snap-type: x mandatory;
       scroll-snap-type: x mandatory;
   display: -webkit-box;

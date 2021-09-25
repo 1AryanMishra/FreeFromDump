@@ -101,9 +101,42 @@ var int_pos = 0;
 var exp_pos = 0;
 
 
+function checkScrollVisibilityOnLoad(){
+    if(beginnerArea.childElementCount > 1){
+        beg_next.style.display = 'block';
+    }
+    if(intermediateArea.childElementCount > 1){
+        int_next.style.display = 'block';
+    }
+    if(expertArea.childElementCount > 1){
+        exp_next.style.display = 'block';
+    }
+}
+
+checkScrollVisibilityOnLoad();
+
+
+function checkScrollVisibility(leftBtn, rightBtn, levelPos, levelAreaElements){
+    if(levelPos <= 0){
+        leftBtn.style.display = 'none';
+    }
+    else{
+        leftBtn.style.display = 'block';
+    }
+
+    if(levelPos >= levelAreaElements - 1){
+        rightBtn.style.display = 'none';
+    }
+    else{
+        rightBtn.style.display = 'block';
+    }
+}
+
+
 beg_prev.addEventListener("click", () => {
     if(beg_pos > 0){
         beg_pos -= 1;
+        checkScrollVisibility(beg_prev, beg_next, beg_pos, beginnerArea.childElementCount);
         beginnerArea.scroll({
             top : 0,
             left : beginnerArea.offsetWidth*beg_pos,
@@ -115,6 +148,7 @@ beg_prev.addEventListener("click", () => {
 beg_next.addEventListener("click", () => {
     if(beg_pos < beginnerArea.childElementCount-1){
         beg_pos += 1;
+        checkScrollVisibility(beg_prev, beg_next, beg_pos, beginnerArea.childElementCount);
         beginnerArea.scroll({
             top : 0,
             left : beginnerArea.offsetWidth*beg_pos,
@@ -126,6 +160,7 @@ beg_next.addEventListener("click", () => {
 int_prev.addEventListener("click", () => {
     if(int_pos > 0){
         int_pos -= 1;
+        checkScrollVisibility(int_prev, int_next, int_pos, intermediateArea.childElementCount);
         intermediateArea.scroll({
             top : 0,
             left : intermediateArea.offsetWidth*int_pos,
@@ -137,6 +172,7 @@ int_prev.addEventListener("click", () => {
 int_next.addEventListener("click", () => {
     if(int_pos < intermediateArea.childElementCount-1){
         int_pos += 1;
+        checkScrollVisibility(int_prev, int_next, int_pos, intermediateArea.childElementCount);
         intermediateArea.scroll({
             top : 0,
             left : intermediateArea.offsetWidth*int_pos,
@@ -148,6 +184,7 @@ int_next.addEventListener("click", () => {
 exp_prev.addEventListener("click", () => {
     if(exp_pos > 0){
         exp_pos -= 1;
+        checkScrollVisibility(exp_prev, exp_next, exp_pos, expertArea.childElementCount);
         expertArea.scroll({
             top : 0,
             left : expertArea.offsetWidth*exp_pos,
@@ -159,6 +196,7 @@ exp_prev.addEventListener("click", () => {
 exp_next.addEventListener("click", () => {
     if(exp_pos < expertArea.childElementCount-1){
         exp_pos += 1;
+        checkScrollVisibility(exp_prev, exp_next, exp_pos, expertArea.childElementCount);
         expertArea.scroll({
             top : 0,
             left : expertArea.offsetWidth*exp_pos,

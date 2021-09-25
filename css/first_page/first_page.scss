@@ -79,6 +79,7 @@ html{
                     position: relative;
 
                     .prev_btn{
+                        display: none;
                         z-index: 1;
                         cursor: pointer;
                         box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
@@ -109,6 +110,7 @@ html{
                     }
 
                     .next_btn{
+                        display: none;
                         z-index: 1;
                         cursor: pointer;
                         box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
@@ -144,7 +146,7 @@ html{
                         display: flex;
                         align-items: center;
                         overflow-x: scroll;
-                        scrollbar-width: none;
+                        scrollbar-width: thin;
                         scroll-snap-type: x mandatory;
     
                         .more_data_resources{
@@ -187,6 +189,7 @@ html{
                                 border-right: 2px solid var(--boxShadow);
                                 overflow: hidden;
                                 overflow-x: scroll;
+                                scrollbar-width: thin;
                                 scroll-snap-type: x mandatory;
                                 display: flex;
                                 justify-content: space-between;

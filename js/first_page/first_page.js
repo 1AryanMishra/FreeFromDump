@@ -2,12 +2,8 @@ import db from '../../database/firestore.js'
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 
 
-
-<<<<<<< HEAD
-const fieldData = await getDoc(doc(db, "fields", `${SelectedField}`));
-=======
 const SelectedField = JSON.parse(localStorage.getItem('goal'));
->>>>>>> firstPage
+
 
 const fieldData = await getDoc(doc(db, "fields", `${SelectedField}`));
 
@@ -87,6 +83,7 @@ function renderToLevel(levelArea, levelData){
 renderToLevel(beginnerArea, beginnerData);
 renderToLevel(intermediateArea, intermediateData);
 renderToLevel(expertArea, expertData);
+
 
 
 

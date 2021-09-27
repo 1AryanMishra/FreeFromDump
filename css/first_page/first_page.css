@@ -119,28 +119,44 @@ html {
   opacity: 1;
   position: absolute;
   margin-left: 0.5rem;
-  left: 0;
-  top: 0;
-  padding: 0.75rem 0;
-  padding-left: 0.3rem;
-  padding-right: 0.55rem;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.4rem 0;
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+  -webkit-transition: 0.01s ease;
+  transition: 0.01s ease;
 }
 
 .main_container #container #levels .level .for_scroll_btns .prev_btn .arrow_top {
-  background: var(--themeFont);
-  width: 24px;
-  height: 6px;
+  border: 0;
+  outline: 0;
+  background: #fff;
+  width: 18px;
+  height: 4.5px;
   -webkit-transform: rotateZ(-45deg);
           transform: rotateZ(-45deg);
 }
 
 .main_container #container #levels .level .for_scroll_btns .prev_btn .arrow_bottom {
-  margin-top: 8px;
-  background: var(--themeFont);
-  width: 24px;
-  height: 6px;
+  margin-top: 6px;
+  border: 0;
+  outline: 0;
+  background: #fff;
+  width: 18px;
+  height: 4.5px;
   -webkit-transform: rotateZ(45deg);
           transform: rotateZ(45deg);
+}
+
+.main_container #container #levels .level .for_scroll_btns .prev_btn:hover .arrow_top, .main_container #container #levels .level .for_scroll_btns .prev_btn:focus .arrow_top {
+  -webkit-transform: translateX(-1rem) rotateZ(-45deg);
+          transform: translateX(-1rem) rotateZ(-45deg);
+}
+
+.main_container #container #levels .level .for_scroll_btns .prev_btn:hover .arrow_bottom, .main_container #container #levels .level .for_scroll_btns .prev_btn:focus .arrow_bottom {
+  -webkit-transform: translateX(-1rem) rotateZ(45deg);
+          transform: translateX(-1rem) rotateZ(45deg);
 }
 
 .main_container #container #levels .level .for_scroll_btns .next_btn {
@@ -152,29 +168,44 @@ html {
   background: #909090;
   opacity: 1;
   position: absolute;
-  top: 0;
-  right: 0;
-  margin-right: 0.5rem;
-  padding: 0.75rem 0;
-  padding-right: 0.35rem;
-  padding-left: 0.55rem;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.4rem 0;
+  padding-right: 1rem;
+  padding-left: 0.5rem;
+  -webkit-transition: 0.01s ease;
+  transition: 0.01s ease;
 }
 
 .main_container #container #levels .level .for_scroll_btns .next_btn .arrow_top {
-  background: var(--themeFont);
-  width: 24px;
-  height: 6px;
+  border: 0;
+  outline: 0;
+  background: #fff;
+  width: 18px;
+  height: 4.5px;
   -webkit-transform: rotateZ(45deg);
           transform: rotateZ(45deg);
 }
 
 .main_container #container #levels .level .for_scroll_btns .next_btn .arrow_bottom {
-  margin-top: 8px;
-  background: var(--themeFont);
-  width: 24px;
-  height: 6px;
+  margin-top: 6px;
+  border: 0;
+  outline: 0;
+  background: #fff;
+  width: 18px;
+  height: 4.5px;
   -webkit-transform: rotateZ(-45deg);
           transform: rotateZ(-45deg);
+}
+
+.main_container #container #levels .level .for_scroll_btns .next_btn:hover .arrow_top, .main_container #container #levels .level .for_scroll_btns .next_btn:focus .arrow_top {
+  -webkit-transform: translateX(1rem) rotateZ(45deg);
+          transform: translateX(1rem) rotateZ(45deg);
+}
+
+.main_container #container #levels .level .for_scroll_btns .next_btn:hover .arrow_bottom, .main_container #container #levels .level .for_scroll_btns .next_btn:focus .arrow_bottom {
+  -webkit-transform: translateX(1rem) rotateZ(-45deg);
+          transform: translateX(1rem) rotateZ(-45deg);
 }
 
 .main_container #container #levels .level .for_scroll_btns .resources_area {
@@ -215,6 +246,104 @@ html {
   scroll-snap-align: center;
   margin: 0 0.5em;
   min-width: 100%;
+  position: relative;
+}
+
+.main_container #container #levels .level .for_scroll_btns .resources_area .resources .prev_btn_res {
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
+          box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
+  background: #909090;
+  opacity: 1;
+  margin-left: 0.25rem;
+  bottom: 5%;
+  left: 0;
+  padding: 0.3rem 0;
+  padding-left: 0.75rem;
+  padding-right: 0.375rem;
+  -webkit-transition: 0.01s ease;
+  transition: 0.01s ease;
+}
+
+.main_container #container #levels .level .for_scroll_btns .resources_area .resources .prev_btn_res .arrow_top_res {
+  border: 0;
+  outline: 0;
+  background: #fff;
+  width: 13.5px;
+  height: 2.5px;
+  -webkit-transform: rotateZ(-45deg);
+          transform: rotateZ(-45deg);
+}
+
+.main_container #container #levels .level .for_scroll_btns .resources_area .resources .prev_btn_res .arrow_bottom_res {
+  margin-top: 4.5px;
+  border: 0;
+  outline: 0;
+  background: #fff;
+  width: 13.5px;
+  height: 2.5px;
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+}
+
+.main_container #container #levels .level .for_scroll_btns .resources_area .resources .prev_btn_res:hover .arrow_top_res, .main_container #container #levels .level .for_scroll_btns .resources_area .resources .prev_btn_res:focus .arrow_top_res {
+  -webkit-transform: translateX(-0.5rem) rotateZ(-45deg);
+          transform: translateX(-0.5rem) rotateZ(-45deg);
+}
+
+.main_container #container #levels .level .for_scroll_btns .resources_area .resources .prev_btn_res:hover .arrow_bottom_res, .main_container #container #levels .level .for_scroll_btns .resources_area .resources .prev_btn_res:focus .arrow_bottom_res {
+  -webkit-transform: translateX(-0.5rem) rotateZ(45deg);
+          transform: translateX(-0.5rem) rotateZ(45deg);
+}
+
+.main_container #container #levels .level .for_scroll_btns .resources_area .resources .next_btn_res {
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
+          box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
+  background: #909090;
+  opacity: 1;
+  bottom: 5%;
+  right: 0;
+  padding: 0.3rem 0;
+  padding-right: 0.75rem;
+  padding-left: 0.375rem;
+  -webkit-transition: 0.01s ease;
+  transition: 0.01s ease;
+}
+
+.main_container #container #levels .level .for_scroll_btns .resources_area .resources .next_btn_res .arrow_top_res {
+  border: 0;
+  outline: 0;
+  background: #fff;
+  width: 13.5px;
+  height: 2.5px;
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+}
+
+.main_container #container #levels .level .for_scroll_btns .resources_area .resources .next_btn_res .arrow_bottom_res {
+  margin-top: 4.5px;
+  border: 0;
+  outline: 0;
+  background: #fff;
+  width: 13.5px;
+  height: 2.5px;
+  -webkit-transform: rotateZ(-45deg);
+          transform: rotateZ(-45deg);
+}
+
+.main_container #container #levels .level .for_scroll_btns .resources_area .resources .next_btn_res:hover .arrow_top_res, .main_container #container #levels .level .for_scroll_btns .resources_area .resources .next_btn_res:focus .arrow_top_res {
+  -webkit-transform: translateX(0.75rem) rotateZ(45deg);
+          transform: translateX(0.75rem) rotateZ(45deg);
+}
+
+.main_container #container #levels .level .for_scroll_btns .resources_area .resources .next_btn_res:hover .arrow_bottom_res, .main_container #container #levels .level .for_scroll_btns .resources_area .resources .next_btn_res:focus .arrow_bottom_res {
+  -webkit-transform: translateX(0.75rem) rotateZ(-45deg);
+          transform: translateX(0.75rem) rotateZ(-45deg);
 }
 
 .main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_name {

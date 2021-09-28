@@ -2,7 +2,7 @@ import db from '../../database/firestore.js'
 import { collection, getDoc } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 
 window.addEventListener('load', () => {
-    if(localStorage.getItem("goal") !== null){
+    if(localStorage.getItem("goal") !== null && sessionStorage.getItem("isActive") === null){
         window.open('https://freefromdump.netlify.app/pages/first_page.html', '_top');
     }
 })

@@ -250,6 +250,7 @@ html {
 }
 
 .main_container #container #levels .level .for_scroll_btns .resources_area .resources .prev_btn_res {
+  display: none;
   position: absolute;
   z-index: 1;
   cursor: pointer;
@@ -299,6 +300,7 @@ html {
 }
 
 .main_container #container #levels .level .for_scroll_btns .resources_area .resources .next_btn_res {
+  display: none;
   position: absolute;
   z-index: 1;
   cursor: pointer;

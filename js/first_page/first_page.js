@@ -36,12 +36,6 @@ function description(link, logo, title, desc, prereq){
 }
 
 
-/* 
-TO BE ADDED BEFORE PUSHING  OR  MERGING 
-
-<img class = "demo_player" src = "../images/resources/beginner/css/courses/f.jpg" alt = "course demo player">
-*/
-
 function resource_container(course_detail){
     return (
         `<li class = "resource_details">

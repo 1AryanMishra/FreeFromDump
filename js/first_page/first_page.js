@@ -1,6 +1,7 @@
 import db from '../../database/firestore.js'
 import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 
+sessionStorage.setItem("isActive", "1");
 
 const SelectedField = JSON.parse(localStorage.getItem('goal'));
 
@@ -35,10 +36,16 @@ function description(link, logo, title, desc, prereq){
 }
 
 
+<<<<<<< HEAD
 /* 
 TO BE ADDED BEFORE PUSHING  OR  MERGING 
 
 <img class = "demo_player" src = "../images/resources/beginner/css/courses/f.jpg" alt = "course demo player">
+=======
+/* To be added in resource_container before description
+
+<iframe class = "demo_player" src="https://www.youtube.com/embed/${course_detail.videoId}?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+>>>>>>> firstPage
 
 */
 
@@ -122,9 +129,21 @@ const exp_prev = document.querySelector("#exp_prev");
 const exp_next = document.querySelector("#exp_next");
 
 
-var beg_pos = 0;
-var int_pos = 0;
-var exp_pos = 0;
+var beg_pos = [0];
+var int_pos = [0];
+var exp_pos = [0];
+
+function populatePosArrayForRes(levelArea, levelArr){
+    for(var i = 0; i<levelArea.childElementCount - 1; i++){
+        levelArr.push(0);
+    }
+}
+
+populatePosArrayForRes(beginnerArea, beg_pos);
+populatePosArrayForRes(intermediateArea, int_pos);
+populatePosArrayForRes(expertArea, exp_pos);
+
+
 
 
 function checkScrollVisibilityOnLoad(){
@@ -162,115 +181,162 @@ function checkScrollVisibility(leftBtn, rightBtn, levelPos, levelAreaElements){
 
 
 beg_prev.addEventListener("click", () => {
-    if(beg_pos > 0){
-        beg_pos -= 1;
-        checkScrollVisibility(beg_prev, beg_next, beg_pos, beginnerArea.childElementCount);
+    if(beg_pos[0] > 0){
+        beg_pos[0] -= 1;
+        checkScrollVisibility(beg_prev, beg_next, beg_pos[0], beginnerArea.childElementCount);
         beginnerArea.scroll({
             top : 0,
-            left : beginnerArea.offsetWidth*beg_pos,
+            left : beginnerArea.offsetWidth*beg_pos[0],
             behavior : 'smooth'
         })
     }
-    LevelResScrollBtn(beginnerArea, beg_pos);
 })
 
 
 beg_next.addEventListener("click", () => {
-    if(beg_pos < beginnerArea.childElementCount-1){
-        beg_pos += 1;
-        checkScrollVisibility(beg_prev, beg_next, beg_pos, beginnerArea.childElementCount);
+    if(beg_pos[0] < beginnerArea.childElementCount-1){
+        beg_pos[0] += 1;
+        checkScrollVisibility(beg_prev, beg_next, beg_pos[0], beginnerArea.childElementCount);
         beginnerArea.scroll({
             top : 0,
-            left : beginnerArea.offsetWidth*beg_pos,
+            left : beginnerArea.offsetWidth*beg_pos[0],
             behavior : 'smooth'
         })
     }
-    LevelResScrollBtn(beginnerArea, beg_pos);
+    LevelResScrollBtn(beginnerArea, beg_pos[0]);
 })
 
 
 int_prev.addEventListener("click", () => {
-    if(int_pos > 0){
-        int_pos -= 1;
-        checkScrollVisibility(int_prev, int_next, int_pos, intermediateArea.childElementCount);
+    if(int_pos[0] > 0){
+        int_pos[0] -= 1;
+        checkScrollVisibility(int_prev, int_next, int_pos[0], intermediateArea.childElementCount);
         intermediateArea.scroll({
             top : 0,
-            left : intermediateArea.offsetWidth*int_pos,
+            left : intermediateArea.offsetWidth*int_pos[0],
             behavior : 'smooth'
         })
     }
-    LevelResScrollBtn(intermediateArea, int_pos);
 })
 
 int_next.addEventListener("click", () => {
-    if(int_pos < intermediateArea.childElementCount-1){
-        int_pos += 1;
-        checkScrollVisibility(int_prev, int_next, int_pos, intermediateArea.childElementCount);
+    if(int_pos[0] < intermediateArea.childElementCount-1){
+        int_pos[0] += 1;
+        checkScrollVisibility(int_prev, int_next, int_pos[0], intermediateArea.childElementCount);
         intermediateArea.scroll({
             top : 0,
-            left : intermediateArea.offsetWidth*int_pos,
+            left : intermediateArea.offsetWidth*int_pos[0],
             behavior : 'smooth'
         })
     }
-    LevelResScrollBtn(intermediateArea, int_pos);
+    LevelResScrollBtn(intermediateArea, int_pos[0]);
 })
 
 
 exp_prev.addEventListener("click", () => {
-    if(exp_pos > 0){
-        exp_pos -= 1;
-        checkScrollVisibility(exp_prev, exp_next, exp_pos, expertArea.childElementCount);
+    if(exp_pos[0] > 0){
+        exp_pos[0] -= 1;
+        checkScrollVisibility(exp_prev, exp_next, exp_pos[0], expertArea.childElementCount);
         expertArea.scroll({
             top : 0,
-            left : expertArea.offsetWidth*exp_pos,
+            left : expertArea.offsetWidth*exp_pos[0],
             behavior : 'smooth'
         })
     }
-    LevelResScrollBtn(expertArea, exp_pos);
 })
 
 
 exp_next.addEventListener("click", () => {
-    if(exp_pos < expertArea.childElementCount-1){
-        exp_pos += 1;
-        checkScrollVisibility(exp_prev, exp_next, exp_pos, expertArea.childElementCount);
+    if(exp_pos[0] < expertArea.childElementCount-1){
+        exp_pos[0] += 1;
+        checkScrollVisibility(exp_prev, exp_next, exp_pos[0], expertArea.childElementCount);
         expertArea.scroll({
             top : 0,
-            left : expertArea.offsetWidth*exp_pos,
+            left : expertArea.offsetWidth*exp_pos[0],
             behavior : 'smooth'
         })
     }
-    LevelResScrollBtn(expertArea, exp_pos);
+    LevelResScrollBtn(expertArea, exp_pos[0]);
 })
 
 
+
 /* RESOURCES SCROLL BTNS */
+
 function LevelResScrollBtn(level, level_pos){
 
-    if(level_pos < level.childElementCount - 1 || level_pos === 0){
+    if(level_pos < level.childElementCount - 1 || level_pos == 0){
         
         const course_res = level.children[level_pos + 1];
         const course_res_scrollArea = course_res.querySelector('.resource_container');
+        const leftBtn = course_res.querySelector(".prev_btn_res");
+        const rightBtn = course_res.querySelector(".next_btn_res");
 
-        course_res.querySelector('.prev_btn_res').addEventListener('click', () => {
-            console.log(course_res_scrollArea.offsetWidth, course_res_scrollArea.childElementCount);
-            course_res_scrollArea.scroll({
-                top : 0,
-                left : 0,
-                behavior : 'smooth'
-            })
+        if(course_res_scrollArea.childElementCount > 1){
+            rightBtn.style.display = 'block';
+        }
+
+        leftBtn.addEventListener('click', () => {
+            if(level == beginnerArea && beg_pos[level_pos + 1] > 0){
+                beg_pos[level_pos + 1] -= 1;
+                checkScrollVisibility(leftBtn, rightBtn, beg_pos[level_pos + 1], course_res_scrollArea.childElementCount);
+                course_res_scrollArea.scroll({
+                    top : 0,
+                    left : course_res_scrollArea.offsetWidth*beg_pos[level_pos+1],
+                    behavior : 'smooth'
+                })
+            }
+            else if(level == intermediateArea && int_pos[level_pos + 1] > 0){
+                int_pos[level_pos + 1] -= 1;
+                checkScrollVisibility(leftBtn, rightBtn, int_pos[level_pos + 1], course_res_scrollArea.childElementCount);
+                course_res_scrollArea.scroll({
+                    top : 0,
+                    left : course_res_scrollArea.offsetWidth*int_pos[level_pos+1],
+                    behavior : 'smooth'
+                })
+            }
+            else if(exp_pos[level_pos + 1] > 0){
+                exp_pos[level_pos + 1] -= 1;
+                checkScrollVisibility(leftBtn, rightBtn, exp_pos[level_pos + 1], course_res_scrollArea.childElementCount);
+                course_res_scrollArea.scroll({
+                    top : 0,
+                    left : course_res_scrollArea.offsetWidth*exp_pos[level_pos+1],
+                    behavior : 'smooth'
+                })
+            }
         })
-        course_res.querySelector('.next_btn_res').addEventListener('click', () => {
-            console.log(course_res_scrollArea.offsetWidth, course_res_scrollArea.childElementCount);
-            course_res_scrollArea.scroll({
-                top : 0,
-                left : 2999,
-                behavior : 'smooth'
-            })
+        rightBtn.addEventListener('click', () => {
+            if(level == beginnerArea && beg_pos[level_pos + 1] < course_res_scrollArea.childElementCount - 1){
+                beg_pos[level_pos + 1] += 1;
+                checkScrollVisibility(leftBtn, rightBtn, beg_pos[level_pos + 1], course_res_scrollArea.childElementCount);
+                course_res_scrollArea.scroll({
+                    top : 0,
+                    left : course_res_scrollArea.offsetWidth*beg_pos[level_pos + 1],
+                    behavior : 'smooth'
+                })
+            }
+            else if(level == intermediateArea  && int_pos[level_pos + 1] < course_res_scrollArea.childElementCount - 1){
+                int_pos[level_pos + 1] += 1;
+                checkScrollVisibility(leftBtn, rightBtn, int_pos[level_pos + 1], course_res_scrollArea.childElementCount);
+                course_res_scrollArea.scroll({
+                    top : 0,
+                    left : course_res_scrollArea.offsetWidth*int_pos[level_pos + 1],
+                    behavior : 'smooth'
+                })
+            }
+            else if(exp_pos[level_pos + 1] < course_res_scrollArea.childElementCount - 1){
+                exp_pos[level_pos + 1] += 1;
+                checkScrollVisibility(leftBtn, rightBtn, exp_pos[level_pos + 1], course_res_scrollArea.childElementCount);
+                course_res_scrollArea.scroll({
+                    top : 0,
+                    left : course_res_scrollArea.offsetWidth*exp_pos[level_pos + 1],
+                    behavior : 'smooth'
+                })
+            }
         })
     }
 }
 
-LevelResScrollBtn(beginnerArea, beg_pos);
-LevelResScrollBtn(intermediateArea, int_pos);
-LevelResScrollBtn(expertArea, exp_pos);
+LevelResScrollBtn(beginnerArea, beg_pos[0]);
+LevelResScrollBtn(intermediateArea, int_pos[0]);
+LevelResScrollBtn(expertArea, exp_pos[0]);

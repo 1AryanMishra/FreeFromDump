@@ -200,6 +200,7 @@ html{
                             position: relative;
 
                             .prev_btn_res{
+                                display: none;
                                 position: absolute;
                                 z-index: 1;
                                 cursor: pointer;
@@ -245,6 +246,7 @@ html{
                             }
 
                             .next_btn_res{
+                                display: none;
                                 position: absolute;
                                 z-index: 1;
                                 cursor: pointer;

@@ -36,16 +36,10 @@ function description(link, logo, title, desc, prereq){
 }
 
 
-/* To be added in resource_container before description
-
-<iframe class = "demo_player" src="https://www.youtube.com/embed/${course_detail.videoId}?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-*/
-
 function resource_container(course_detail){
     return (
         `<li class = "resource_details">
-            <img class = "demo_player" src = "../images/resources/beginner/css/courses/f.jpg" alt = "course demo player">
+            <iframe class = "demo_player" src="https://www.youtube.com/embed/${course_detail.videoId}?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             ${description(course_detail.channelLink, course_detail.logo, course_detail.title, course_detail.description, course_detail.prerequisites)}
         </li>`
     )

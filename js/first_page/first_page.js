@@ -38,11 +38,8 @@ function description(link, logo, title, desc, prereq){
 }
 
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> firstPage
 function resource_container(course_detail){
     return (
         `<li class = "resource_details">

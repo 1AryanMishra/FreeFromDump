@@ -1,18 +1,20 @@
 import db from '../../database/firestore.js'
-import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
+import { collection, orderBy, limit, doc, getDoc, getDocs, query, startAfter, endAt } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 
 sessionStorage.setItem("isActive", "1");
 
 const SelectedField = JSON.parse(localStorage.getItem('goal'));
 
 
-const fieldData = await getDoc(doc(db, "fields", `${SelectedField}`));
+const goalDoc = doc(db, 'fields', `${SelectedField}`);
+
+
 
 function prerequisites(prereq){
     var prereq_list = `<ul class="prerequisites">Prerequisites : `;
-    prereq.forEach((p) => {
-        prereq_list += `<li>${p}</li>`
-    })
+    for(var i = 0; i<prereq.length; i++){
+        prereq_list += `<li>${prereq[i]}</li>`
+    }
     prereq_list += "</ul>";
     return prereq_list;
 }
@@ -34,6 +36,8 @@ function description(link, logo, title, desc, prereq){
         </section>`
     )
 }
+
+
 
 
 function resource_container(course_detail){
@@ -60,53 +64,97 @@ function remove_whiteSpace(courseName){
 
 
 
-function resources(db){
-    var resource_list = `<li class="resources" id = "${remove_whiteSpace(db.course)}">
-                            <button id="#${remove_whiteSpace(db.course)}_prev" class="prev_btn_res">
-                                <div class="arrow_top_res"></div>
-                                <div class="arrow_bottom_res"></div>
-                            </button>
-
-                            <button id="#${remove_whiteSpace(db.course)}_next" class="next_btn_res">
-                                <div class="arrow_top_res"></div>
-                                <div class="arrow_bottom_res"></div>
-                            </button>`;
-    resource_list += `<h2 class = "resource_name">${db.course}</h2>
-    <section class="resource_container">`;
-    for(var i = 0; i<db.resources.length; i++){
-        resource_list += resource_container(db.resources[i]);
-    }
-    resource_list += "</section></li>";
-    return resource_list;
-}
-
-
-const beginnerArea = document.querySelector("#beginner_level_rendering");
-const intermediateArea = document.querySelector("#intermediate_level_rendering")
-const expertArea = document.querySelector("#expert_level_rendering")
-
-
-const beginnerData = fieldData.data().beginner;
-const intermediateData = fieldData.data().intermediate;
-const expertData = fieldData.data().expert;
+const levelClass = document.querySelectorAll(".resources_area");
 
 
 
 // RENDER LEVEL RESOURCE DATA TO BROWSER
-function renderToLevel(levelArea, levelData){
-    levelData.forEach((d) => {
-        levelArea.innerHTML += `${resources(d)}`;
-    })
+
+
+
+function RenderCourseList(course_name){
+    return( 
+        `<li class="resources">
+            <button class="prev_btn_res">
+                <div class="arrow_top_res"></div>
+                <div class="arrow_bottom_res"></div>
+            </button>
+
+            <button class="next_btn_res">
+                <div class="arrow_top_res"></div>
+                <div class="arrow_bottom_res"></div>
+            </button>
+
+            <h2 class = "resource_name">${course_name}</h2>
+            <section class="resource_container">
+                <li class = "resource_details more_data_resource_details">
+                    <h2 class="fetching_data_text">Loading...</h2>
+                    <div class = "demo_player more_data_demo_player"></div>
+                    <section class="description more_data_description">
+                        <div class="provider more_data_provider">
+                            <div class="provider_logo more_data_provider_logo"></div>
+                            <div class="provider_name more_data_provider_name"><h3></h3></div>
+                        </div>
+                        <p class="some_text more_data_some_text"></p>
+                        <ul class="prerequisites more_data_prerequisites">
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </section>
+                </li>`
+        )
 }
 
-renderToLevel(beginnerArea, beginnerData);
-renderToLevel(intermediateArea, intermediateData);
-renderToLevel(expertArea, expertData);
+
+
+for(var i = 0; i<2; i++){
+    const LevelCollection = collection(goalDoc, `${i}`);
+    var resources_area = levelClass[i];
+    for(var j = 0; j<2; j++){
+        const CourseSection = doc(LevelCollection, `${j}`);
+        const course_name = await getDoc(CourseSection);
+        
+        var resources_area_html = `${RenderCourseList(course_name.data().course)}`;
+
+        for(var k = 0; k<2; k++){
+            const CourseData = await getDoc(query(doc(CourseSection, 'resources', `${k}`)));
+            
+            resources_area_html += `${resource_container(CourseData.data())}`;
+        }
+
+        resources_area_html += "</section></li>";
+        
+        resources_area.innerHTML += resources_area_html;
+    }
+}
+
+
+
+// FOR EXPERT LEVEL AS IT HAS ONLY ONE RESOURCE IN EACH COURSE
+const LevelCollection = collection(goalDoc, `2`);
+var exp_resources_area = levelClass[2]
+for(var j = 0; j<2; j++){
+    const CourseSection = doc(LevelCollection, `${j}`);
+    const course_name = await getDoc(CourseSection);
+    
+    var exp_resources_area_html = `${RenderCourseList(course_name.data().course)}`;
+
+    for(var k = 0; k<1; k++){
+        const CourseData = await getDoc(query(doc(CourseSection, 'resources', `${k}`)));
+        
+        exp_resources_area_html += `${resource_container(CourseData.data())}`;
+    }
+
+    exp_resources_area_html += "</section></li>";
+    
+    exp_resources_area.innerHTML += exp_resources_area_html;
+}
 
 
 
 
-/* --------SCROLL BUTTONS-------  */
+
+// --------SCROLL BUTTONS-------
 
 const beg_prev = document.querySelector("#beg_prev");
 const beg_next = document.querySelector("#beg_next");
@@ -126,21 +174,21 @@ function populatePosArrayForRes(levelArea, levelArr){
     }
 }
 
-populatePosArrayForRes(beginnerArea, beg_pos);
-populatePosArrayForRes(intermediateArea, int_pos);
-populatePosArrayForRes(expertArea, exp_pos);
+populatePosArrayForRes(levelClass[0], beg_pos);
+populatePosArrayForRes(levelClass[1], int_pos);
+populatePosArrayForRes(levelClass[2], exp_pos);
 
 
 
 
 function checkScrollVisibilityOnLoad(){
-    if(beginnerArea.childElementCount > 1){
+    if(levelClass[0].childElementCount > 1){
         beg_next.style.display = 'block'
     }
-    if(intermediateArea.childElementCount > 1){
+    if(levelClass[1].childElementCount > 1){
         int_next.style.display = 'block'
     }
-    if(expertArea.childElementCount > 1){
+    if(levelClass[2].childElementCount > 1){
         exp_next.style.display = 'block'
     }
 }
@@ -170,10 +218,10 @@ function checkScrollVisibility(leftBtn, rightBtn, levelPos, levelAreaElements){
 beg_prev.addEventListener("click", () => {
     if(beg_pos[0] > 0){
         beg_pos[0] -= 1;
-        checkScrollVisibility(beg_prev, beg_next, beg_pos[0], beginnerArea.childElementCount);
-        beginnerArea.scroll({
+        checkScrollVisibility(beg_prev, beg_next, beg_pos[0], levelClass[0].childElementCount);
+        levelClass[0].scroll({
             top : 0,
-            left : beginnerArea.offsetWidth*beg_pos[0],
+            left : levelClass[0].offsetWidth*beg_pos[0],
             behavior : 'smooth'
         })
     }
@@ -181,52 +229,52 @@ beg_prev.addEventListener("click", () => {
 
 
 beg_next.addEventListener("click", () => {
-    if(beg_pos[0] < beginnerArea.childElementCount-1){
+    if(beg_pos[0] < levelClass[0].childElementCount-1){
         beg_pos[0] += 1;
-        checkScrollVisibility(beg_prev, beg_next, beg_pos[0], beginnerArea.childElementCount);
-        beginnerArea.scroll({
+        checkScrollVisibility(beg_prev, beg_next, beg_pos[0], levelClass[0].childElementCount);
+        levelClass[0].scroll({
             top : 0,
-            left : beginnerArea.offsetWidth*beg_pos[0],
+            left : levelClass[0].offsetWidth*beg_pos[0],
             behavior : 'smooth'
         })
     }
-    LevelResScrollBtn(beginnerArea, beg_pos[0]);
+    LevelResScrollBtn(levelClass[0], beg_pos[0]);
 })
 
 
 int_prev.addEventListener("click", () => {
     if(int_pos[0] > 0){
         int_pos[0] -= 1;
-        checkScrollVisibility(int_prev, int_next, int_pos[0], intermediateArea.childElementCount);
-        intermediateArea.scroll({
+        checkScrollVisibility(int_prev, int_next, int_pos[0], levelClass[1].childElementCount);
+        levelClass[1].scroll({
             top : 0,
-            left : intermediateArea.offsetWidth*int_pos[0],
+            left : levelClass[1].offsetWidth*int_pos[0],
             behavior : 'smooth'
         })
     }
 })
 
 int_next.addEventListener("click", () => {
-    if(int_pos[0] < intermediateArea.childElementCount-1){
+    if(int_pos[0] < levelClass[1].childElementCount-1){
         int_pos[0] += 1;
-        checkScrollVisibility(int_prev, int_next, int_pos[0], intermediateArea.childElementCount);
-        intermediateArea.scroll({
+        checkScrollVisibility(int_prev, int_next, int_pos[0], levelClass[1].childElementCount);
+        levelClass[1].scroll({
             top : 0,
-            left : intermediateArea.offsetWidth*int_pos[0],
+            left : levelClass[1].offsetWidth*int_pos[0],
             behavior : 'smooth'
         })
     }
-    LevelResScrollBtn(intermediateArea, int_pos[0]);
+    LevelResScrollBtn(levelClass[1], int_pos[0]);
 })
 
 
 exp_prev.addEventListener("click", () => {
     if(exp_pos[0] > 0){
         exp_pos[0] -= 1;
-        checkScrollVisibility(exp_prev, exp_next, exp_pos[0], expertArea.childElementCount);
-        expertArea.scroll({
+        checkScrollVisibility(exp_prev, exp_next, exp_pos[0], levelClass[2].childElementCount);
+        levelClass[2].scroll({
             top : 0,
-            left : expertArea.offsetWidth*exp_pos[0],
+            left : levelClass[2].offsetWidth*exp_pos[0],
             behavior : 'smooth'
         })
     }
@@ -234,21 +282,21 @@ exp_prev.addEventListener("click", () => {
 
 
 exp_next.addEventListener("click", () => {
-    if(exp_pos[0] < expertArea.childElementCount-1){
+    if(exp_pos[0] < levelClass[2].childElementCount-1){
         exp_pos[0] += 1;
-        checkScrollVisibility(exp_prev, exp_next, exp_pos[0], expertArea.childElementCount);
-        expertArea.scroll({
+        checkScrollVisibility(exp_prev, exp_next, exp_pos[0], levelClass[2].childElementCount);
+        levelClass[2].scroll({
             top : 0,
-            left : expertArea.offsetWidth*exp_pos[0],
+            left : levelClass[2].offsetWidth*exp_pos[0],
             behavior : 'smooth'
         })
     }
-    LevelResScrollBtn(expertArea, exp_pos[0]);
+    LevelResScrollBtn(levelClass[2], exp_pos[0]);
 })
 
 
 
-/* RESOURCES SCROLL BTNS */
+// -------- RESOURCES SCROLL BTNS -------
 
 function LevelResScrollBtn(level, level_pos){
 
@@ -264,7 +312,7 @@ function LevelResScrollBtn(level, level_pos){
         }
 
         leftBtn.addEventListener('click', () => {
-            if(level == beginnerArea && beg_pos[level_pos + 1] > 0){
+            if(level == levelClass[0] && beg_pos[level_pos + 1] > 0){
                 beg_pos[level_pos + 1] -= 1;
                 checkScrollVisibility(leftBtn, rightBtn, beg_pos[level_pos + 1], course_res_scrollArea.childElementCount);
                 course_res_scrollArea.scroll({
@@ -273,7 +321,7 @@ function LevelResScrollBtn(level, level_pos){
                     behavior : 'smooth'
                 })
             }
-            else if(level == intermediateArea && int_pos[level_pos + 1] > 0){
+            else if(level == levelClass[1] && int_pos[level_pos + 1] > 0){
                 int_pos[level_pos + 1] -= 1;
                 checkScrollVisibility(leftBtn, rightBtn, int_pos[level_pos + 1], course_res_scrollArea.childElementCount);
                 course_res_scrollArea.scroll({
@@ -293,7 +341,7 @@ function LevelResScrollBtn(level, level_pos){
             }
         })
         rightBtn.addEventListener('click', () => {
-            if(level == beginnerArea && beg_pos[level_pos + 1] < course_res_scrollArea.childElementCount - 1){
+            if(level == levelClass[0] && beg_pos[level_pos + 1] < course_res_scrollArea.childElementCount - 1){
                 beg_pos[level_pos + 1] += 1;
                 checkScrollVisibility(leftBtn, rightBtn, beg_pos[level_pos + 1], course_res_scrollArea.childElementCount);
                 course_res_scrollArea.scroll({
@@ -302,7 +350,7 @@ function LevelResScrollBtn(level, level_pos){
                     behavior : 'smooth'
                 })
             }
-            else if(level == intermediateArea  && int_pos[level_pos + 1] < course_res_scrollArea.childElementCount - 1){
+            else if(level == levelClass[1]  && int_pos[level_pos + 1] < course_res_scrollArea.childElementCount - 1){
                 int_pos[level_pos + 1] += 1;
                 checkScrollVisibility(leftBtn, rightBtn, int_pos[level_pos + 1], course_res_scrollArea.childElementCount);
                 course_res_scrollArea.scroll({
@@ -324,6 +372,6 @@ function LevelResScrollBtn(level, level_pos){
     }
 }
 
-LevelResScrollBtn(beginnerArea, beg_pos[0]);
-LevelResScrollBtn(intermediateArea, int_pos[0]);
-LevelResScrollBtn(expertArea, exp_pos[0]);
+LevelResScrollBtn(levelClass[0], beg_pos[0]);
+LevelResScrollBtn(levelClass[1], int_pos[0]);
+LevelResScrollBtn(levelClass[2], exp_pos[0]);

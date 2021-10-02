@@ -190,6 +190,10 @@ html{
                                 top: 25%;
                                 left: 31%;
                             }
+
+                            .more_data_resource_container{
+                                overflow-x: hidden;
+                            }
                         }
     
                         .resources{
@@ -315,7 +319,21 @@ html{
                                 display: flex;
                                 justify-content: space-between;
                                 align-items: center;
-                                
+
+                                .more_data_resource_details{
+                                    order: 1;
+                                    position: relative;
+        
+                                    .fetching_data_text{
+                                        border: 2px solid yellowgreen;
+                                        outline: 0;
+                                        padding: 0.5rem;
+                                        position: absolute;
+                                        top: 20%;
+                                        left: 30%;
+                                    }
+                                }
+
                                 .resource_details{
                                     scroll-snap-align: center;
                                     min-width: 100%;
@@ -444,10 +462,6 @@ html{
                                     }
                                 }
                             }
-    
-                            .more_data_resource_container{
-                                overflow-x: hidden;
-                            }
                         }
                     }
                 }
@@ -509,6 +523,14 @@ html{
                                     min-width: 100%;
                                     
                                     .resource_container{
+
+                                        .more_data_resource_details{
+                
+                                            .fetching_data_text{
+                                                top: 40%;
+                                                left: 40%;
+                                            }
+                                        }
                                         
                                         .resource_details{
                                             flex-direction: row;
@@ -551,6 +573,14 @@ html{
                                 .resources{
         
                                     .resource_container{
+                                        
+                                        .more_data_resource_details{
+                
+                                            .fetching_data_text{
+                                                top: 40%;
+                                                left: 44%;
+                                            }
+                                        }
         
                                         .resource_details{
         

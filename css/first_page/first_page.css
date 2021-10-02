@@ -240,6 +240,10 @@ html {
   left: 31%;
 }
 
+.main_container #container #levels .level .for_scroll_btns .resources_area .more_data_resources .more_data_resource_container {
+  overflow-x: hidden;
+}
+
 .main_container #container #levels .level .for_scroll_btns .resources_area .resources {
   -webkit-box-shadow: 0 0 0.5em var(--boxShadow) inset;
           box-shadow: 0 0 0.5em var(--boxShadow) inset;
@@ -382,6 +386,22 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .more_data_resource_details {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  position: relative;
+}
+
+.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .more_data_resource_details .fetching_data_text {
+  border: 2px solid yellowgreen;
+  outline: 0;
+  padding: 0.5rem;
+  position: absolute;
+  top: 20%;
+  left: 30%;
 }
 
 .main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details {
@@ -560,10 +580,6 @@ html {
   background: rgba(0, 0, 255, 0.5);
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .more_data_resource_container {
-  overflow-x: hidden;
-}
-
 .main_container #container #levels .level .start_from_level {
   color: var(--buttonFont);
   font-size: 1em;
@@ -594,6 +610,10 @@ html {
   body .main_container #container #levels .level .for_scroll_btns .resources_area .resources {
     min-width: 100%;
   }
+  body .main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .more_data_resource_details .fetching_data_text {
+    top: 40%;
+    left: 40%;
+  }
   body .main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -619,6 +639,10 @@ html {
     padding: 5rem 10em;
     -webkit-box-shadow: 0 0 5rem var(--MoreDataBoxShadow) inset;
             box-shadow: 0 0 5rem var(--MoreDataBoxShadow) inset;
+  }
+  body .main_container #container #levels #intermediate .for_scroll_btns .resources_area .resources .resource_container .more_data_resource_details .fetching_data_text {
+    top: 40%;
+    left: 44%;
   }
   body .main_container #container #levels #intermediate .for_scroll_btns .resources_area .resources .resource_container .resource_details .demo_player {
     -webkit-box-ordinal-group: 2;

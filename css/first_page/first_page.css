@@ -105,110 +105,11 @@ html {
   padding: 1em;
 }
 
-.main_container #container #levels .level .for_scroll_btns {
-  position: relative;
+.main_container #container #levels .level .resources_area::-webkit-scrollbar {
+  width: 400px;
 }
 
-.main_container #container #levels .level .for_scroll_btns .prev_btn {
-  display: none;
-  z-index: 1;
-  cursor: pointer;
-  -webkit-box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
-          box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
-  background: #909090;
-  opacity: 1;
-  position: absolute;
-  margin-left: 0.5rem;
-  top: 0.5rem;
-  left: 0.5rem;
-  padding: 0.4rem 0;
-  padding-left: 1rem;
-  padding-right: 0.5rem;
-  -webkit-transition: 0.01s ease;
-  transition: 0.01s ease;
-}
-
-.main_container #container #levels .level .for_scroll_btns .prev_btn .arrow_top {
-  border: 0;
-  outline: 0;
-  background: #fff;
-  width: 18px;
-  height: 4.5px;
-  -webkit-transform: rotateZ(-45deg);
-          transform: rotateZ(-45deg);
-}
-
-.main_container #container #levels .level .for_scroll_btns .prev_btn .arrow_bottom {
-  margin-top: 6px;
-  border: 0;
-  outline: 0;
-  background: #fff;
-  width: 18px;
-  height: 4.5px;
-  -webkit-transform: rotateZ(45deg);
-          transform: rotateZ(45deg);
-}
-
-.main_container #container #levels .level .for_scroll_btns .prev_btn:hover .arrow_top, .main_container #container #levels .level .for_scroll_btns .prev_btn:focus .arrow_top {
-  -webkit-transform: translateX(-1rem) rotateZ(-45deg);
-          transform: translateX(-1rem) rotateZ(-45deg);
-}
-
-.main_container #container #levels .level .for_scroll_btns .prev_btn:hover .arrow_bottom, .main_container #container #levels .level .for_scroll_btns .prev_btn:focus .arrow_bottom {
-  -webkit-transform: translateX(-1rem) rotateZ(45deg);
-          transform: translateX(-1rem) rotateZ(45deg);
-}
-
-.main_container #container #levels .level .for_scroll_btns .next_btn {
-  display: none;
-  z-index: 1;
-  cursor: pointer;
-  -webkit-box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
-          box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
-  background: #909090;
-  opacity: 1;
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  padding: 0.4rem 0;
-  padding-right: 1rem;
-  padding-left: 0.5rem;
-  -webkit-transition: 0.01s ease;
-  transition: 0.01s ease;
-}
-
-.main_container #container #levels .level .for_scroll_btns .next_btn .arrow_top {
-  border: 0;
-  outline: 0;
-  background: #fff;
-  width: 18px;
-  height: 4.5px;
-  -webkit-transform: rotateZ(45deg);
-          transform: rotateZ(45deg);
-}
-
-.main_container #container #levels .level .for_scroll_btns .next_btn .arrow_bottom {
-  margin-top: 6px;
-  border: 0;
-  outline: 0;
-  background: #fff;
-  width: 18px;
-  height: 4.5px;
-  -webkit-transform: rotateZ(-45deg);
-          transform: rotateZ(-45deg);
-}
-
-.main_container #container #levels .level .for_scroll_btns .next_btn:hover .arrow_top, .main_container #container #levels .level .for_scroll_btns .next_btn:focus .arrow_top {
-  -webkit-transform: translateX(1rem) rotateZ(45deg);
-          transform: translateX(1rem) rotateZ(45deg);
-}
-
-.main_container #container #levels .level .for_scroll_btns .next_btn:hover .arrow_bottom, .main_container #container #levels .level .for_scroll_btns .next_btn:focus .arrow_bottom {
-  -webkit-transform: translateX(1rem) rotateZ(-45deg);
-          transform: translateX(1rem) rotateZ(-45deg);
-}
-
-.main_container #container #levels .level .for_scroll_btns .resources_area {
+.main_container #container #levels .level .resources_area {
   -webkit-box-shadow: 0 0 1em var(--boxShadow);
           box-shadow: 0 0 1em var(--boxShadow);
   width: 100%;
@@ -219,19 +120,21 @@ html {
       -ms-flex-align: center;
           align-items: center;
   overflow-x: scroll;
-  scrollbar-width: thin;
+  scrollbar-width: 1em;
+  scrollbar-color: var(--themeBg) var(--themeBg);
   -ms-scroll-snap-type: x mandatory;
       scroll-snap-type: x mandatory;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .more_data_resources {
+.main_container #container #levels .level .resources_area .more_data_resources {
+  overflow: hidden;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
   position: relative;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .more_data_resources .fetching_data_text {
+.main_container #container #levels .level .resources_area .more_data_resources .fetching_data_text {
   border: 2px solid yellowgreen;
   outline: 0;
   padding: 0.5rem;
@@ -240,11 +143,11 @@ html {
   left: 31%;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .more_data_resources .more_data_resource_container {
+.main_container #container #levels .level .resources_area .more_data_resources .more_data_resource_container {
   overflow-x: hidden;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources {
+.main_container #container #levels .level .resources_area .resources {
   -webkit-box-shadow: 0 0 0.5em var(--boxShadow) inset;
           box-shadow: 0 0 0.5em var(--boxShadow) inset;
   scroll-snap-align: center;
@@ -253,112 +156,13 @@ html {
   position: relative;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .prev_btn_res {
-  display: none;
-  position: absolute;
-  z-index: 1;
-  cursor: pointer;
-  -webkit-box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
-          box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
-  background: #909090;
-  opacity: 1;
-  margin-left: 0.25rem;
-  bottom: 5%;
-  left: 0;
-  padding: 0.3rem 0;
-  padding-left: 0.75rem;
-  padding-right: 0.375rem;
-  -webkit-transition: 0.01s ease;
-  transition: 0.01s ease;
-}
-
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .prev_btn_res .arrow_top_res {
-  border: 0;
-  outline: 0;
-  background: #fff;
-  width: 13.5px;
-  height: 2.5px;
-  -webkit-transform: rotateZ(-45deg);
-          transform: rotateZ(-45deg);
-}
-
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .prev_btn_res .arrow_bottom_res {
-  margin-top: 4.5px;
-  border: 0;
-  outline: 0;
-  background: #fff;
-  width: 13.5px;
-  height: 2.5px;
-  -webkit-transform: rotateZ(45deg);
-          transform: rotateZ(45deg);
-}
-
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .prev_btn_res:hover .arrow_top_res, .main_container #container #levels .level .for_scroll_btns .resources_area .resources .prev_btn_res:focus .arrow_top_res {
-  -webkit-transform: translateX(-0.5rem) rotateZ(-45deg);
-          transform: translateX(-0.5rem) rotateZ(-45deg);
-}
-
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .prev_btn_res:hover .arrow_bottom_res, .main_container #container #levels .level .for_scroll_btns .resources_area .resources .prev_btn_res:focus .arrow_bottom_res {
-  -webkit-transform: translateX(-0.5rem) rotateZ(45deg);
-          transform: translateX(-0.5rem) rotateZ(45deg);
-}
-
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .next_btn_res {
-  display: none;
-  position: absolute;
-  z-index: 1;
-  cursor: pointer;
-  -webkit-box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
-          box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
-  background: #909090;
-  opacity: 1;
-  bottom: 5%;
-  right: 0;
-  padding: 0.3rem 0;
-  padding-right: 0.75rem;
-  padding-left: 0.375rem;
-  -webkit-transition: 0.01s ease;
-  transition: 0.01s ease;
-}
-
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .next_btn_res .arrow_top_res {
-  border: 0;
-  outline: 0;
-  background: #fff;
-  width: 13.5px;
-  height: 2.5px;
-  -webkit-transform: rotateZ(45deg);
-          transform: rotateZ(45deg);
-}
-
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .next_btn_res .arrow_bottom_res {
-  margin-top: 4.5px;
-  border: 0;
-  outline: 0;
-  background: #fff;
-  width: 13.5px;
-  height: 2.5px;
-  -webkit-transform: rotateZ(-45deg);
-          transform: rotateZ(-45deg);
-}
-
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .next_btn_res:hover .arrow_top_res, .main_container #container #levels .level .for_scroll_btns .resources_area .resources .next_btn_res:focus .arrow_top_res {
-  -webkit-transform: translateX(0.75rem) rotateZ(45deg);
-          transform: translateX(0.75rem) rotateZ(45deg);
-}
-
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .next_btn_res:hover .arrow_bottom_res, .main_container #container #levels .level .for_scroll_btns .resources_area .resources .next_btn_res:focus .arrow_bottom_res {
-  -webkit-transform: translateX(0.75rem) rotateZ(-45deg);
-          transform: translateX(0.75rem) rotateZ(-45deg);
-}
-
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_name {
+.main_container #container #levels .level .resources_area .resources .resource_name {
   text-align: center;
   font-size: 1.5rem;
   margin: 0.5rem 0;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .more_data_resource_name {
+.main_container #container #levels .level .resources_area .resources .more_data_resource_name {
   margin: 0.65rem auto;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
@@ -368,13 +172,12 @@ html {
           box-shadow: 0 0 1.5rem var(--MoreDataBoxShadow) inset;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container {
+.main_container #container #levels .level .resources_area .resources .resource_container {
   -webkit-box-shadow: 0 0 1em var(--boxShadow);
           box-shadow: 0 0 1em var(--boxShadow);
-  border-right: 2px solid var(--boxShadow);
   overflow: hidden;
   overflow-x: scroll;
-  scrollbar-width: thin;
+  scrollbar-width: auto;
   -ms-scroll-snap-type: x mandatory;
       scroll-snap-type: x mandatory;
   display: -webkit-box;
@@ -388,14 +191,15 @@ html {
           align-items: center;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .more_data_resource_details {
+.main_container #container #levels .level .resources_area .resources .resource_container .more_data_resource_details {
+  overflow: hidden;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
   position: relative;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .more_data_resource_details .fetching_data_text {
+.main_container #container #levels .level .resources_area .resources .resource_container .more_data_resource_details .fetching_data_text {
   border: 2px solid yellowgreen;
   outline: 0;
   padding: 0.5rem;
@@ -404,7 +208,7 @@ html {
   left: 30%;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details {
   scroll-snap-align: center;
   min-width: 100%;
   display: -webkit-box;
@@ -417,18 +221,18 @@ html {
   margin: auto 0.5em;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .demo_player {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .demo_player {
   width: 100%;
   min-height: 56%;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .more_data_demo_player {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .more_data_demo_player {
   -webkit-box-shadow: 0 0 7em var(--MoreDataBoxShadow) inset;
           box-shadow: 0 0 7em var(--MoreDataBoxShadow) inset;
   padding: 5em 0;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .description {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description {
   margin: 0.5em 1em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -439,7 +243,7 @@ html {
           flex-direction: column;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .description .provider {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .provider {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -451,16 +255,16 @@ html {
       justify-content: space-around;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .description .provider .provider_logo {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .provider .provider_logo {
   max-width: 15%;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .description .provider .provider_logo img {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .provider .provider_logo img {
   border-radius: 100%;
   max-width: 100%;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .description .provider .more_data_provider_logo {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .provider .more_data_provider_logo {
   border-radius: 100%;
   margin: auto;
   max-width: -webkit-fit-content;
@@ -471,7 +275,7 @@ html {
           box-shadow: 0 0 1.25rem var(--MoreDataBoxShadow) inset;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .description .provider .provider_name {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .provider .provider_name {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -481,7 +285,7 @@ html {
   font-size: 1.3rem;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .description .provider .more_data_provider_name {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .provider .more_data_provider_name {
   margin: 0.65rem auto;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
@@ -491,13 +295,13 @@ html {
           box-shadow: 0 0 1rem var(--MoreDataBoxShadow) inset;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .description .some_text {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .some_text {
   color: #909090;
   padding: 1rem 0;
   font-size: 1rem;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .description .more_data_some_text {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .more_data_some_text {
   margin: 0.5rem auto;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
@@ -507,7 +311,7 @@ html {
           box-shadow: 0 0 4rem var(--MoreDataBoxShadow) inset;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .description .prerequisites {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .prerequisites {
   font-size: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -520,11 +324,11 @@ html {
       flex-wrap: wrap;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .description .prerequisites li {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .prerequisites li {
   margin: auto;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .description .more_data_prerequisites {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .more_data_prerequisites {
   margin: 0 auto;
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
@@ -534,7 +338,7 @@ html {
           box-shadow: 0 0 1.7rem var(--MoreDataBoxShadow) inset;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .description .course_action {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action {
   margin-top: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -543,7 +347,7 @@ html {
       justify-content: space-around;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .description .course_action .is_fav {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action .is_fav {
   border-radius: 100%;
   color: var(--buttonFont);
   font-size: 1em;
@@ -556,13 +360,13 @@ html {
   transition: 0.2s ease;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .description .course_action .is_fav:focus, .main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .description .course_action .is_fav:hover {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action .is_fav:focus, .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action .is_fav:hover {
   -webkit-box-shadow: 0 0 1em 0 red;
           box-shadow: 0 0 1em 0 red;
   background: rgba(255, 0, 0, 0.8);
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .description .course_action .add_to_list {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action .add_to_list {
   color: var(--buttonFont);
   font-size: 1.1rem;
   -webkit-box-shadow: 0 0 1em 0 var(--buttonBoxShadow) inset;
@@ -574,7 +378,7 @@ html {
   transition: 0.2s ease;
 }
 
-.main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .description .course_action .add_to_list:focus, .main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .description .course_action .add_to_list:hover {
+.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action .add_to_list:focus, .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action .add_to_list:hover {
   -webkit-box-shadow: 0 0 1em 0 rgba(0, 0, 255, 0.5);
           box-shadow: 0 0 1em 0 rgba(0, 0, 255, 0.5);
   background: rgba(0, 0, 255, 0.5);
@@ -603,48 +407,48 @@ html {
 }
 
 @media (min-width: 900px) {
-  body .main_container #container #levels .level .for_scroll_btns .resources_area .more_data_resources .fetching_data_text {
+  body .main_container #container #levels .level .resources_area .more_data_resources .fetching_data_text {
     top: 50%;
     left: 44%;
   }
-  body .main_container #container #levels .level .for_scroll_btns .resources_area .resources {
+  body .main_container #container #levels .level .resources_area .resources {
     min-width: 100%;
   }
-  body .main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .more_data_resource_details .fetching_data_text {
+  body .main_container #container #levels .level .resources_area .resources .resource_container .more_data_resource_details .fetching_data_text {
     top: 40%;
     left: 40%;
   }
-  body .main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details {
+  body .main_container #container #levels .level .resources_area .resources .resource_container .resource_details {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
     min-width: 100%;
   }
-  body .main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .demo_player {
+  body .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .demo_player {
     width: 64%;
     min-height: 36%;
   }
-  body .main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .more_data_demo_player {
+  body .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .more_data_demo_player {
     -webkit-box-shadow: 0 0 10em var(--MoreDataBoxShadow) inset;
             box-shadow: 0 0 10em var(--MoreDataBoxShadow) inset;
     margin: auto;
     max-width: 60%;
     padding: 10em 0;
   }
-  body .main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .more_data_description {
+  body .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .more_data_description {
     margin: 1rem auto;
   }
-  body .main_container #container #levels .level .for_scroll_btns .resources_area .resources .resource_container .resource_details .more_data_description .more_data_some_text {
+  body .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .more_data_description .more_data_some_text {
     padding: 5rem 10em;
     -webkit-box-shadow: 0 0 5rem var(--MoreDataBoxShadow) inset;
             box-shadow: 0 0 5rem var(--MoreDataBoxShadow) inset;
   }
-  body .main_container #container #levels #intermediate .for_scroll_btns .resources_area .resources .resource_container .more_data_resource_details .fetching_data_text {
+  body .main_container #container #levels #intermediate .resources_area .resources .resource_container .more_data_resource_details .fetching_data_text {
     top: 40%;
     left: 44%;
   }
-  body .main_container #container #levels #intermediate .for_scroll_btns .resources_area .resources .resource_container .resource_details .demo_player {
+  body .main_container #container #levels #intermediate .resources_area .resources .resource_container .resource_details .demo_player {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;

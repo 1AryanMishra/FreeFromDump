@@ -75,389 +75,203 @@ html{
                     padding: 1em;
                 }
 
-                .for_scroll_btns{
-                    position: relative;
+                .resources_area{
+                    box-shadow: 0 0 1em var(--boxShadow);
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    overflow-x: scroll;
+                    scrollbar-width: 1em;
+                    scrollbar-color: var(--themeBg) var(--themeBg);
+                    scroll-snap-type: x mandatory;
 
-                    .prev_btn{
-                        display: none;
-                        z-index: 1;
-                        cursor: pointer;
-                        box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
-                        background: #909090;
-                        opacity: 1;
-                        position: absolute;
-                        margin-left: 0.5rem;
-                        top: 0.5rem;
-                        left: 0.5rem;
-                        padding: 0.4rem 0;
-                        padding-left: 1rem;
-                        padding-right: 0.5rem;
-                        transition: 0.01s ease;
+                    .more_data_resources{
+                        overflow: hidden;
+                        order: 1;
+                        position: relative;
 
-                        .arrow_top{
-                            border: 0;
+                        .fetching_data_text{
+                            border: 2px solid yellowgreen;
                             outline: 0;
-                            background: #fff;
-                            width: 18px;
-                            height: 4.5px;
-                            transform: rotateZ(-45deg);
+                            padding: 0.5rem;
+                            position: absolute;
+                            top: 25%;
+                            left: 31%;
                         }
-                        
-                        .arrow_bottom{
-                            margin-top: 6px;
-                            border: 0;
-                            outline: 0;
-                            background: #fff;
-                            width: 18px;
-                            height: 4.5px;
-                            transform: rotateZ(45deg);
+
+                        .more_data_resource_container{
+                            overflow-x: hidden;
                         }
                     }
 
-                    .prev_btn:hover, .prev_btn:focus{
-                        
-                        .arrow_top{
-                            transform: translateX(-1rem) rotateZ(-45deg);
-                        } 
-                        .arrow_bottom{
-                            transform: translateX(-1rem) rotateZ(45deg);
+                    .resources{
+                        box-shadow: 0 0 0.5em var(--boxShadow) inset;
+                        scroll-snap-align: center;
+                        margin: 0 0.5em;
+                        min-width: 100%;
+                        position: relative;
+
+                        .resource_name{
+                            text-align: center;
+                            font-size: 1.5rem;
+                            margin: 0.5rem 0;
                         }
-                    }
 
-                    .next_btn{
-                        display: none;
-                        z-index: 1;
-                        cursor: pointer;
-                        box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
-                        background: #909090;
-                        opacity: 1;
-                        position: absolute;
-                        top: 0.5rem;
-                        right: 0.5rem;
-                        padding: 0.4rem 0;
-                        padding-right: 1rem;
-                        padding-left: 0.5rem;
-                        transition: 0.01s ease;
-
-                        .arrow_top{
-                            border: 0;
-                            outline: 0;
-                            background: #fff;
-                            width: 18px;
-                            height: 4.5px;
-                            transform: rotateZ(45deg);
+                        .more_data_resource_name{
+                            margin: 0.65rem auto;
+                            max-width: fit-content;
+                            padding: 1rem 5rem;
+                            box-shadow: 0 0 1.5rem var(--MoreDataBoxShadow) inset;
                         }
-                        
-                        .arrow_bottom{
-                            margin-top: 6px;
-                            border: 0;
-                            outline: 0;
-                            background: #fff;
-                            width: 18px;
-                            height: 4.5px;
-                            transform: rotateZ(-45deg);
-                        }
-                    }
 
-                    .next_btn:hover, .next_btn:focus{
-                        
-                        .arrow_top{
-                            transform: translateX(1rem) rotateZ(45deg);
-                        } 
-                        .arrow_bottom{
-                            transform: translateX(1rem) rotateZ(-45deg);
-                        }
-                    }
-                    
-                    .resources_area{
-                        box-shadow: 0 0 1em var(--boxShadow);
-                        width: 100%;
-                        display: flex;
-                        align-items: center;
-                        overflow-x: scroll;
-                        scrollbar-width: thin;
-                        scroll-snap-type: x mandatory;
-    
-                        .more_data_resources{
-                            order: 1;
-                            position: relative;
-    
-                            .fetching_data_text{
-                                border: 2px solid yellowgreen;
-                                outline: 0;
-                                padding: 0.5rem;
-                                position: absolute;
-                                top: 25%;
-                                left: 31%;
-                            }
+                        .resource_container{
+                            box-shadow: 0 0 1em var(--boxShadow);
+                            overflow: hidden;
+                            overflow-x: scroll;
+                            scrollbar-width: auto;
+                            scroll-snap-type: x mandatory;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
 
-                            .more_data_resource_container{
-                                overflow-x: hidden;
-                            }
-                        }
-    
-                        .resources{
-                            box-shadow: 0 0 0.5em var(--boxShadow) inset;
-                            scroll-snap-align: center;
-                            margin: 0 0.5em;
-                            min-width: 100%;
-                            position: relative;
-
-                            .prev_btn_res{
-                                display: none;
-                                position: absolute;
-                                z-index: 1;
-                                cursor: pointer;
-                                box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
-                                background: #909090;
-                                opacity: 1;
-                                margin-left: 0.25rem;
-                                bottom : 5%;
-                                left: 0;
-                                padding: 0.3rem 0;
-                                padding-left: 0.75rem;
-                                padding-right: 0.375rem;
-                                transition: 0.01s ease;
-        
-                                .arrow_top_res{
-                                    border: 0;
-                                    outline: 0;
-                                    background: #fff;
-                                    width: 13.5px;
-                                    height: 2.5px;
-                                    transform: rotateZ(-45deg);
-                                }
-                                
-                                .arrow_bottom_res{
-                                    margin-top: 4.5px;
-                                    border: 0;
-                                    outline: 0;
-                                    background: #fff;
-                                    width: 13.5px;
-                                    height: 2.5px;
-                                    transform: rotateZ(45deg);
-                                }
-                            }
-
-                            .prev_btn_res:hover, .prev_btn_res:focus{
-                        
-                                .arrow_top_res{
-                                    transform: translateX(-0.5rem) rotateZ(-45deg);
-                                } 
-                                .arrow_bottom_res{
-                                    transform: translateX(-0.5rem) rotateZ(45deg);
-                                }
-                            }
-
-                            .next_btn_res{
-                                display: none;
-                                position: absolute;
-                                z-index: 1;
-                                cursor: pointer;
-                                box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
-                                background: #909090;
-                                opacity: 1;
-                                bottom : 5%;
-                                right: 0;
-                                padding: 0.3rem 0;
-                                padding-right: 0.75rem;
-                                padding-left: 0.375rem;
-                                transition: 0.01s ease;
-        
-                                .arrow_top_res{
-                                    border: 0;
-                                    outline: 0;
-                                    background: #fff;
-                                    width: 13.5px;
-                                    height: 2.5px;
-                                    transform: rotateZ(45deg);
-                                }
-                                
-                                .arrow_bottom_res{
-                                    margin-top: 4.5px;
-                                    border: 0;
-                                    outline: 0;
-                                    background: #fff;
-                                    width: 13.5px;
-                                    height: 2.5px;
-                                    transform: rotateZ(-45deg);
-                                }
-                            }
-
-                            .next_btn_res:hover, .next_btn_res:focus{
-                        
-                                .arrow_top_res{
-                                    transform: translateX(0.75rem) rotateZ(45deg);
-                                } 
-                                .arrow_bottom_res{
-                                    transform: translateX(0.75rem) rotateZ(-45deg);
-                                }
-                            }
-    
-                            .resource_name{
-                                text-align: center;
-                                font-size: 1.5rem;
-                                margin: 0.5rem 0;
-                            }
-    
-                            .more_data_resource_name{
-                                margin: 0.65rem auto;
-                                max-width: fit-content;
-                                padding: 1rem 5rem;
-                                box-shadow: 0 0 1.5rem var(--MoreDataBoxShadow) inset;
-                            }
-    
-                            
-        
-                            .resource_container{
-                                box-shadow: 0 0 1em var(--boxShadow);
-                                border-right: 2px solid var(--boxShadow);
+                            .more_data_resource_details{
                                 overflow: hidden;
-                                overflow-x: scroll;
-                                scrollbar-width: thin;
-                                scroll-snap-type: x mandatory;
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
+                                order: 1;
+                                position: relative;
+    
+                                .fetching_data_text{
+                                    border: 2px solid yellowgreen;
+                                    outline: 0;
+                                    padding: 0.5rem;
+                                    position: absolute;
+                                    top: 20%;
+                                    left: 30%;
+                                }
+                            }
 
-                                .more_data_resource_details{
-                                    order: 1;
-                                    position: relative;
-        
-                                    .fetching_data_text{
-                                        border: 2px solid yellowgreen;
-                                        outline: 0;
-                                        padding: 0.5rem;
-                                        position: absolute;
-                                        top: 20%;
-                                        left: 30%;
-                                    }
+                            .resource_details{
+                                scroll-snap-align: center;
+                                min-width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                margin: auto 0.5em;
+
+                                .demo_player{
+                                    width: 100%;
+                                    min-height: 56%;
                                 }
 
-                                .resource_details{
-                                    scroll-snap-align: center;
-                                    min-width: 100%;
+                                .more_data_demo_player{
+                                    box-shadow: 0 0 7em var(--MoreDataBoxShadow) inset;
+                                    padding: 5em 0;
+                                }
+
+                                .description{
+                                    margin:  0.5em 1em;
                                     display: flex;
                                     flex-direction: column;
-                                    margin: auto 0.5em;
-    
-                                    .demo_player{
-                                        width: 100%;
-                                        min-height: 56%;
-                                    }
-    
-                                    .more_data_demo_player{
-                                        box-shadow: 0 0 7em var(--MoreDataBoxShadow) inset;
-                                        padding: 5em 0;
-                                    }
-    
-                                    .description{
-                                        margin:  0.5em 1em;
+        
+                                    .provider{
                                         display: flex;
-                                        flex-direction: column;
-            
-                                        .provider{
-                                            display: flex;
-                                            flex-direction: row;
-                                            justify-content: space-around;
+                                        flex-direction: row;
+                                        justify-content: space-around;
+                                        
+                                        .provider_logo{
+                                            max-width: 15%;
                                             
-                                            .provider_logo{
-                                                max-width: 15%;
-                                                
-                                                img{
-                                                    border-radius: 100%;
-                                                    max-width: 100%;
-                                                }
-                                            }
-    
-                                            .more_data_provider_logo{
+                                            img{
                                                 border-radius: 100%;
-                                                margin: auto;
-                                                max-width: fit-content;
-                                                padding: 1.25rem;
-                                                box-shadow: 0 0 1.25rem var(--MoreDataBoxShadow) inset;
-                                            }
-            
-                                            .provider_name{
-                                                display: flex;
-                                                align-items: center;
-                                                font-size: 1.3rem;
-                                            }
-    
-                                            .more_data_provider_name{
-                                                margin: 0.65rem auto;
-                                                max-width: fit-content;
-                                                padding: 0.65rem 5rem;
-                                                box-shadow: 0 0 1rem var(--MoreDataBoxShadow) inset;
+                                                max-width: 100%;
                                             }
                                         }
-            
-                                        .some_text{
-                                            color: #909090;
-                                            padding: 1rem 0;
-                                            font-size: 1rem;
-                                        }
-    
-                                        .more_data_some_text{
-                                            margin: 0.5rem auto;
+
+                                        .more_data_provider_logo{
+                                            border-radius: 100%;
+                                            margin: auto;
                                             max-width: fit-content;
-                                            padding: 3rem 9rem;
-                                            box-shadow: 0 0 4rem var(--MoreDataBoxShadow) inset;
+                                            padding: 1.25rem;
+                                            box-shadow: 0 0 1.25rem var(--MoreDataBoxShadow) inset;
                                         }
-            
-                                        .prerequisites{
-                                            font-size: 1rem;
+        
+                                        .provider_name{
                                             display: flex;
-                                            flex-direction: row;
-                                            flex-wrap: wrap;
-            
-                                            li{
-                                                margin: auto;
-                                            }
+                                            align-items: center;
+                                            font-size: 1.3rem;
                                         }
-    
-                                        .more_data_prerequisites{
-                                            margin: 0 auto;
+
+                                        .more_data_provider_name{
+                                            margin: 0.65rem auto;
                                             max-width: fit-content;
-                                            padding: 1.2rem 6rem;
-                                            box-shadow: 0 0 1.7rem var(--MoreDataBoxShadow) inset;
+                                            padding: 0.65rem 5rem;
+                                            box-shadow: 0 0 1rem var(--MoreDataBoxShadow) inset;
                                         }
-    
-                                        .course_action{
-                                            margin-top: 1em;
-                                            display: flex;
-                                            justify-content: space-around;
-    
-                                            .is_fav{
-                                                border-radius: 100%;
-                                                color: var(--buttonFont);
-                                                font-size: 1em;
-                                                box-shadow: 0 0 1em 0 var(--buttonBoxShadow) inset;
-                                                padding: 0.5rem 1rem;
-                                                background: #909090;
-                                                text-align: center;
-                                                transition: 0.2s ease;
-                                            }
-    
-                                            .is_fav:focus, .is_fav:hover{
-                                                box-shadow: 0 0 1em 0 rgba($color: red, $alpha: 1);
-                                                background: rgba($color: red, $alpha: 0.8);
-                                            }
-    
-                                            .add_to_list{
-                                                color: var(--buttonFont);
-                                                font-size: 1.1rem;
-                                                box-shadow: 0 0 1em 0 var(--buttonBoxShadow) inset;
-                                                padding: 0.5rem 1rem;
-                                                background: #909090;
-                                                text-align: center;
-                                                transition: 0.2s ease;
-                                            }
-    
-                                            .add_to_list:focus, .add_to_list:hover{
-                                                box-shadow: 0 0 1em 0 rgba($color: blue, $alpha: 0.5);
-                                                background: rgba($color: blue, $alpha: 0.5);
-                                            }
+                                    }
+        
+                                    .some_text{
+                                        color: #909090;
+                                        padding: 1rem 0;
+                                        font-size: 1rem;
+                                    }
+
+                                    .more_data_some_text{
+                                        margin: 0.5rem auto;
+                                        max-width: fit-content;
+                                        padding: 3rem 9rem;
+                                        box-shadow: 0 0 4rem var(--MoreDataBoxShadow) inset;
+                                    }
+        
+                                    .prerequisites{
+                                        font-size: 1rem;
+                                        display: flex;
+                                        flex-direction: row;
+                                        flex-wrap: wrap;
+        
+                                        li{
+                                            margin: auto;
+                                        }
+                                    }
+
+                                    .more_data_prerequisites{
+                                        margin: 0 auto;
+                                        max-width: fit-content;
+                                        padding: 1.2rem 6rem;
+                                        box-shadow: 0 0 1.7rem var(--MoreDataBoxShadow) inset;
+                                    }
+
+                                    .course_action{
+                                        margin-top: 1em;
+                                        display: flex;
+                                        justify-content: space-around;
+
+                                        .is_fav{
+                                            border-radius: 100%;
+                                            color: var(--buttonFont);
+                                            font-size: 1em;
+                                            box-shadow: 0 0 1em 0 var(--buttonBoxShadow) inset;
+                                            padding: 0.5rem 1rem;
+                                            background: #909090;
+                                            text-align: center;
+                                            transition: 0.2s ease;
+                                        }
+
+                                        .is_fav:focus, .is_fav:hover{
+                                            box-shadow: 0 0 1em 0 rgba($color: red, $alpha: 1);
+                                            background: rgba($color: red, $alpha: 0.8);
+                                        }
+
+                                        .add_to_list{
+                                            color: var(--buttonFont);
+                                            font-size: 1.1rem;
+                                            box-shadow: 0 0 1em 0 var(--buttonBoxShadow) inset;
+                                            padding: 0.5rem 1rem;
+                                            background: #909090;
+                                            text-align: center;
+                                            transition: 0.2s ease;
+                                        }
+
+                                        .add_to_list:focus, .add_to_list:hover{
+                                            box-shadow: 0 0 1em 0 rgba($color: blue, $alpha: 0.5);
+                                            background: rgba($color: blue, $alpha: 0.5);
                                         }
                                     }
                                 }
@@ -507,86 +321,78 @@ html{
 
                     .level{
 
-                        .for_scroll_btns{
+                        .resources_area{
 
-                            .resources_area{
-    
-                                .more_data_resources{
-    
-                                    .fetching_data_text{
-                                        top: 50%;
-                                        left: 44%;
-                                    }
+                            .more_data_resources{
+
+                                .fetching_data_text{
+                                    top: 50%;
+                                    left: 44%;
                                 }
+                            }
+                            
+                            .resources{
+                                min-width: 100%;
                                 
-                                .resources{
-                                    min-width: 100%;
-                                    
-                                    .resource_container{
+                                .resource_container{
 
-                                        .more_data_resource_details{
-                
-                                            .fetching_data_text{
-                                                top: 40%;
-                                                left: 40%;
-                                            }
+                                    .more_data_resource_details{
+            
+                                        .fetching_data_text{
+                                            top: 40%;
+                                            left: 40%;
                                         }
+                                    }
+                                    
+                                    .resource_details{
+                                        flex-direction: row;
+                                        min-width: 100%;
                                         
-                                        .resource_details{
-                                            flex-direction: row;
-                                            min-width: 100%;
-                                            
-                                            .demo_player{
-                                                width: 64%;
-                                                min-height: 36%;
-                                            }
-    
-                                            .more_data_demo_player{
-                                                box-shadow: 0 0 10em var(--MoreDataBoxShadow) inset;
-                                                margin: auto;
-                                                max-width: 60%;
-                                                padding: 10em 0;
-                                            }
-    
-                                            .more_data_description{
-                                                margin: 1rem auto;
-    
-                                                .more_data_some_text{
-                                                    padding: 5rem 10em;
-                                                    box-shadow: 0 0 5rem var(--MoreDataBoxShadow) inset;
-                                                }
+                                        .demo_player{
+                                            width: 64%;
+                                            min-height: 36%;
+                                        }
+
+                                        .more_data_demo_player{
+                                            box-shadow: 0 0 10em var(--MoreDataBoxShadow) inset;
+                                            margin: auto;
+                                            max-width: 60%;
+                                            padding: 10em 0;
+                                        }
+
+                                        .more_data_description{
+                                            margin: 1rem auto;
+
+                                            .more_data_some_text{
+                                                padding: 5rem 10em;
+                                                box-shadow: 0 0 5rem var(--MoreDataBoxShadow) inset;
                                             }
                                         }
                                     }
                                 }
                             }
                         }
-
                     }
 
                     #intermediate{
-                        
-                        .for_scroll_btns{
+                        .resources_area{
 
-                            .resources_area{
-
-                                .resources{
-        
-                                    .resource_container{
-                                        
-                                        .more_data_resource_details{
-                
-                                            .fetching_data_text{
-                                                top: 40%;
-                                                left: 44%;
-                                            }
+                            .resources{
+    
+                                .resource_container{
+                                    
+                                    .more_data_resource_details{
+            
+                                        .fetching_data_text{
+                                            top: 40%;
+                                            left: 44%;
                                         }
-        
-                                        .resource_details{
-        
-                                            .demo_player{
-                                                order: 1;
-                                            }
+                                    }
+    
+                                    .resource_details{
+    
+                                        .demo_player{
+                                            order: 1;
                                         }
                                     }
                                 }

@@ -89,8 +89,9 @@ async function renderCourse(CourseName, level, LevelCollection, i){
 
     CourseData.forEach((d) => {
         const course = d.data();
-        res_area_html += `<li class = "resource_details">`;
-        //<iframe class = "demo_player" src="https://www.youtube.com/embed/${course.videoId}?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        res_area_html += `<li class = "resource_details">
+        <iframe class = "demo_player" src="https://www.youtube.com/embed/${course.videoId}?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        `;
     
         res_area_html += description(course.channelLink, course.logo, course.title, course.description, course.prerequisites);
     
@@ -114,17 +115,6 @@ async function renderLevel(level, i){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* ------- Rendering Levels ------- */
 
 const levelClass = document.querySelectorAll(".resources_area");
@@ -132,9 +122,6 @@ const levelClass = document.querySelectorAll(".resources_area");
 renderLevel(levelClass[0], 0);
 renderLevel(levelClass[1], 1);
 renderLevel(levelClass[2], 2);
-
-
-
 
 
 

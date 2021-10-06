@@ -1,5 +1,5 @@
 import db from '../../database/firestore.js'
-import { collection, limit, doc, getDoc, orderBy, getDocs, query, startAfter } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
+import { collection, limit, doc, getDoc, orderBy, getDocs, query, startAt } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 
 sessionStorage.setItem("isActive", "1");
 
@@ -61,7 +61,7 @@ function RenderCourseList(course_name){
         `<li class="resources">
 
             <h2 class = "resource_name">${course_name}</h2>
-            <section class="resource_container">
+            <section class="resource_container" id="${remove_whiteSpace(course_name)}">
                 <li class = "resource_details more_data_resource_details">
                     <h2 class="fetching_data_text">Loading...</h2>
                     <div class = "demo_player more_data_demo_player"></div>
@@ -98,6 +98,12 @@ async function renderCourse(CourseName, level, LevelCollection, i){
     })
     res_area_html += "</section></li>";
     level.innerHTML += res_area_html;
+    const res_scroll = level.querySelector(`#${remove_whiteSpace(CourseName)}`);
+    res_scroll.addEventListener('scroll', () => {
+        if(res_scroll.scrollLeft == (res_scroll.scrollWidth - res_scroll.offsetWidth)){
+            PaginateCourse(level, CourseName);
+        }
+    })
 }
 
 
@@ -106,9 +112,10 @@ async function renderLevel(level, i){
     const LevelCollection = collection(goalDoc, `${i}`);
     const CourseQ = query(LevelCollection, limit(2));
     const course_name = await getDocs(CourseQ);
+    var it = 0;
     course_name.forEach((f) => {
-        var it = 0;
         renderCourse(f.data().course, level, LevelCollection, it);
+        it++;
     })
 }
 
@@ -138,19 +145,47 @@ renderLevel(levelClass[2], 2);
 
 
 
-
 /* ------- PAGINATION FUNCTION -------  */
+
+async function PaginateLevel(i){
+    const docRef = levelClass[i].childElementCount - 1;
+    const LevelCollection = collection(goalDoc, `${i}`);
+    
+    const StartDoc = getDoc(query(doc(LevelCollection, `${docRef}`)));
+    StartDoc.then(async (response) => {
+        const newData = await getDocs(query(LevelCollection, startAt(response), limit(2)));
+        var it = 0;
+        newData.forEach((f) => {
+            renderCourse(f.data().course, levelClass[i], LevelCollection, it);
+            it++;
+        })
+        if(it < 2){
+            levelClass[i].querySelector(".fetching_data_text").textContent = "No more data";
+        }
+    }).catch((err) => {
+        levelClass[i].querySelector(".fetching_data_text").textContent = "No more data";
+    })
+}
 
 
 function PaginationCheck(level, i){
     level.addEventListener('scroll', () => {
         if(level.scrollLeft == (level.scrollWidth - level.offsetWidth)){
-            renderLevel(level, i);
+            PaginateLevel(i);
         }
     })
 }
 
+var levelCounter = 0;
+levelClass.forEach((level) => {
+    PaginationCheck(level, levelCounter);
+    levelCounter++;
+})
 
-for(var i = 0; i<3; i++){
-    PaginationCheck(levelClass[i], i);
+
+function PaginateCourse(level, courseName){
+    //const CourseRef = query(collection(goalDoc, `${i}`), where("course", "=", `${courseName}`));
+    //const StartAtCourse = level.querySelector(`#${courseName}`);
+    //console.log(StartAtCourse.id);
+    console.log("In Scroll for ", courseName);
 }

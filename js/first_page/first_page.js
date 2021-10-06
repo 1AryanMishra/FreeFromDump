@@ -1,5 +1,5 @@
 import db from '../../database/firestore.js'
-import { collection, limit, doc, getDoc, orderBy, getDocs, query, startAt } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
+import { collection, limit, doc, getDoc, orderBy, getDocs, query, startAfter, startAt } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 
 sessionStorage.setItem("isActive", "1");
 
@@ -63,7 +63,7 @@ function RenderCourseList(course_name){
             <h2 class = "resource_name">${course_name}</h2>
             <section class="resource_container" id="${remove_whiteSpace(course_name)}">
                 <li class = "resource_details more_data_resource_details">
-                    <h2 class="fetching_data_text">Loading...</h2>
+                    <h2 class="fetching_data_text">No More Data</h2>
                     <div class = "demo_player more_data_demo_player"></div>
                     <section class="description more_data_description">
                         <div class="provider more_data_provider">
@@ -81,32 +81,30 @@ function RenderCourseList(course_name){
 }
 
 
-async function renderCourse(CourseName, level, LevelCollection, i){
+function renderCourse(CourseName, level, docRef){
     var res_area_html = `${RenderCourseList(CourseName)}`;
-    const CourseData = await getDocs(query(collection(LevelCollection, `${i}`, 'resources'), limit(2)));
+    const CourseData = getDocs(query(collection(docRef, 'resources')));
 
     //Rendering Internal Resources List of Course
 
-    var retP = CourseData.forEach((d) => {
-        const course = d.data();
-        res_area_html += `<li class = "resource_details">`;
-        //<iframe class = "demo_player" src="https://www.youtube.com/embed/${course.videoId}?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    
-        res_area_html += description(course.channelLink, course.logo, course.title, course.description, course.prerequisites);
-    
-        res_area_html += "</li>";
+    CourseData.then((response) => {
+        response.forEach((d) => {
+            const course = d.data();
+            res_area_html += `<li class = "resource_details">`;
+            //<iframe class = "demo_player" src="https://www.youtube.com/embed/${course.videoId}?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+            res_area_html += description(course.channelLink, course.logo, course.title, course.description, course.prerequisites);
+        
+            res_area_html += "</li>";
+        })
+        res_area_html += "</section></li>";
+        level.innerHTML += res_area_html;
+        level.querySelector(`#${remove_whiteSpace(CourseName)}`).scroll({
+            top : 0,
+            left : 0,
+            behaviour : 'smooth'
+        });
     })
-    res_area_html += "</section></li>";
-    level.innerHTML += res_area_html;
-    
-    const res_scroll = level.querySelector(`#${remove_whiteSpace(CourseName)}`);
-    
-    res_scroll.addEventListener('scroll', () => {
-        if(res_scroll.scrollLeft == (res_scroll.scrollWidth - res_scroll.offsetWidth)){
-            PaginateCourse(level, CourseName);
-        }
-    })
-    return retP;
 }
 
 
@@ -118,14 +116,14 @@ function renderLevel(level, i){
     var it = 0;
     course_name.then((response) => {
         response.forEach((f) => {
-            renderCourse(f.data().course, level, LevelCollection, it).then(() => {
-                level.scroll({
-                    top : 0,
-                    left : 0,
-                    behaviour : 'smooth'
-                })
-                it++;
-            });
+            const docRef = doc(LevelCollection, `${it}`);
+            renderCourse(f.data().course, level, docRef);
+            it++;
+        })
+        level.scroll({
+            top : 0,
+            left : 0,
+            behaviour : 'smooth'
         })
     });
 }
@@ -147,21 +145,28 @@ renderLevel(levelClass[2], 2);
 
 /* ------- PAGINATION FUNCTION -------  */
 
-async function PaginateLevel(i){
-    const docRef = levelClass[i].childElementCount - 1;
+function PaginateLevel(i){
+    var docRefPos = levelClass[i].childElementCount - 1;
     const LevelCollection = collection(goalDoc, `${i}`);
     
-    const StartDoc = getDoc(query(doc(LevelCollection, `${docRef}`)));
-    StartDoc.then(async (response) => {
-        const newData = await getDocs(query(LevelCollection, startAt(response), limit(2)));
-        var it = 0;
-        newData.forEach((f) => {
-            renderCourse(f.data().course, levelClass[i], LevelCollection, it);
-            it++;
-        })
-        if(it < 2){
+    var docRef = doc(LevelCollection, `${docRefPos}`);
+    const StartDoc = getDoc(query(docRef));
+    StartDoc.then((response) => {
+        //RENDERING GOT DATA
+        renderCourse(response.data().course, levelClass[i], docRef);
+
+        //FETCHING SECOND DATA
+        docRefPos++;
+        docRef = doc(LevelCollection, `${docRefPos}`);
+        const newDoc = getDoc(query(docRef));
+        
+        //RENDERING NEW DATA
+        newDoc.then((response) => {
+            renderCourse(response.data().course, levelClass[i], docRef);
+        }).catch((err) => {
             levelClass[i].querySelector(".fetching_data_text").textContent = "No more data";
-        }
+        })
+
     }).catch((err) => {
         levelClass[i].querySelector(".fetching_data_text").textContent = "No more data";
     })
@@ -181,11 +186,3 @@ levelClass.forEach((level) => {
     PaginationCheck(level, levelCounter);
     levelCounter++;
 })
-
-
-function PaginateCourse(level, courseName){
-    //const CourseRef = query(collection(goalDoc, `${i}`), where("course", "=", `${courseName}`));
-    //const StartAtCourse = level.querySelector(`#${courseName}`);
-    //console.log(StartAtCourse.id);
-    console.log("In Scroll for ", courseName);
-}

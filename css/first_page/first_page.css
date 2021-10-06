@@ -105,10 +105,6 @@ html {
   padding: 1em;
 }
 
-.main_container #container #levels .level .resources_area::-webkit-scrollbar {
-  width: 400px;
-}
-
 .main_container #container #levels .level .resources_area {
   -webkit-box-shadow: 0 0 1em var(--boxShadow);
           box-shadow: 0 0 1em var(--boxShadow);

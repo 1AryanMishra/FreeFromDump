@@ -133,11 +133,8 @@ renderLevel(levelClass[2], 2);
 
 
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> firstPage
 /* ------- PAGINATION FUNCTION -------  */
 
 async function PaginateLevel(i){

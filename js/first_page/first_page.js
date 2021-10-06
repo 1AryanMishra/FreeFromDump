@@ -87,11 +87,10 @@ async function renderCourse(CourseName, level, LevelCollection, i){
 
     //Rendering Internal Resources List of Course
 
-    CourseData.forEach((d) => {
+    var retP = CourseData.forEach((d) => {
         const course = d.data();
-        res_area_html += `<li class = "resource_details">
-        <iframe class = "demo_player" src="https://www.youtube.com/embed/${course.videoId}?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        `;
+        res_area_html += `<li class = "resource_details">`;
+        //<iframe class = "demo_player" src="https://www.youtube.com/embed/${course.videoId}?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     
         res_area_html += description(course.channelLink, course.logo, course.title, course.description, course.prerequisites);
     
@@ -99,25 +98,36 @@ async function renderCourse(CourseName, level, LevelCollection, i){
     })
     res_area_html += "</section></li>";
     level.innerHTML += res_area_html;
+    
     const res_scroll = level.querySelector(`#${remove_whiteSpace(CourseName)}`);
+    
     res_scroll.addEventListener('scroll', () => {
         if(res_scroll.scrollLeft == (res_scroll.scrollWidth - res_scroll.offsetWidth)){
             PaginateCourse(level, CourseName);
         }
     })
+    return retP;
 }
 
 
 
-async function renderLevel(level, i){
+function renderLevel(level, i){
     const LevelCollection = collection(goalDoc, `${i}`);
     const CourseQ = query(LevelCollection, limit(2));
-    const course_name = await getDocs(CourseQ);
+    const course_name = getDocs(CourseQ);
     var it = 0;
-    course_name.forEach((f) => {
-        renderCourse(f.data().course, level, LevelCollection, it);
-        it++;
-    })
+    course_name.then((response) => {
+        response.forEach((f) => {
+            renderCourse(f.data().course, level, LevelCollection, it).then(() => {
+                level.scroll({
+                    top : 0,
+                    left : 0,
+                    behaviour : 'smooth'
+                })
+                it++;
+            });
+        })
+    });
 }
 
 

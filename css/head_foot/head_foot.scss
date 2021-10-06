@@ -97,22 +97,14 @@ body{
             box-shadow: 0 0 1em 0 var(--boxShadow) inset;
             background: var(--headerBg);
             display: flex;
-            justify-content: space-around;
             padding: 0.5em 0;
-
+            justify-content: space-evenly;
+            
             #logo{
                 color: var(--logoFont);
                 font-size: 1.5rem;
             }
-    
-            #sign_in{
-                color: var(--buttonFont);
-                align-self: center;
-                background: rgba(255, 0, 0, 0.8);
-                text-align: center;
-                padding: 0.4rem 1rem 0.5rem 1rem;
-                box-shadow: 0 0 0.4em 0 var(--boxShadow);
-            }
+
         }
 
 

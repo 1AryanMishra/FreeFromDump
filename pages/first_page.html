@@ -7,14 +7,21 @@
     <title>FreeFromDump</title>
     <link rel="stylesheet" href="../css/head_foot/head_foot.css">
     <link rel="stylesheet" href="../css/first_page/first_page.css">
+    <link rel="stylesheet" href="../css/sign_in/sign_in.css">
 </head>
 <body class="dark">
     <header>
 
         <div class="main">
-            <a href="../index.html"<span id = "logo">FreeFromDump</span>
-            <a href="/pages/sing_in.html" id = "sign_in">Sign In</a>
+            <a href="../index.html" id="logo">FreeFromDump</a>
+            <button class = "sign_in">Sign In</button>
         </div>
+        <section class="sign_in_box">
+            <p>Select Any Provider to Login.</p>
+            <div class="login_providers_box">
+                <img class="login_provider" id="Google" src="/loginProviders/google.png">
+            </div>
+        </section>
         <div class="nav" id="nav">
 
             <div id="nav_section">
@@ -188,9 +195,6 @@
     </section>
 
 
-
-
-
     <input id="switch" type="button" value="Light">
 
     <footer>
@@ -200,4 +204,5 @@
 </body>
 <script src="../js/head_foot/head_foot.js"></script>
 <script type="module" src="../js/first_page/first_page.js"></script>
+<script type="module" src="../js/auth/auth.js"></script>
 </html>

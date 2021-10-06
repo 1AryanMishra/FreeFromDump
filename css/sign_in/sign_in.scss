@@ -1,4 +1,61 @@
-body{
-    background: #000;
-    color: #fff;
+.sign_in_box{
+    border-bottom: 0.1px solid blue;
+    transition: 0.5s ease-out;
+    display: flex;
+    margin: auto;
+    flex-flow: column nowrap;
+    padding: 1em;
+    height: 0;
+    visibility: hidden;
+    border-radius: 100%;
+
+    p{
+        margin: auto;
+    }
+
+    .login_providers_box{
+        transition: 0.2s ease;
+        margin: auto;
+        margin-top: 1em;
+        display: flex;
+        max-width: 10%;
+        box-shadow: 0 0 1em var(--boxShadow) inset;
+
+        .login_provider{
+            cursor: pointer;
+            max-width: 100%;
+        }
+        
+        .login_provider:hover{
+            box-shadow: 0 0 1em var(--boxShadow);
+            transform: scale(1.2);
+        }
+    }
+}
+
+.visible{
+    border-radius: 6px;
+    transition: 0.5s ease-in;
+    visibility: visible;
+    height: 100%;
+}
+
+.sign_in{
+    cursor: pointer;
+    color: var(--buttonFont);
+    align-self: center;
+    background: rgba(255, 0, 0, 0.8);
+    text-align: center;
+    padding: 0.4rem 1rem 0.5rem 1rem;
+    box-shadow: 0 0 0.4em 0 var(--boxShadow);
+}
+
+@media (min-width : 900px){
+    .sign_in_box{
+        flex-direction: row;
+
+        .login_providers_box{
+            max-width: 5%;
+        }
+    }
 }

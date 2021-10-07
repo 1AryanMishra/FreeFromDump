@@ -25,10 +25,24 @@ onAuthStateChanged(auth, (user) => {
         document.querySelector('.greet_user').style.display = 'flex';
         document.querySelector('.greet_user').querySelector('.user_dp').src = `${user.photoURL}`;
         document.querySelector('.greet_user').querySelector('.username').textContent = `Hello, ${getFirstName(user.displayName)}`;
+
+        document.querySelector('.sign_out').addEventListener('click', () => {
+            signOut(auth).then(() => {
+                document.querySelector('.sign_out').style.display = 'none';
+                document.querySelector('.sign_in').style.visibility = 'visible';
+                document.querySelector('.greet_user').style.display = 'none';
+                document.querySelector('.retry_msg').style.display = 'none';
+            })
+            .catch((err) => {
+                document.querySelector('.sign_out_err').classList.toggle('sign_out_err_visible');
+            })
+        })
     }
     else{
         const signInBtns = document.querySelectorAll('.sign_in');
         const Google = new GoogleAuthProvider();
+
+        document.querySelector('.sign_in').style.visibility = 'visible';
         
         signInBtns.forEach((b) => {
             b.addEventListener('click', () => {
@@ -51,18 +65,6 @@ onAuthStateChanged(auth, (user) => {
                     console.log(err);
                     document.querySelector('.retry_msg').style.display = 'block';
                 })
-            })
-        })
-    
-        document.querySelector('.sign_out').addEventListener('click', () => {
-            signOut(auth).then(() => {
-                document.querySelector('.sign_out').style.display = 'none';
-                document.querySelector('.sign_in').style.visibility = 'visible';
-                document.querySelector('.greet_user').style.display = 'none';
-                document.querySelector('.retry_msg').style.display = 'none';
-            })
-            .catch((err) => {
-                document.querySelector('.sign_out_err').classList.toggle('sign_out_err_visible');
             })
         })
     }    

@@ -79,6 +79,7 @@
 }
 
 .sign_in{
+    visibility: hidden;
     cursor: pointer;
     color: var(--buttonFont);
     align-self: center;

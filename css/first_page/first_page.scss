@@ -254,6 +254,7 @@ html{
                 }
 
                 .start_from_level:focus, .start_from_level:hover{
+                    cursor: pointer;
                     box-shadow: 0 0 1em 0 rgba($color: rgb(200, 200, 150), $alpha: 1);
                     background: rgba($color: rgb(200, 200, 150), $alpha: 0.8);
                 }

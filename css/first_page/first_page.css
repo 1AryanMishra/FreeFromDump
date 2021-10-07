@@ -347,6 +347,7 @@ html {
 }
 
 .main_container #container #levels .level .start_from_level:focus, .main_container #container #levels .level .start_from_level:hover {
+  cursor: pointer;
   -webkit-box-shadow: 0 0 1em 0 #c8c896;
           box-shadow: 0 0 1em 0 #c8c896;
   background: rgba(200, 200, 150, 0.8);

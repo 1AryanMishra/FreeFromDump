@@ -100,6 +100,7 @@
 }
 
 .sign_in {
+  visibility: hidden;
   cursor: pointer;
   color: var(--buttonFont);
   -ms-flex-item-align: center;

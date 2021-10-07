@@ -2,9 +2,23 @@ import { GoogleAuthProvider, signOut, getAuth, signInWithPopup, onAuthStateChang
 
 const auth = getAuth();
 
+
+function getFirstName(name){
+    var fname = '';
+    for (let i = 0; i < name.length; i++) {
+        if(name[i] == " "){
+            break;
+        }
+        else{
+            fname += name[i];
+        }
+    }
+    return fname;
+}
+
+
 onAuthStateChanged(auth, (user) => {
     if(user){
-        console.log("Logged In as" , user.displayName);
         document.querySelector('.sign_out').style.display = 'block';
         document.querySelector('.sign_in').style.visibility = 'hidden';
         document.querySelector('.sign_in_box').style.display = 'none';
@@ -13,7 +27,6 @@ onAuthStateChanged(auth, (user) => {
         document.querySelector('.greet_user').querySelector('.username').textContent = `Hello, ${getFirstName(user.displayName)}`;
     }
     else{
-        console.log("User Not Logged In");
         const signInBtns = document.querySelectorAll('.sign_in');
         const Google = new GoogleAuthProvider();
         
@@ -40,19 +53,6 @@ onAuthStateChanged(auth, (user) => {
                 })
             })
         })
-    
-        function getFirstName(name){
-            var fname = '';
-            for (let i = 0; i < name.length; i++) {
-                if(name[i] == " "){
-                    break;
-                }
-                else{
-                    fname += name[i];
-                }
-            }
-            return fname;
-        }
     
         document.querySelector('.sign_out').addEventListener('click', () => {
             signOut(auth).then(() => {

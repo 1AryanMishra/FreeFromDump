@@ -1,7 +1,23 @@
 .greet_user{
-    margin: 1em;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: 0 0 1em var(--boxShadow);
+    margin: auto;
     margin-left: auto;
-    display: none;
+    display: flex;
+    flex-flow: row nowrap;
+
+    .user_dp{
+        margin-left: auto;
+        max-width: 3%;
+        border: 100%;
+    }
+
+    .username{
+        margin: auto 1em;
+        font-weight: bold;
+        font-style: italic;
+    }
 }
 
 .sign_in_box{

@@ -1,7 +1,29 @@
 .greet_user {
-  margin: 1em;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  -webkit-box-shadow: 0 0 1em var(--boxShadow);
+          box-shadow: 0 0 1em var(--boxShadow);
+  margin: auto;
   margin-left: auto;
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+.greet_user .user_dp {
+  margin-left: auto;
+  max-width: 3%;
+  border: 100%;
+}
+
+.greet_user .username {
+  margin: auto 1em;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .sign_in_box {

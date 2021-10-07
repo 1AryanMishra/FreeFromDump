@@ -3,8 +3,6 @@
   border-top-right-radius: 0;
   -webkit-box-shadow: 0 0 1em var(--boxShadow);
           box-shadow: 0 0 1em var(--boxShadow);
-  margin: auto;
-  margin-left: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,9 +14,10 @@
 }
 
 .greet_user .user_dp {
-  margin-left: auto;
-  max-width: 10%;
-  border: 100%;
+  margin: auto;
+  margin-right: 0;
+  max-width: 30%;
+  border-radius: 100%;
 }
 
 .greet_user .username {

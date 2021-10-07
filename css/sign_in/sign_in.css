@@ -91,12 +91,6 @@
   display: none;
 }
 
-.sign_in_box .display_err {
-  -webkit-transition: none;
-  transition: none;
-  display: block;
-}
-
 .visible {
   border-radius: 6px;
   -webkit-transition: 0.5s ease-in;

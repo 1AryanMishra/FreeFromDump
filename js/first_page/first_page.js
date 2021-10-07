@@ -1,6 +1,6 @@
 import db from '../../database/firestore.js'
 import { collection, limit, doc, getDoc, orderBy, getDocs, query, startAfter, startAt } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
-import { getAuth } from 'https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js'
+import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js'
 
 sessionStorage.setItem("isActive", "1");
 
@@ -87,8 +87,8 @@ function renderCourse(CourseName, level, docRef){
     CourseData.then((response) => {
         response.forEach((d) => {
             const course = d.data();
-            res_area_html += `<li class = "resource_details">
-            <iframe class = "demo_player" src="https://www.youtube.com/embed/${course.videoId}?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            res_area_html += `<li class = "resource_details">`;
+            //<iframe class = "demo_player" src="https://www.youtube.com/embed/${course.videoId}?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         
             res_area_html += description(course.channelLink, course.logo, course.title, course.description, course.prerequisites);
         
@@ -187,14 +187,16 @@ levelClass.forEach((level) => {
 
 function StartFromHere(level){
     const auth = getAuth();
-    const user = auth.currentUser;
-    if(user){
-        console.log("Signed In as ", user.displayName, user.email, user.uid, 'for Level ', level);
-    }
-    else{
-        document.querySelector('.sign_in_box').scrollIntoView();
-        document.querySelector('.sign_in_box').classList.add('visible');
-    }
+    onAuthStateChanged(auth, (user) => {
+        if(user){
+            console.log("Signed In as ", user.displayName, user.email, user.uid, 'for Level ', level);
+        }
+        else{
+            console.log("No Users");
+            document.querySelector('.sign_in_box').scrollIntoView();
+            document.querySelector('.sign_in_box').classList.add('visible');
+        }
+    })
 }
 
 const startBtns = document.querySelectorAll('.start_from_level');

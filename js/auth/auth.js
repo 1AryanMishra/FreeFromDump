@@ -1,7 +1,13 @@
 import { GoogleAuthProvider, signOut, getAuth, signInWithPopup, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js'
 
 const auth = getAuth();
-
+const signInBtns = document.querySelectorAll('.sign_in');
+    
+signInBtns.forEach((b) => {
+    b.addEventListener('click', () => {
+        document.querySelector('.sign_in_box').classList.toggle('visible');
+    })
+})
 
 function getFirstName(name){
     var fname = '';
@@ -18,16 +24,9 @@ function getFirstName(name){
 
 
 function signIn(){
-    const signInBtns = document.querySelectorAll('.sign_in');
     const Google = new GoogleAuthProvider();
 
     document.querySelector('.sign_in').style.visibility = 'visible';
-    
-    signInBtns.forEach((b) => {
-        b.addEventListener('click', () => {
-            document.querySelector('.sign_in_box').classList.toggle('visible');
-        })
-    })
 
     const prov_btn = document.querySelectorAll('.login_provider');
 
@@ -61,7 +60,6 @@ onAuthStateChanged(auth, (user) => {
         document.querySelector('.sign_out').addEventListener('click', () => {
             signOut(auth).then(() => {
                 document.querySelector('.sign_out').style.display = 'none';
-                document.querySelector('.sign_in').style.visibility = 'visible';
                 document.querySelector('.greet_user').style.display = 'none';
                 document.querySelector('.retry_msg').style.display = 'none';
 

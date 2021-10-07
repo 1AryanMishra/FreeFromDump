@@ -18,8 +18,7 @@ prov_btn.forEach((f) => {
             document.querySelector('.sign_in').style.display = 'none';
             document.querySelector('.sign_in_box').style.display = 'none';
             document.querySelector('.greet_user').style.display = 'block';
-            console.log(result.user);
-            document.querySelector('.greet_user').querySelector('.user_dp').src = `${result.user.displayImage}`;
+            document.querySelector('.greet_user').querySelector('.user_dp').src = `${result.user.photoURL}`;
             document.querySelector('.greet_user').querySelector('.username').textContent = `Hello, ${getFirstName(result.user.displayName)}`;
         }).catch((err) => {
             console.log(err);

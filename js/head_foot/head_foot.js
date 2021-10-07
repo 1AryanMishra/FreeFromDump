@@ -24,20 +24,16 @@ function navBoxAnimation(){
     const bottom = index.querySelector("#bottom_nav_bar");
 
     if(nav_open){
-        top.style.transform = "translateY(12px)";
-        mid.style.visibility = "hidden";
-        mid.style.display = "none";
-        bottom.style.transform = "translateY(-12px)";
-        top.style.transform += "rotateZ(45deg)";
-        bottom.style.transform = "rotateZ(-45deg)";
+        top.style.transform += "rotateZ(-25deg)";
+        top.style.width = '20px';
+        bottom.style.transform = "rotateZ(25deg)";
+        bottom.style.width = '20px';
     }
     else{
-        top.style.transform = "translateY(0px)";
-        bottom.style.transform = "translateY(0px)";
+        top.style.width = '30px';
         top.style.transform = "rotateZ(0deg)";
+        bottom.style.width = '30px';
         bottom.style.transform = "rotateZ(0deg)";
-        mid.style.visibility = "visible";
-        mid.style.display = "block";
     }
 }
 

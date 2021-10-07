@@ -164,6 +164,7 @@ body header .nav #nav_section ul a:hover li {
 }
 
 body header .nav .nav_box {
+  border: 0.5px solid blue;
   margin-left: auto;
   margin-right: 0.5em;
   margin-top: 0.5em;
@@ -179,11 +180,13 @@ body header .nav .nav_box {
 }
 
 body header .nav .nav_box .nav_line {
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
   -webkit-box-shadow: 0 0 0.15em 0 var(--boxShadow);
           box-shadow: 0 0 0.15em 0 var(--boxShadow);
-  margin: 3px 0;
+  margin: 2.5px 0;
   background: var(--navBorderCol);
-  border: 3px solid var(--navBorderCol);
+  border: 2px solid var(--navBorderCol);
   width: 30px;
 }
 

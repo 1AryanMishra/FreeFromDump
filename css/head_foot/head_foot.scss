@@ -147,6 +147,7 @@ body{
             }
 
             .nav_box{
+                border: 0.5px solid blue;
                 margin-left: auto;
                 margin-right: 0.5em;
                 margin-top: 0.5em;
@@ -155,10 +156,11 @@ body{
                 justify-content: space-around;
                 
                 .nav_line{
+                    transform-origin: top right;
                     box-shadow: 0 0 0.15em 0 var(--boxShadow);
-                    margin: 3px 0;
+                    margin: 2.5px 0;
                     background: var(--navBorderCol);
-                    border: 3px solid var(--navBorderCol);
+                    border: 2px solid var(--navBorderCol);
                     width: 30px;
                 }
             }

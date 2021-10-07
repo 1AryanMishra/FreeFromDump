@@ -11,9 +11,9 @@
 }
 
 .greet_user .user_dp {
-  margin: auto;
+  margin: 0.25em auto;
   margin-right: 0;
-  max-width: 3%;
+  max-width: 6%;
   border-radius: 100%;
 }
 
@@ -24,13 +24,14 @@
 }
 
 .sign_in_box {
+  -webkit-box-shadow: 0 0 1em var(--boxShadow);
+          box-shadow: 0 0 1em var(--boxShadow);
   border-bottom: 0.1px solid blue;
   -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: auto;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
@@ -43,17 +44,19 @@
 .sign_in_box p {
   -webkit-transition: none;
   transition: none;
-  margin: auto;
+  margin: 0.5em auto;
+  font-size: 1.1rem;
 }
 
 .sign_in_box .login_providers_box {
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
-  margin: 1em auto;
+  margin: auto;
+  margin-bottom: 0.5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 5%;
+  max-width: 10%;
   border-radius: 100%;
   -webkit-box-shadow: 0 0 1em var(--boxShadow) inset;
           box-shadow: 0 0 1em var(--boxShadow) inset;
@@ -107,14 +110,21 @@
 }
 
 @media (min-width: 900px) {
+  .greet_user .user_dp {
+    max-width: 2%;
+  }
   .sign_in_box {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
   }
+  .sign_in_box p {
+    margin: auto;
+  }
   .sign_in_box .login_providers_box {
-    max-width: 5%;
+    margin: 0.5em auto;
+    max-width: 4%;
   }
 }
 /*# sourceMappingURL=sign_in.css.map */

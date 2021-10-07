@@ -6,9 +6,9 @@
     flex-flow: row nowrap;
 
     .user_dp{
-        margin: auto;
+        margin: 0.25em auto;
         margin-right: 0;
-        max-width: 3%;
+        max-width: 6%;
         border-radius: 100%;
     }
 
@@ -20,10 +20,10 @@
 }
 
 .sign_in_box{
+    box-shadow: 0 0 1em var(--boxShadow);
     border-bottom: 0.1px solid blue;
     transition: 0.5s ease-out;
     display: flex;
-    margin: auto;
     flex-flow: column nowrap;
     height: 0;
     visibility: hidden;
@@ -31,14 +31,16 @@
 
     p{
         transition: none;
-        margin: auto;
+        margin: 0.5em auto;
+        font-size: 1.1rem;
     }
 
     .login_providers_box{
         transition: 0.2s ease;
-        margin: 1em auto;
+        margin: auto;
+        margin-bottom: 0.5em;
         display: flex;
-        max-width: 5%;
+        max-width: 10%;
         border-radius: 100%;
         box-shadow: 0 0 1em var(--boxShadow) inset;
 
@@ -83,11 +85,23 @@
 }
 
 @media (min-width : 900px){
+
+    .greet_user{
+        
+        .user_dp{
+            max-width: 2%;
+        }
+    }
     .sign_in_box{
         flex-direction: row;
 
+        p{
+            margin: auto;
+        }
+
         .login_providers_box{
-            max-width: 5%;
+            margin: 0.5em auto;
+            max-width: 4%;
         }
     }
 }

@@ -3,20 +3,17 @@
   border-top-right-radius: 0;
   -webkit-box-shadow: 0 0 1em var(--boxShadow);
           box-shadow: 0 0 1em var(--boxShadow);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  display: none;
 }
 
 .greet_user .user_dp {
   margin: auto;
   margin-right: 0;
-  max-width: 30%;
+  max-width: 10%;
   border-radius: 100%;
 }
 

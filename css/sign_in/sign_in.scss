@@ -2,14 +2,13 @@
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     box-shadow: 0 0 1em var(--boxShadow);
-    display: flex;
-    flex-flow: row nowrap;
     display: none;
+    flex-flow: row nowrap;
 
     .user_dp{
         margin: auto;
         margin-right: 0;
-        max-width: 30%;
+        max-width: 10%;
         border-radius: 100%;
     }
 

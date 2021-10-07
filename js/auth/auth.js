@@ -14,7 +14,7 @@ const prov_btn = document.querySelectorAll('.login_provider');
 
 prov_btn.forEach((f) => {
     f.addEventListener('click', () => {
-        signInWithPopup(auth, f.id).then((result) => {
+        signInWithPopup(auth, Google).then((result) => {
             document.querySelector('.retry_msg').classList.toggle('display_err');
             console.log(result.user);
         }).catch((err) => {

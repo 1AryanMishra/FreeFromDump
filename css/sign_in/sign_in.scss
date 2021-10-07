@@ -10,26 +10,37 @@
     border-radius: 100%;
 
     p{
+        transition: none;
         margin: auto;
     }
 
     .login_providers_box{
         transition: 0.2s ease;
-        margin: auto;
-        margin-top: 1em;
+        margin: 1em auto;
         display: flex;
         max-width: 10%;
         box-shadow: 0 0 1em var(--boxShadow) inset;
 
         .login_provider{
+            transition: none;
             cursor: pointer;
             max-width: 100%;
         }
         
         .login_provider:hover{
+            transition: none;
             box-shadow: 0 0 1em var(--boxShadow);
             transform: scale(1.2);
         }
+    }
+
+    .retry_msg{
+        display: none;
+    }
+
+    .display_err{
+        transition: none;
+        display: block;
     }
 }
 

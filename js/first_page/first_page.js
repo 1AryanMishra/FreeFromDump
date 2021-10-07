@@ -164,11 +164,11 @@ function PaginateLevel(i){
         newDoc.then((response) => {
             renderCourse(response.data().course, levelClass[i], docRef);
         }).catch((err) => {
-            levelClass[i].querySelector(".fetching_data_text").textContent = "No more data";
+            levelClass[i].querySelector('.more_data_resources').style.display = 'none';
         })
 
     }).catch((err) => {
-        levelClass[i].querySelector(".fetching_data_text").textContent = "No more data";
+        levelClass[i].querySelector('.more_data_resources').style.display = 'none';
     })
 }
 

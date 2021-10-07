@@ -12,6 +12,7 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
+  display: none;
 }
 
 .greet_user .user_dp {

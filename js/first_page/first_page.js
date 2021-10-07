@@ -1,5 +1,6 @@
 import db from '../../database/firestore.js'
 import { collection, limit, doc, getDoc, orderBy, getDocs, query, startAfter, startAt } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
+import { getAuth } from 'https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js'
 
 sessionStorage.setItem("isActive", "1");
 
@@ -185,5 +186,12 @@ levelClass.forEach((level) => {
 
 
 function StartFromHere(){
-    //const setUserData = doc('users', '')
+    const auth = getAuth();
+    const user = auth.currentUser;
+    if(user){
+        console.log("Signed In as ", user.displayName, user.email, user.uid);
+    }
+    else{
+        document.querySelector('.sign_in_box').classList.toggle('visible');
+    }
 }

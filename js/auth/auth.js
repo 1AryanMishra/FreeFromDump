@@ -6,6 +6,7 @@ const user = auth.currentUser;
 
 
 if(user){
+    console.log("Logged In as" , user.displayName);
     document.querySelector('.sign_out').style.display = 'block';
     document.querySelector('.sign_in').style.visibility = 'hidden';
     document.querySelector('.sign_in_box').style.display = 'none';
@@ -14,6 +15,7 @@ if(user){
     document.querySelector('.greet_user').querySelector('.username').textContent = `Hello, ${getFirstName(user.displayName)}`;
 }
 else{
+    console.log("User Not Logged In");
     const signInBtns = document.querySelectorAll('.sign_in');
     const Google = new GoogleAuthProvider();
     

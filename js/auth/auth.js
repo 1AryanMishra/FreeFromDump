@@ -31,7 +31,7 @@ prov_btn.forEach((f) => {
             document.querySelector('.greet_user').querySelector('.username').textContent = `Hello, ${getFirstName(result.user.displayName)}`;
         }).catch((err) => {
             console.log(err);
-            document.querySelector('.retry_msg').classList.toggle('display_err');
+            document.querySelector('.retry_msg').style.display = 'block';
         })
     })
 })
@@ -51,10 +51,10 @@ function getFirstName(name){
 
 document.querySelector('.sign_out').addEventListener('click', () => {
     signOut(auth).then(() => {
-        document.querySelector('.sign_in_box').style.display = 'flex';
         document.querySelector('.sign_out').style.display = 'none';
         document.querySelector('.sign_in').style.visibility = 'visible';
         document.querySelector('.greet_user').style.display = 'none';
+        document.querySelector('.retry_msg').style.display = 'none';
     })
     .catch((err) => {
         document.querySelector('.sign_out_err').classList.toggle('sign_out_err_visible');

@@ -192,7 +192,8 @@ function StartFromHere(level){
         console.log("Signed In as ", user.displayName, user.email, user.uid, 'for Level ', level);
     }
     else{
-        document.querySelector('.sign_in_box').classList.toggle('visible');
+        document.querySelector('.sign_in_box').scrollIntoView();
+        document.querySelector('.sign_in_box').classList.add('visible');
     }
 }
 

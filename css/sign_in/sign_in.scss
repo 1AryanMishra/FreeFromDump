@@ -5,6 +5,15 @@
     display: none;
     flex-flow: row nowrap;
 
+    .sign_out_err{
+        display: none;
+        margin: auto;
+    }
+
+    .sign_out_err_visible{
+        display: block;
+    }
+
     .user_dp{
         margin: 0.25em auto;
         margin-right: 0;
@@ -83,6 +92,12 @@
     padding: 0.4rem 1rem 0.5rem 1rem;
     box-shadow: 0 0 0.4em 0 var(--boxShadow);
 }
+
+
+.sign_out{
+    display: none;
+}
+
 
 @media (min-width : 900px){
 

@@ -31,10 +31,6 @@ function description(link, logo, title, desc, prereq){
             </div>
             <p class="some_text">${desc}</p>
             ${prerequisites(prereq)}
-            <div class = "course_action">
-                <button class = "is_fav" id = "html">!Fav</button>
-                <button class = "add_to_list">Watch later</button>
-            </div>
         </section>`
     )
 }
@@ -186,3 +182,8 @@ levelClass.forEach((level) => {
     PaginationCheck(level, levelCounter);
     levelCounter++;
 })
+
+
+function StartFromHere(){
+    //const setUserData = doc('users', '')
+}

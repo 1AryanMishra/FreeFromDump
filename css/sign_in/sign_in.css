@@ -17,14 +17,15 @@
 }
 
 .sign_in_box p {
+  -webkit-transition: none;
+  transition: none;
   margin: auto;
 }
 
 .sign_in_box .login_providers_box {
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
-  margin: auto;
-  margin-top: 1em;
+  margin: 1em auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,15 +35,29 @@
 }
 
 .sign_in_box .login_providers_box .login_provider {
+  -webkit-transition: none;
+  transition: none;
   cursor: pointer;
   max-width: 100%;
 }
 
 .sign_in_box .login_providers_box .login_provider:hover {
+  -webkit-transition: none;
+  transition: none;
   -webkit-box-shadow: 0 0 1em var(--boxShadow);
           box-shadow: 0 0 1em var(--boxShadow);
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+}
+
+.sign_in_box .retry_msg {
+  display: none;
+}
+
+.sign_in_box .display_err {
+  -webkit-transition: none;
+  transition: none;
+  display: block;
 }
 
 .visible {

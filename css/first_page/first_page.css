@@ -329,55 +329,9 @@ html {
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
-  padding: 1.2rem 6rem;
+  padding: 0.7rem 6rem;
   -webkit-box-shadow: 0 0 1.7rem var(--MoreDataBoxShadow) inset;
           box-shadow: 0 0 1.7rem var(--MoreDataBoxShadow) inset;
-}
-
-.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action {
-  margin-top: 1em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action .is_fav {
-  border-radius: 100%;
-  color: var(--buttonFont);
-  font-size: 1em;
-  -webkit-box-shadow: 0 0 1em 0 var(--buttonBoxShadow) inset;
-          box-shadow: 0 0 1em 0 var(--buttonBoxShadow) inset;
-  padding: 0.5rem 1rem;
-  background: #909090;
-  text-align: center;
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease;
-}
-
-.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action .is_fav:focus, .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action .is_fav:hover {
-  -webkit-box-shadow: 0 0 1em 0 red;
-          box-shadow: 0 0 1em 0 red;
-  background: rgba(255, 0, 0, 0.8);
-}
-
-.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action .add_to_list {
-  color: var(--buttonFont);
-  font-size: 1.1rem;
-  -webkit-box-shadow: 0 0 1em 0 var(--buttonBoxShadow) inset;
-          box-shadow: 0 0 1em 0 var(--buttonBoxShadow) inset;
-  padding: 0.5rem 1rem;
-  background: #909090;
-  text-align: center;
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease;
-}
-
-.main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action .add_to_list:focus, .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .course_action .add_to_list:hover {
-  -webkit-box-shadow: 0 0 1em 0 rgba(0, 0, 255, 0.5);
-          box-shadow: 0 0 1em 0 rgba(0, 0, 255, 0.5);
-  background: rgba(0, 0, 255, 0.5);
 }
 
 .main_container #container #levels .level .start_from_level {

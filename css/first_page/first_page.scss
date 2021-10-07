@@ -234,45 +234,8 @@ html{
                                     .more_data_prerequisites{
                                         margin: 0 auto;
                                         max-width: fit-content;
-                                        padding: 1.2rem 6rem;
+                                        padding: 0.7rem 6rem;
                                         box-shadow: 0 0 1.7rem var(--MoreDataBoxShadow) inset;
-                                    }
-
-                                    .course_action{
-                                        margin-top: 1em;
-                                        display: flex;
-                                        justify-content: space-around;
-
-                                        .is_fav{
-                                            border-radius: 100%;
-                                            color: var(--buttonFont);
-                                            font-size: 1em;
-                                            box-shadow: 0 0 1em 0 var(--buttonBoxShadow) inset;
-                                            padding: 0.5rem 1rem;
-                                            background: #909090;
-                                            text-align: center;
-                                            transition: 0.2s ease;
-                                        }
-
-                                        .is_fav:focus, .is_fav:hover{
-                                            box-shadow: 0 0 1em 0 rgba($color: red, $alpha: 1);
-                                            background: rgba($color: red, $alpha: 0.8);
-                                        }
-
-                                        .add_to_list{
-                                            color: var(--buttonFont);
-                                            font-size: 1.1rem;
-                                            box-shadow: 0 0 1em 0 var(--buttonBoxShadow) inset;
-                                            padding: 0.5rem 1rem;
-                                            background: #909090;
-                                            text-align: center;
-                                            transition: 0.2s ease;
-                                        }
-
-                                        .add_to_list:focus, .add_to_list:hover{
-                                            box-shadow: 0 0 1em 0 rgba($color: blue, $alpha: 0.5);
-                                            background: rgba($color: blue, $alpha: 0.5);
-                                        }
                                     }
                                 }
                             }

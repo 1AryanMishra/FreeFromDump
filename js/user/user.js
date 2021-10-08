@@ -17,8 +17,8 @@ onAuthStateChanged(auth, (user) => {
         console.log("Setting User Data...");
         setDoc(doc(db, 'users', `${user.uid}`), data);
         console.log(data);
-        
-        /*const UserData = getDoc(query(collection(db, 'users'), where("uid", "=", `${user.uid}`)));
+
+        const UserData = getDoc(query(collection(db, 'users'), where("uid", "=", `${user.uid}`)));
         UserData.then((response) => {
             console.log("Inside UserData.then ");
             if(response.data()){
@@ -27,14 +27,14 @@ onAuthStateChanged(auth, (user) => {
             }
             else{
                 console.log("User.data() IS null");
-                console.log("Setting User Data...");
-                setDoc(doc(db, 'users', `${user.uid}`), data);
+                //console.log("Setting User Data...");
+                //setDoc(doc(db, 'users', `${user.uid}`), data);
                 console.log(data);
             }
         }).catch((err) => {
             console.log("User Does not Exists.", err);
             //location.reload();
-        })*/
+        })
     }
     else{
         window.open('https://freefromdump.netlify.app/pages/first_page.html', '_top');

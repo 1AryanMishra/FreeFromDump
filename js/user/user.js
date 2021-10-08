@@ -21,13 +21,7 @@ onAuthStateChanged(auth, (user) => {
             UserData.then((response) => {
                 console.log("Inside UserData.then ");
                 response.forEach((f) => {
-                    if(response.data()){
-                        console.log("User.data() is NOT null");
-                        console.log("logging UserData response", f.data());
-                    }
-                    else{
-                        console.log("User.data() IS null");
-                    }
+                    console.log(f.id, "=>", f.data());
                 })
             })
         }).catch((err) => {

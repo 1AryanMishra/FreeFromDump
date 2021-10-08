@@ -15,27 +15,23 @@ onAuthStateChanged(auth, (user) => {
         console.log("Fetching User Data from Database...");
 
         console.log("Setting User Data...");
-        const setting = setDoc(doc(db, 'users', `${user.uid}`), data);
+        const setting = setDoc(doc(db, "users", `${user.uid}`), data);
         setting.then(() => {
-            console.log(data);
-        })
-
-        const UserData = getDoc(query(collection(db, 'users'), where("uid", "=", `${user.uid}`)));
-        UserData.then((response) => {
-            console.log("Inside UserData.then ");
-            if(response.data()){
-                console.log("User.data() is NOT null");
-                console.log("logging UserData response", response.data());
-            }
-            else{
-                console.log("User.data() IS null");
-                //console.log("Setting User Data...");
-                //setDoc(doc(db, 'users', `${user.uid}`), data);
-                console.log(data);
-            }
+            const UserData = getDoc(query(collection(db, 'users'), where("uid", "=", `${user.uid}`)));
+            UserData.then((response) => {
+                console.log("Inside UserData.then ");
+                if(response.data()){
+                    console.log("User.data() is NOT null");
+                    console.log("logging UserData response", response.data());
+                }
+                else{
+                    console.log("User.data() IS null");
+                }
+            }).catch((err) => {
+                console.log("User Does not Exists.", err);
+            })
         }).catch((err) => {
-            console.log("User Does not Exists.", err);
-            //location.reload();
+            console.log("Error while setting User Data : ",err);
         })
     }
     else{

@@ -1,5 +1,5 @@
 import db from '../../database/firestore.js'
-import { collection, getDoc } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
+import { collection, getDocs } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 
 window.addEventListener('load', () => {
     if(localStorage.getItem("goal") !== null && sessionStorage.getItem("isActive") === null){
@@ -10,6 +10,11 @@ window.addEventListener('load', () => {
 const submit = document.getElementById("submit");
 
 const goal = document.getElementById("field");
+const fieldsList = await getDocs(collection(db, 'fields'));
+fieldsList.forEach((f) => {
+    goal.innerHTML += `<option value="${f.id}">${f.data().label}</option>`;
+})
+
 const goal_msg = document.querySelector("#goal_msg");
 
 const pc_checkbox = document.querySelector("#pc_checkbox");

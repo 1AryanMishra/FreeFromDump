@@ -4,6 +4,10 @@ import { doc, collection, where, getDoc, getDocs, setDoc, query } from "https://
 
 const auth = getAuth();
 
+if(!(sessionStorage.getItem('isActive'))){
+    sessionStorage.setItem('isActive', 1);
+}
+
 
 
 function getFirstName(name){
@@ -26,7 +30,7 @@ onAuthStateChanged(auth, (user) => {
 
         //======= User Greeting =======
         const greet_user = document.querySelector('.greet_user');
-        
+
         document.querySelector('.sign_out').style.display = 'block';
         greet_user.style.display = 'flex';
         greet_user.querySelector('.user_dp').src = `${user.photoURL}`;

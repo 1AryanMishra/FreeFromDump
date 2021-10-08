@@ -1,5 +1,5 @@
 import db from '../../database/firestore.js'
-import { collection, limit, doc, getDoc, orderBy, getDocs, query, startAfter, startAt } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
+import { collection, limit, doc, getDoc, getDocs, query } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js'
 
 sessionStorage.setItem("isActive", "1");

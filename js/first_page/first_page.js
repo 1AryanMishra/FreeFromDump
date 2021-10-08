@@ -189,6 +189,8 @@ function StartFromHere(level){
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
         if(user){
+            sessionStorage.setItem("level", `${level}`);
+            sessionStorage.setItem("course", `${SelectedField}`);
             window.open('https://freefromdump.netlify.app/pages/user.html', '_top');
         }
         else{
@@ -200,8 +202,9 @@ function StartFromHere(level){
 }
 
 const startBtns = document.querySelectorAll('.start_from_level');
-startBtns.forEach((f) => {
-    f.addEventListener('click', () => {
-        StartFromHere(f.id);
+
+for(var i = 0; i<startBtns.length; i++){
+    startBtns[i].addEventListener('click', () => {
+        StartFromHere(i);
     })
-})
+}

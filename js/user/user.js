@@ -6,26 +6,28 @@ const auth = getAuth();
 
 onAuthStateChanged(auth, (user) => {
     if(user){
-        const data = {
-            name : `${user.displayName}`,
-            email : `${user.email}`,
-            uid : `${user.uid}`
-        }
-        console.log("User Exists.", data);
-        console.log("Fetching User Data from Database...");
-
-        console.log("Setting User Data...");
-        const setting = setDoc(doc(db, "users", `${user.uid}`), data);
-        setting.then(() => {
-            const UserData = getDocs(query(collection(db, "users"), where("uid", "==", `${user.uid}`)));
-            UserData.then((response) => {
-                console.log("Inside UserData.then ");
-                response.forEach((f) => {
-                    console.log(f.id, "=>", f.data());
-                })
+        const oldUser = getDocs(query(collection(db, 'users'), where("uid", "==", `${user.uid}`)));
+        oldUser.then((response) => {
+            response.forEach((d) => {
+                console.log("User Exists.");
+                const userData = {
+                    name : `${d.data().name}`,
+                    email : `${d.data().email}`,
+                    uid : `${d.data().uid}`
+                }
+                console.log(userData);
             })
         }).catch((err) => {
-            console.log("Error while setting User Data : ",err);
+            console.log("User does NOT exists.");
+            console.log(err);
+            console.log("Setting User Data...");
+            const setting = setDoc(doc(db, 'users', `${user.uid}`), {
+                name : `${user.displayName}`,
+                uid : `${user.uid}`,
+                email : `${user.email}`,
+                course : `${JSON.parse(sessionStorage.getItem("course"))}`,
+                level : `${JSON.parse(sessionStorage.getItem("level"))}`
+            })
         })
     }
     else{

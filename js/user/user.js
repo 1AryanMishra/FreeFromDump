@@ -9,8 +9,8 @@ onAuthStateChanged(auth, (user) => {
         const oldUser = getDocs(query(collection(db, 'users'), where("uid", "==", `${user.uid}`)));
         oldUser.then((response) => {
             console.log(response);
-            console.log(response.snapshot);
-            if(response.snapshot.docChanges.length > 1){
+            console.log(response._snapshot);
+            if(response._snapshot.docChanges.length > 1){
                 response.forEach((d) => {
                     console.log("User Exists.");
                     const userData = {

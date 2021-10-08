@@ -74,6 +74,20 @@ onAuthStateChanged(auth, (user) => {
                 document.querySelector('.sign_out_err').classList.toggle('sign_out_err_visible');
             })
         })
+
+        // ======= Routing To User Page if Old User, Else Still =======
+        const oldUser = getDocs(query(collection(db, 'users'), where("uid", "==", `${user.uid}`)));
+        oldUser.then((response) => {
+            if(response._snapshot.docChanges.length >= 1){
+                window.open('https://mayajal.netlify.app/pages/user.html', '_top');
+            }
+            else{
+                //Stay On that Page and wait for Course Selection
+            }
+        }).catch((err) => {
+            console.log(err);
+        })
+
     }
     else{
         console.log("No LoggedIn User");

@@ -15,8 +15,10 @@ onAuthStateChanged(auth, (user) => {
         console.log("Fetching User Data from Database...");
 
         console.log("Setting User Data...");
-        setDoc(doc(db, 'users', `${user.uid}`), data);
-        console.log(data);
+        const setting = setDoc(doc(db, 'users', `${user.uid}`), data);
+        setting.then(() => {
+            console.log(data);
+        })
 
         const UserData = getDoc(query(collection(db, 'users'), where("uid", "=", `${user.uid}`)));
         UserData.then((response) => {

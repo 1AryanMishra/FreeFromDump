@@ -4,9 +4,6 @@ import { doc, collection, where, getDoc, getDocs, setDoc, query } from "https://
 
 const auth = getAuth();
 
-console.log(sessionStorage.getItem('level'));
-console.log(sessionStorage.getItem('course'));
-
 onAuthStateChanged(auth, (user) => {
     if(user){
         const oldUser = getDocs(query(collection(db, 'users'), where("uid", "==", `${user.uid}`)));
@@ -29,8 +26,8 @@ onAuthStateChanged(auth, (user) => {
                     name : `${user.displayName}`,
                     uid : `${user.uid}`,
                     email : `${user.email}`,
-                    course : `${JSON.parse(sessionStorage.getItem("course"))}`,
-                    level : `${JSON.parse(sessionStorage.getItem("level"))}`
+                    course : `${sessionStorage.getItem("course")}`,
+                    level : `${sessionStorage.getItem("level")}`
                 })
             }
         }).catch((err) => {

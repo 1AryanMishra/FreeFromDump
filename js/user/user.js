@@ -8,15 +8,20 @@ onAuthStateChanged(auth, (user) => {
     if(user){
         const UserData = getDoc(doc(db, 'users', `${user.uid}`));
         UserData.then((response) => {
-            console.log(response.data());
-        }).catch((err) => {
-            data = {
-                name : `${user.displayName}`,
-                email : `${user.email}`,
-                uid : `${user.uid}`
+            if(response){
+                console.log("logging UserData response", response.data());
             }
-            setDoc(doc(db, 'users', `${user.uid}`), data);
-            console.log(data);
+            else{
+                data = {
+                    name : `${user.displayName}`,
+                    email : `${user.email}`,
+                    uid : `${user.uid}`
+                }
+                setDoc(doc(db, 'users', `${user.uid}`), data);
+                console.log(data);
+            }
+        }).catch((err) => {
+            location.reload();
         })
     }
     else{

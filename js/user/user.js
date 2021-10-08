@@ -4,10 +4,8 @@ import { doc, collection, where, getDoc, getDocs, setDoc, query } from "https://
 
 const auth = getAuth();
 
-console.log(typeof(sessionStorage.getItem('course')));
-console.log(typeof(sessionStorage.getItem('level')));
-console.log(JSON.parse(sessionStorage.getItem('course')));
-console.log(JSON.parse(sessionStorage.getItem('level')));
+console.log(sessionStorage.getItem('level'));
+console.log(sessionStorage.getItem('course'));
 
 onAuthStateChanged(auth, (user) => {
     if(user){

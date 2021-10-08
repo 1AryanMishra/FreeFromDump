@@ -8,7 +8,7 @@ onAuthStateChanged(auth, (user) => {
     if(user){
         const UserData = getDoc(doc(db, 'users', `${user.uid}`));
         UserData.then((response) => {
-            if(response){
+            if(response != null){
                 console.log("logging UserData response", response.data());
             }
             else{

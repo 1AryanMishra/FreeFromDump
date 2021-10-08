@@ -26,11 +26,14 @@ onAuthStateChanged(auth, (user) => {
 
         //======= User Greeting =======
         const greet_user = document.querySelector('.greet_user');
+        
+        document.querySelector('.sign_out').style.display = 'block';
         greet_user.style.display = 'flex';
         greet_user.querySelector('.user_dp').src = `${user.photoURL}`;
         greet_user.querySelector('.username').textContent = `Hello, ${getFirstName(user.displayName)}`;
 
         //======= SignOut Functionality =======
+
         document.querySelector('.sign_out').addEventListener('click', () => {
             signOut(auth).then(() => {
                 document.querySelector('.sign_out').style.display = 'none';

@@ -1,4 +1,4 @@
-import db from '../../database/firestore';
+import db from '../../database/firestore.js';
 import { GoogleAuthProvider, signOut, getAuth, signInWithPopup, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js'
 import { collection, getDocs, query } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 

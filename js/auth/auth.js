@@ -50,6 +50,7 @@ function signIn(){
 
 onAuthStateChanged(auth, (user) => {
     if(user){
+        //Adding Greet
         document.querySelector('.sign_out').style.display = 'block';
         document.querySelector('.sign_in').style.visibility = 'hidden';
         document.querySelector('.sign_in_box').style.display = 'none';
@@ -57,6 +58,7 @@ onAuthStateChanged(auth, (user) => {
         document.querySelector('.greet_user').querySelector('.user_dp').src = `${user.photoURL}`;
         document.querySelector('.greet_user').querySelector('.username').textContent = `Hello, ${getFirstName(user.displayName)}`;
 
+        //SignOut btn function
         document.querySelector('.sign_out').addEventListener('click', () => {
             signOut(auth).then(() => {
                 document.querySelector('.sign_out').style.display = 'none';

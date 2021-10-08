@@ -36,6 +36,6 @@ onAuthStateChanged(auth, (user) => {
         })
     }
     else{
-        window.open('https://freefromdump.netlify.app/pages/first_page.html', '_top');
+        window.open('https://mayajal.netlify.app/pages/first_page.html', '_top');
     }
 })

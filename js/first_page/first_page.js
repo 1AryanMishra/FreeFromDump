@@ -191,7 +191,7 @@ function StartFromHere(level){
         if(user){
             sessionStorage.setItem("level", `${level}`);
             sessionStorage.setItem("course", `${SelectedField}`);
-            window.open('https://freefromdump.netlify.app/pages/user.html', '_top');
+            window.open('https://mayajal.netlify.app/pages/user.html', '_top');
         }
         else{
             console.log("No Users");

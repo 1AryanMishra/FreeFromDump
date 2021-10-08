@@ -3,7 +3,7 @@ import { collection, getDocs } from "https://www.gstatic.com/firebasejs/9.0.2/fi
 
 window.addEventListener('load', () => {
     if(localStorage.getItem("goal") !== null && sessionStorage.getItem("isActive") === null){
-        window.open('https://freefromdump.netlify.app/pages/first_page.html', '_top');
+        window.open('https://mayajal.netlify.app/pages/first_page.html', '_top');
     }
 })
 

@@ -92,7 +92,8 @@ function RenderExcersises(i, user){
     const PracticeArea = document.querySelector('.practiceArea');
     const PracticeData = getDoc(doc(db, 'fields', `${user.course}`, `${user.level}`, `${i}`));
     PracticeData.then((data) => {
-        if(data.data()._snapshot.docChanges.length >= 1){
+        console.log(data);
+        if(data.data().practiceSets.length >= 1){
             PracticeArea.innerHTML = RenderPracticeArea(data.data().practiceSets);
         }
         else{

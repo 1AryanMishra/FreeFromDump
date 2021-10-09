@@ -177,7 +177,7 @@ html{
                                         justify-content: space-around;
                                         
                                         .provider_logo{
-                                            max-width: 15%;
+                                            max-width: 100%;
                                             padding: 1em;
                                             border-radius: 100%;
                                             box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
@@ -314,6 +314,17 @@ html{
                                     .resource_details{
                                         flex-direction: row;
                                         min-width: 100%;
+
+                                        .description{
+
+                                            .provider{
+    
+                                                .provider_logo{
+                                                    max-width: 10%;
+                                                }
+                                            }
+                                        }
+
                                         
                                         .demo_player{
                                             width: 64%;

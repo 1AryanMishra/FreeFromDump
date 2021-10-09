@@ -252,7 +252,7 @@ html {
 }
 
 .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .provider .provider_logo {
-  max-width: 15%;
+  max-width: 100%;
   padding: 1em;
   border-radius: 100%;
   -webkit-box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
@@ -379,6 +379,9 @@ html {
         -ms-flex-direction: row;
             flex-direction: row;
     min-width: 100%;
+  }
+  body .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .provider .provider_logo {
+    max-width: 10%;
   }
   body .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .demo_player {
     width: 64%;

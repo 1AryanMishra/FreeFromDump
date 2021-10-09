@@ -87,10 +87,10 @@ function RenderPracticeArea(data){
 
 
 
-function RenderExcersises(user){
-    console.log("Rendering Excersises for ", user.name);
+function RenderExcersises(i, user){
+    console.log("Rendering Excersises for ", i);
     const PracticeArea = document.querySelector('.practiceArea');
-    const PracticeData = getDoc(query(doc(db, 'fields', `${user.course}`, `${user.level}`), where("course", "==", `${course}`)));
+    const PracticeData = getDoc(doc(db, 'fields', `${user.course}`, `${user.level}`, `${i}`));
     PracticeData.then((data) => {
         if(data.data()._snapshot.docChanges.length >= 1){
             PracticeArea.innerHTML = RenderPracticeArea(data.data().practiceSets);
@@ -149,7 +149,7 @@ function RenderResources(i, user, courseName){
 function RenderTargetMaterial(i, user, courseName){
     console.log("Rendering TargetMaterial for", i);
     RenderResources(i, user, courseName);
-    RenderExcersises(user);
+    RenderExcersises(i, user);
 }
 
 

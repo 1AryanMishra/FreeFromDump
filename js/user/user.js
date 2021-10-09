@@ -34,11 +34,14 @@ function FetchUserLevelData(user){
     const targetSection = document.querySelector('.targets');
     const UserCourses = getDocs(collection(db, 'fields', `${user.course}`, `${user.level}`));
     UserCourses.then((c) => {
+        var courseDataToBeRendered = "";
         console.log("Fetched courses");
         c.forEach((d) => {
-            targetSection.innerHTML += `<div class="targetCard" id="${d.data().course}">${d.data().course}</div>`
+            console.log("Course is ", d.data().course);
+            courseDataToBeRendered += `<div class="targetCard" id="${d.data().course}">${d.data().course}</div>`
         })
-        console.log("Rendered Courses Cards.");
+        console.log("Rendering Courses Cards.");
+        targetSection.innerHTML = courseDataToBeRendered;
         for(var i = 0; i<courses.length; i++){
             courses[i].addEventListener('click', () => {
                 RenderTargetMaterial(courses[i].id, i);

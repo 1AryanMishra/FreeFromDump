@@ -17,8 +17,10 @@
 }
 
 .main_container .container .target_container {
+  -webkit-box-shadow: 0 0 1em var(--buttonBoxShadow);
+          box-shadow: 0 0 1em var(--buttonBoxShadow);
   margin: auto;
-  max-width: 95%;
+  max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -140,7 +142,7 @@
 }
 
 .main_container .container .target_material .resources_container .resources_area .target_res_container .target_res .channel_intro .channel_logo {
-  max-width: 10%;
+  max-width: 100%;
   margin: auto;
   padding: 1em;
   border-radius: 100%;
@@ -251,6 +253,9 @@
 @media (min-width: 950px) {
   .main_container .container .target_material .resources_container {
     border-bottom-right-radius: 6px;
+  }
+  .main_container .container .target_material .resources_container .resources_area .target_res_container .target_res .channel_intro .channel_logo {
+    max-width: 10%;
   }
   .main_container .container .target_material .resources_container .resources_area .target_res_container .target_res .res_flex_area {
     -webkit-box-orient: horizontal;

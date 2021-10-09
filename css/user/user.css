@@ -165,7 +165,6 @@
   margin: 0.5em auto;
   -webkit-box-shadow: 0 0 5em var(--buttonBoxShadow) inset;
           box-shadow: 0 0 5em var(--buttonBoxShadow) inset;
-  padding: 4.5em 8em;
 }
 
 .main_container .container .target_material .resources_container .resources_area .target_res_container .target_res .res_flex_area .res_desc {
@@ -235,7 +234,6 @@
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
-  padding: 10em 5em;
   -webkit-box-shadow: 0 0 5em var(--buttonBoxShadow) inset;
           box-shadow: 0 0 5em var(--buttonBoxShadow) inset;
 }

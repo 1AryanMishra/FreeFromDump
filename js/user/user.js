@@ -93,7 +93,7 @@ function RenderExcersises(user){
     const PracticeData = getDoc(query(doc(db, 'fields', `${user.course}`, `${user.level}`), where("course", "==", `${course}`)));
     PracticeData.then((data) => {
         if(data.data()._snapshot.docChanges.length >= 1){
-            PracticeArea.innerHTML = RenderPracticeArea(data.data());
+            PracticeArea.innerHTML = RenderPracticeArea(data.data().practiceSets);
         }
         else{
             PracticeArea.textContent = "No Practice Data Available.";
@@ -119,7 +119,7 @@ function RenderResource(data){
                         ${renderPrereq(data.prerequisites)}
                     </div>
                 </div>
-                <a href="https://www.youtube.com/watch?v=${data.videoId}"><button class="watchOnYT">Watch On YouTube</button></a>
+                <a class="watchOnYT" href="https://www.youtube.com/watch?v=${data.videoId}"><button class="watchOnYT">Watch On YouTube</button></a>
             </div>
     `)
 }

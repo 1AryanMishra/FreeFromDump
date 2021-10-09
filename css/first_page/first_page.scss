@@ -178,6 +178,9 @@ html{
                                         
                                         .provider_logo{
                                             max-width: 15%;
+                                            padding: 1em;
+                                            border-radius: 100%;
+                                            box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
                                             
                                             img{
                                                 border-radius: 100%;

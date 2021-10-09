@@ -253,6 +253,10 @@ html {
 
 .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .provider .provider_logo {
   max-width: 15%;
+  padding: 1em;
+  border-radius: 100%;
+  -webkit-box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
+          box-shadow: 0 0 1em var(--buttonBoxShadow) inset;
 }
 
 .main_container #container #levels .level .resources_area .resources .resource_container .resource_details .description .provider .provider_logo img {

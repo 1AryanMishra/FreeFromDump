@@ -56,9 +56,13 @@ onAuthStateChanged(auth, (user) => {
         document.querySelector('.sign_out').style.display = 'block';
         document.querySelector('.sign_in').style.visibility = 'hidden';
         document.querySelector('.sign_in_box').style.display = 'none';
-        document.querySelector('.greet_user').style.display = 'flex';
-        document.querySelector('.greet_user').querySelector('.user_dp').src = `${user.photoURL}`;
-        document.querySelector('.greet_user').querySelector('.username').textContent = `Hello, ${getFirstName(user.displayName)}`;
+        const greetUser = document.querySelector('.greet_user');
+        greetUser.style.display = 'flex';
+        greetUser.querySelector('.user_dp').src = `${user.photoURL}`;
+        greetUser.querySelector('.username').textContent = `Hello, ${getFirstName(user.displayName)}`;
+        greetUser.querySelector('.user_dp').addEventListener('click', () => {
+            window.open('https://mayajal.netlify.app/pages/user.html', '_top');
+        })
 
         //SignOut btn function
         document.querySelector('.sign_out').addEventListener('click', () => {
@@ -79,7 +83,7 @@ onAuthStateChanged(auth, (user) => {
         const oldUser = getDocs(query(collection(db, 'users'), where("uid", "==", `${user.uid}`)));
         oldUser.then((response) => {
             if(response._snapshot.docChanges.length >= 1){
-                if((sessionStorage.getItem('isActive') === null)){
+                if((sessionStorage.getItem('isLoggedIn') === null)){
                     window.open('https://mayajal.netlify.app/pages/user.html', '_top');
                 }
             }

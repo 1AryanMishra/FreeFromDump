@@ -29,28 +29,19 @@ function getFirstName(name){
 
 
 function FetchUserLevelData(user){
-    console.log("Fetching ", user.name, "courses.");
     const targetSection = document.querySelector('.targets');
-    console.log("User Course is ", user.course, "User Level is ", user.level);
     const UserCourses = getDocs(collection(db, 'fields', `${user.course}`, `${user.level}`));
     UserCourses.then((c) => {
-        console.log(c);
         var courseDataToBeRendered = "";
-        console.log("Fetched courses");
         c.forEach((d) => {
-            console.log(d);
-            console.log("Course is ", d.data().course);
             courseDataToBeRendered += `<div class="targetCard" id="${d.id}">${d.data().course}</div>`
         })
-        console.log("Rendering Courses Cards.");
         targetSection.innerHTML = courseDataToBeRendered;
 
         const courses = document.querySelectorAll('.targetCard');
-        console.log("There are ", courses.length, "courses.");
 
         courses.forEach((c) => {
             c.addEventListener('click', () => {
-                console.log("Addind Event Listener for Course ", c.id);
                 RenderTargetMaterial(c.id, user, c.textContent);
             })
         })
@@ -88,15 +79,14 @@ function RenderPracticeArea(data){
 
 
 function RenderExcersises(i, user){
-    console.log("Rendering Excersises for ", i);
     const PracticeArea = document.querySelector('.practiceArea');
     const PracticeData = getDoc(doc(db, 'fields', `${user.course}`, `${user.level}`, `${i}`));
     PracticeData.then((data) => {
-        console.log(data);
-        if(data.data().practiceSets.length >= 1){
+        if(data.data().practiceSets){
             PracticeArea.innerHTML = RenderPracticeArea(data.data().practiceSets);
         }
         else{
+            PracticeArea.innerHTML = "";
             PracticeArea.textContent = "No Practice Data Available.";
         }
     })
@@ -127,7 +117,6 @@ function RenderResource(data){
 
 
 function GetSetResData(i, user){
-    console.log("Fetching Courses for level", user.level);
     const res_container = document.querySelector('.target_res_container');
     const courseData = getDocs(collection(db, 'fields', `${user.course}`, `${user.level}`, `${i}`, 'resources'));
     var course_data = '';
@@ -135,7 +124,6 @@ function GetSetResData(i, user){
         response.forEach((d) => {
             course_data += `${RenderResource(d.data())}`;
         })
-        console.log("Rendering Resources to res_container.");
         res_container.innerHTML = course_data;
     })
 }
@@ -148,7 +136,6 @@ function RenderResources(i, user, courseName){
 
 
 function RenderTargetMaterial(i, user, courseName){
-    console.log("Rendering TargetMaterial for", i);
     RenderResources(i, user, courseName);
     RenderExcersises(i, user);
 }
@@ -185,7 +172,6 @@ onAuthStateChanged(auth, (user) => {
         })
 
         //======= User Data Fetching/Setting Processing =======
-        console.log("Checking For Old/New User.");
         const oldUser = getDocs(query(collection(db, 'users'), where("uid", "==", `${user.uid}`)));
         oldUser.then((response) => {
             if(response._snapshot.docChanges.length >= 1){
@@ -195,7 +181,6 @@ onAuthStateChanged(auth, (user) => {
                 })
             }
             else{
-                console.log("New User");
                 const UserDataToSet = {
                     name : `${user.displayName}`,
                     uid : `${user.uid}`,

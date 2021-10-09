@@ -39,7 +39,7 @@
                     text-align: center;
                 }
 
-                .targetCard:hover{
+                .targetCard:hover, .targetCard:focus{
                     transform: scale(1.2);
                     box-shadow: 0 0 1em yellowgreen;
                 }
@@ -140,6 +140,8 @@
             }
     
             .excersises_container{
+                margin: auto;
+                max-width: 90%;
                 box-shadow: 0 0 1em #fff;
                 border-bottom-right-radius: 100%;
                 padding-top: 1em;
@@ -156,7 +158,7 @@
                     margin: 0.5em;
                 }
     
-                .sites{
+                .practiceArea{
                     margin: 1em;
                     display: flex;
                     flex-flow: row nowrap;
@@ -166,11 +168,16 @@
                     scroll-snap-type: x mandatory;
                     
                     .practiceSites{
+                        transform: scale(0.3);
                         max-width: 100%;
                         scroll-snap-align: center;
                         margin: auto 2em;
                         min-width: fit-content;
                         box-shadow: 0 0 5em var(--buttonBoxShadow) inset;
+                    }
+                    
+                    .practiceSites:hover, .practiceSites:focus{
+                        transform: scale(1.2);
                     }
                 }
             }

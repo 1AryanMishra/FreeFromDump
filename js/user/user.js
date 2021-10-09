@@ -29,7 +29,7 @@ const courses = document.querySelectorAll('.targetCard');
 
 
 
-function FetchUserLevelData(userData){
+function FetchUserLevelData(user){
     const targetSection = document.querySelector('.targets');
     const UserCourses = getDocs(collection(db, 'fields', `${user.course}`, `${user.level}`));
     UserCourses.then((c) => {
@@ -66,7 +66,7 @@ function renderPrereq(prereq){
 function RenderPracticeArea(data){
     var practiceSets = "";
     for(var i=0; i<data.length; i++){
-        practiceSets += `<img class="practiceSites" src="data[i]">`;
+        practiceSets += `<img class="practiceSites" src="${data[i]}">`;
     }
     return practiceSets;
 }
@@ -74,9 +74,9 @@ function RenderPracticeArea(data){
 
 
 
-function RenderExcersises(course){
+function RenderExcersises(course, user){
     const PracticeArea = document.querySelector('.practiceArea');
-    const PracticeData = getDoc(query(doc(db, 'fields', `${user_course}`, `${user_level}`), where("course", "==", `${course}`)));
+    const PracticeData = getDoc(query(doc(db, 'fields', `${user.course}`, `${user.level}`), where("course", "==", `${course}`)));
     PracticeData.then((data) => {
         if(data.data()._snapshot.docChanges.length >= 1){
             PracticeArea.innerHTML = RenderPracticeArea(data.data());
@@ -111,9 +111,9 @@ function RenderResource(data){
 }
 
 
-function GetSetResData(course, i){
+function GetSetResData(course, i, user){
     const res_container = document.querySelector('.target_res_container');
-    const courseData = getDocs(collection(db, 'fields', `${user_course}`, `${user_level}`, `${i}`, 'resources'));
+    const courseData = getDocs(collection(db, 'fields', `${user.course}`, `${user.level}`, `${i}`, 'resources'));
     var course_data = '';
     courseData.then((response) => {
         response.forEach((d) => {
@@ -123,16 +123,16 @@ function GetSetResData(course, i){
     })
 }
 
-function RenderResources(course, i){
+function RenderResources(course, i, user){
     const res_area = document.querySelector('.resources_area');
     res_area.querySelector('.target_name').textContent = `${course}`;
-    GetSetResData(course, i);
+    GetSetResData(course, i, user);
 }
 
 
-function RenderTargetMaterial(course, i){
-    RenderResources(course, i);
-    RenderExcersises(course);
+function RenderTargetMaterial(course, i, user){
+    RenderResources(course, i, user);
+    RenderExcersises(course, user);
 }
 
 

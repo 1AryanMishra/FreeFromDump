@@ -49,9 +49,9 @@ function FetchUserLevelData(user){
         console.log("There are ", courses.length, "courses.");
 
         for(var i = 0; i<courses.length; i++){
-            console.log("Inside for loop for course", course[i].id);
+            console.log("Inside for loop for course", courses[i].id);
             courses[i].addEventListener('click', () => {
-                console.log("Adding Event Listener for course ", course[i].id);
+                console.log("Adding Event Listener for course ", courses[i].id);
                 RenderTargetMaterial(courses[i].id, i);
             })
         }

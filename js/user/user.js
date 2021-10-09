@@ -25,13 +25,13 @@ function getFirstName(name){
 
 
 
-const courses = document.querySelectorAll('.targetCard');
 
 
 
 function FetchUserLevelData(user){
     console.log("Fetching ", user.name, "courses.");
     const targetSection = document.querySelector('.targets');
+    console.log("User Course is ", user.course, "User Level is ", user.level);
     const UserCourses = getDocs(collection(db, 'fields', `${user.course}`, `${user.level}`));
     UserCourses.then((c) => {
         console.log(c);
@@ -44,8 +44,14 @@ function FetchUserLevelData(user){
         })
         console.log("Rendering Courses Cards.");
         targetSection.innerHTML = courseDataToBeRendered;
+
+        const courses = document.querySelectorAll('.targetCard');
+        console.log("There are ", courses.length, "courses.");
+
         for(var i = 0; i<courses.length; i++){
+            console.log("Inside for loop for course", course[i].id);
             courses[i].addEventListener('click', () => {
+                console.log("Adding Event Listener for course ", course[i].id);
                 RenderTargetMaterial(courses[i].id, i);
             })
         }

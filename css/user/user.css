@@ -194,7 +194,7 @@
 
 .main_container .container .target_material .excersises_container {
   margin: auto;
-  max-width: 90%;
+  max-width: 100%;
   -webkit-box-shadow: 0 0 1em #fff;
           box-shadow: 0 0 1em #fff;
   border-bottom-right-radius: 100%;
@@ -219,7 +219,7 @@
 }
 
 .main_container .container .target_material .excersises_container .practiceArea {
-  max-width: 50%;
+  max-width: 100%;
   margin: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -238,9 +238,7 @@
 .main_container .container .target_material .excersises_container .practiceArea .practiceSites {
   scroll-snap-align: center;
   margin: auto 2em;
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
+  max-width: 100%;
   -webkit-box-shadow: 0 0 5em var(--buttonBoxShadow) inset;
           box-shadow: 0 0 5em var(--buttonBoxShadow) inset;
 }
@@ -272,6 +270,9 @@
   }
   .main_container .container .target_material .excersises_container {
     border-bottom-right-radius: 6px;
+  }
+  .main_container .container .target_material .excersises_container .practiceArea .practiceSites {
+    max-width: 20%;
   }
 }
 /*# sourceMappingURL=user.css.map */

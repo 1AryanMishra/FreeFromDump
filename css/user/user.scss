@@ -142,7 +142,7 @@
     
             .excersises_container{
                 margin: auto;
-                max-width: 90%;
+                max-width: 100%;
                 box-shadow: 0 0 1em #fff;
                 border-bottom-right-radius: 100%;
                 padding-top: 1em;
@@ -160,7 +160,7 @@
                 }
     
                 .practiceArea{
-                    max-width: 50%;
+                    max-width: 100%;
                     margin: 1em;
                     display: flex;
                     flex-flow: row nowrap;
@@ -172,7 +172,7 @@
                     .practiceSites{
                         scroll-snap-align: center;
                         margin: auto 2em;
-                        min-width: fit-content;
+                        max-width: 100%;
                         box-shadow: 0 0 5em var(--buttonBoxShadow) inset;
                     }
                     
@@ -220,6 +220,13 @@
     
                 .excersises_container{
                     border-bottom-right-radius: 6px;
+
+                    .practiceArea{
+
+                        .practiceSites{
+                            max-width: 20%  ;
+                        }
+                    }
                 }
             }
         }

@@ -28,7 +28,7 @@ function getFirstName(name){
 function signIn(){
     const Google = new GoogleAuthProvider();
 
-    const signInBtns = document.querySelector('.sign_in');
+    const signInBtns = document.querySelectorAll('.sign_in');
     signInBtns.forEach((b) => {
         b.style.visibility = "visible";
     })

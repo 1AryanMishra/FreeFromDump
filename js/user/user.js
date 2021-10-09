@@ -34,9 +34,11 @@ function FetchUserLevelData(user){
     const targetSection = document.querySelector('.targets');
     const UserCourses = getDocs(collection(db, 'fields', `${user.course}`, `${user.level}`));
     UserCourses.then((c) => {
+        console.log(c);
         var courseDataToBeRendered = "";
         console.log("Fetched courses");
         c.forEach((d) => {
+            console.log(d);
             console.log("Course is ", d.data().course);
             courseDataToBeRendered += `<div class="targetCard" id="${d.data().course}">${d.data().course}</div>`
         })

@@ -30,12 +30,15 @@ const courses = document.querySelectorAll('.targetCard');
 
 
 function FetchUserLevelData(user){
+    console.log("Fetching ", user.name, "courses.");
     const targetSection = document.querySelector('.targets');
     const UserCourses = getDocs(collection(db, 'fields', `${user.course}`, `${user.level}`));
     UserCourses.then((c) => {
+        console.log("Fetched courses");
         c.forEach((d) => {
             targetSection.innerHTML += `<div class="targetCard" id="${d.data().course}">${d.data().course}</div>`
         })
+        console.log("Rendered Courses Cards.");
         for(var i = 0; i<courses.length; i++){
             courses[i].addEventListener('click', () => {
                 RenderTargetMaterial(courses[i].id, i);
@@ -75,6 +78,7 @@ function RenderPracticeArea(data){
 
 
 function RenderExcersises(course, user){
+    console.log("Rendering Excersises for ", user.name);
     const PracticeArea = document.querySelector('.practiceArea');
     const PracticeData = getDoc(query(doc(db, 'fields', `${user.course}`, `${user.level}`), where("course", "==", `${course}`)));
     PracticeData.then((data) => {
@@ -112,6 +116,7 @@ function RenderResource(data){
 
 
 function GetSetResData(course, i, user){
+    console.log("Fetching Courses for level", user.level);
     const res_container = document.querySelector('.target_res_container');
     const courseData = getDocs(collection(db, 'fields', `${user.course}`, `${user.level}`, `${i}`, 'resources'));
     var course_data = '';
@@ -119,6 +124,7 @@ function GetSetResData(course, i, user){
         response.forEach((d) => {
             course_data += `${RenderResource(d.data())}`;
         })
+        console.log("Rendering Resources to res_container.");
         res_container.innerHTML = course_data;
     })
 }
@@ -131,6 +137,7 @@ function RenderResources(course, i, user){
 
 
 function RenderTargetMaterial(course, i, user){
+    console.log("Rendering TargetMaterial for", course);
     RenderResources(course, i, user);
     RenderExcersises(course, user);
 }

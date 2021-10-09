@@ -1,5 +1,5 @@
 import db from '../../database/firestore.js';
-import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js';
+import { getAuth, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js';
 import { doc, collection, where, getDoc, getDocs, setDoc, query } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 
 const auth = getAuth();
@@ -45,7 +45,7 @@ onAuthStateChanged(auth, (user) => {
                 document.querySelector('.greet_user').style.display = 'none';
                 document.querySelector('.retry_msg').style.display = 'none';
 
-                signIn();
+                window.open('https://mayajal.netlify.app/pages/first_page.html', '_top');
             })
             .catch((err) => {
                 document.querySelector('.sign_out_err').classList.toggle('sign_out_err_visible');

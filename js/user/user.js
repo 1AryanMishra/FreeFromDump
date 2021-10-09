@@ -40,7 +40,7 @@ function FetchUserLevelData(user){
         c.forEach((d) => {
             console.log(d);
             console.log("Course is ", d.data().course);
-            courseDataToBeRendered += `<div class="targetCard" id="${d.data().course}">${d.data().course}</div>`
+            courseDataToBeRendered += `<div class="targetCard" id="${d.id}">${d.data().course}</div>`
         })
         console.log("Rendering Courses Cards.");
         targetSection.innerHTML = courseDataToBeRendered;
@@ -48,13 +48,12 @@ function FetchUserLevelData(user){
         const courses = document.querySelectorAll('.targetCard');
         console.log("There are ", courses.length, "courses.");
 
-        for(var i = 0; i<courses.length; i++){
-            console.log("Inside for loop for course", courses[i].id);
-            courses[i].addEventListener('click', () => {
-                console.log("Adding Event Listener for course ", courses[i].id);
-                RenderTargetMaterial(courses[i].id, i);
+        courses.forEach((c) => {
+            c.addEventListener('click', () => {
+                console.log("Addind Event Listener for Course ", c.id);
+                RenderTargetMaterial(c.id, user);
             })
-        }
+        })
     })
 }
 
@@ -88,7 +87,7 @@ function RenderPracticeArea(data){
 
 
 
-function RenderExcersises(course, user){
+function RenderExcersises(user){
     console.log("Rendering Excersises for ", user.name);
     const PracticeArea = document.querySelector('.practiceArea');
     const PracticeData = getDoc(query(doc(db, 'fields', `${user.course}`, `${user.level}`), where("course", "==", `${course}`)));
@@ -126,7 +125,7 @@ function RenderResource(data){
 }
 
 
-function GetSetResData(course, i, user){
+function GetSetResData(i, user){
     console.log("Fetching Courses for level", user.level);
     const res_container = document.querySelector('.target_res_container');
     const courseData = getDocs(collection(db, 'fields', `${user.course}`, `${user.level}`, `${i}`, 'resources'));
@@ -140,17 +139,17 @@ function GetSetResData(course, i, user){
     })
 }
 
-function RenderResources(course, i, user){
+function RenderResources(i, user){
     const res_area = document.querySelector('.resources_area');
-    res_area.querySelector('.target_name').textContent = `${course}`;
-    GetSetResData(course, i, user);
+    res_area.querySelector('.target_name').textContent = `${user.course}`;
+    GetSetResData(i, user);
 }
 
 
-function RenderTargetMaterial(course, i, user){
-    console.log("Rendering TargetMaterial for", course);
-    RenderResources(course, i, user);
-    RenderExcersises(course, user);
+function RenderTargetMaterial(i, user){
+    console.log("Rendering TargetMaterial for", i);
+    RenderResources(i, user);
+    RenderExcersises(user);
 }
 
 

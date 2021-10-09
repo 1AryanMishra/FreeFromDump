@@ -51,7 +51,7 @@ function FetchUserLevelData(user){
         courses.forEach((c) => {
             c.addEventListener('click', () => {
                 console.log("Addind Event Listener for Course ", c.id);
-                RenderTargetMaterial(c.id, user);
+                RenderTargetMaterial(c.id, user, c.textContent);
             })
         })
     })
@@ -108,7 +108,7 @@ function RenderResource(data){
         `
             <div class="target_res">
                 <div class="channel_intro">
-                    <div class="channel_logo">${data.logo}</div>
+                    <img class="channel_logo" src="${data.logo}">
                     <h3 class="channel_name">${data.title}</h3>
                 </div>
                 <div class="res_flex_area">
@@ -119,7 +119,7 @@ function RenderResource(data){
                         ${renderPrereq(data.prerequisites)}
                     </div>
                 </div>
-                <button class="watchOnYT">Watch On YouTube</button>
+                <a href="https://www.youtube.com/watch?v=${data.videoId}"><button class="watchOnYT">Watch On YouTube</button></a>
             </div>
     `)
 }
@@ -139,16 +139,16 @@ function GetSetResData(i, user){
     })
 }
 
-function RenderResources(i, user){
+function RenderResources(i, user, courseName){
     const res_area = document.querySelector('.resources_area');
-    res_area.querySelector('.target_name').textContent = `${user.course}`;
+    res_area.querySelector('.target_name').textContent = `${courseName}`;
     GetSetResData(i, user);
 }
 
 
-function RenderTargetMaterial(i, user){
+function RenderTargetMaterial(i, user, courseName){
     console.log("Rendering TargetMaterial for", i);
-    RenderResources(i, user);
+    RenderResources(i, user, courseName);
     RenderExcersises(user);
 }
 

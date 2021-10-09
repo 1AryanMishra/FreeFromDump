@@ -4,7 +4,7 @@ import { doc, collection, where, getDoc, getDocs, setDoc, query } from "https://
 
 const auth = getAuth();
 
-if((sessionStorage.getItem('isActive') === null){
+if((sessionStorage.getItem('isActive') === null)){
     sessionStorage.setItem('isActive', 1);
 }
 

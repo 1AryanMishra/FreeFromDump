@@ -24,6 +24,7 @@
   margin-right: 0;
   max-width: 8%;
   border-radius: 100%;
+  cursor: pointer;
 }
 
 .greet_user .username {

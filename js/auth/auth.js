@@ -79,7 +79,9 @@ onAuthStateChanged(auth, (user) => {
         const oldUser = getDocs(query(collection(db, 'users'), where("uid", "==", `${user.uid}`)));
         oldUser.then((response) => {
             if(response._snapshot.docChanges.length >= 1){
-                window.open('https://mayajal.netlify.app/pages/user.html', '_top');
+                if((sessionStorage.getItem('isActive') === null)){
+                    window.open('https://mayajal.netlify.app/pages/user.html', '_top');
+                }
             }
             else{
                 //Stay On that Page and wait for Course Selection

@@ -4,7 +4,7 @@ import { doc, collection, where, getDoc, getDocs, setDoc, query } from "https://
 
 const auth = getAuth();
 
-if(!(sessionStorage.getItem('isActive'))){
+if((sessionStorage.getItem('isActive') === null){
     sessionStorage.setItem('isActive', 1);
 }
 
@@ -28,7 +28,7 @@ function getFirstName(name){
 onAuthStateChanged(auth, (user) => {
     if(user){
 
-        //======= User Greeting =======
+        /*======= User Greeting =======
         const greet_user = document.querySelector('.greet_user');
 
         document.querySelector('.sign_out').style.display = 'block';
@@ -50,7 +50,7 @@ onAuthStateChanged(auth, (user) => {
             .catch((err) => {
                 document.querySelector('.sign_out_err').classList.toggle('sign_out_err_visible');
             })
-        })
+        })*/
 
         //======= User Data Fetching/Setting Processing =======
         const oldUser = getDocs(query(collection(db, 'users'), where("uid", "==", `${user.uid}`)));

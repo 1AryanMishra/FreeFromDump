@@ -236,7 +236,7 @@
 .main_container .container .target_material .excersises_container .practiceArea .practiceSites {
   -webkit-transform: scale(0.3);
           transform: scale(0.3);
-  max-width: 100%;
+  max-width: 50%;
   scroll-snap-align: center;
   margin: auto 2em;
   min-width: -webkit-fit-content;

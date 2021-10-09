@@ -176,7 +176,6 @@ onAuthStateChanged(auth, (user) => {
         oldUser.then((response) => {
             if(response._snapshot.docChanges.length >= 1){
                 response.forEach((u) => {
-                    console.log("Old User.");
                     FetchUserLevelData(u.data());
                 })
             }

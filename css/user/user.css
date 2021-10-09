@@ -187,6 +187,10 @@
   color: var(--buttonFont);
 }
 
+.main_container .container .target_material .resources_container .resources_area .target_res_container .target_res .watchOnYT button {
+  padding: 0;
+}
+
 .main_container .container .target_material .excersises_container {
   -webkit-box-shadow: 0 0 1em #fff;
           box-shadow: 0 0 1em #fff;

@@ -129,6 +129,10 @@
                                 background: rgba(255, 0, 0, 1);
                                 text-align: center;
                                 color: var(--buttonFont);
+
+                                button{
+                                    padding: 0;
+                                }
                             }
                         }
                     }

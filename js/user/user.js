@@ -174,14 +174,17 @@ onAuthStateChanged(auth, (user) => {
         })
 
         //======= User Data Fetching/Setting Processing =======
+        console.log("Checking For Old/New User.");
         const oldUser = getDocs(query(collection(db, 'users'), where("uid", "==", `${user.uid}`)));
         oldUser.then((response) => {
             if(response._snapshot.docChanges.length >= 1){
                 response.forEach((u) => {
+                    console.log("Old User.");
                     FetchUserLevelData(u.data());
                 })
             }
             else{
+                console.log("New User");
                 const UserDataToSet = {
                     name : `${user.displayName}`,
                     uid : `${user.uid}`,

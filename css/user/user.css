@@ -90,6 +90,8 @@
 
 .main_container .container .target_material .resources_container h2 {
   padding-left: 0.5em;
+  -webkit-box-shadow: 0 0 1em var(--buttonBoxShadow);
+          box-shadow: 0 0 1em var(--buttonBoxShadow);
 }
 
 .main_container .container .target_material .resources_container .resources_area {
@@ -214,6 +216,8 @@
 
 .main_container .container .target_material .excersises_container h2 {
   padding-left: 0.5em;
+  -webkit-box-shadow: 0 0 1em var(--buttonBoxShadow);
+          box-shadow: 0 0 1em var(--buttonBoxShadow);
 }
 
 .main_container .container .target_material .excersises_container .excersiseGuideText {

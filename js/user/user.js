@@ -25,6 +25,120 @@ function getFirstName(name){
 
 
 
+const courses = document.querySelectorAll('.targetCard');
+
+
+
+function FetchUserLevelData(userData){
+    const targetSection = document.querySelector('.targets');
+    const UserCourses = getDocs(collection(db, 'fields', `${user.course}`, `${user.level}`));
+    UserCourses.then((c) => {
+        c.forEach((d) => {
+            targetSection.innerHTML += `<div class="targetCard" id="${d.data().course}">${d.data().course}</div>`
+        })
+        for(var i = 0; i<courses.length; i++){
+            courses[i].addEventListener('click', () => {
+                RenderTargetMaterial(courses[i].id, i);
+            })
+        }
+    })
+}
+
+
+
+
+
+
+
+function renderPrereq(prereq){
+    var prereqList = "";
+    for(var i = 0; i<prereq.length; i++){
+        prereqList += `<li>${prereq[i]}</li>`;
+    }
+    return(`
+    <ul class="prerequisites">
+        ${prereqList}
+    </ul>
+    `)
+}
+
+
+function RenderPracticeArea(data){
+    var practiceSets = "";
+    for(var i=0; i<data.length; i++){
+        practiceSets += `<img class="practiceSites" src="data[i]">`;
+    }
+    return practiceSets;
+}
+
+
+
+
+function RenderExcersises(course){
+    const PracticeArea = document.querySelector('.practiceArea');
+    const PracticeData = getDoc(query(doc(db, 'fields', `${user_course}`, `${user_level}`), where("course", "==", `${course}`)));
+    PracticeData.then((data) => {
+        if(data.data()._snapshot.docChanges.length >= 1){
+            PracticeArea.innerHTML = RenderPracticeArea(data.data());
+        }
+        else{
+            PracticeArea.textContent = "No Practice Data Available.";
+        }
+    })
+}
+
+
+
+function RenderResource(data){
+    return (
+        `
+            <div class="target_res">
+                <div class="channel_intro">
+                    <div class="channel_logo">${data.logo}</div>
+                    <h3 class="channel_name">${data.title}</h3>
+                </div>
+                <div class="res_flex_area">
+                    <iframe class = "demo_player" src="https://www.youtube.com/embed/${data.videoId}?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="res_desc">
+                        <p class="desc_text">${data.description}</p>
+                        <p class="desc_text">Prerequisites : </p>
+                        ${renderPrereq(data.prerequisites)}
+                    </div>
+                </div>
+                <button class="watchOnYT">Watch On YouTube</button>
+            </div>
+    `)
+}
+
+
+function GetSetResData(course, i){
+    const res_container = document.querySelector('.target_res_container');
+    const courseData = getDocs(collection(db, 'fields', `${user_course}`, `${user_level}`, `${i}`, 'resources'));
+    var course_data = '';
+    courseData.then((response) => {
+        response.forEach((d) => {
+            course_data += `${RenderResource(d.data())}`;
+        })
+        res_container.innerHTML = course_data;
+    })
+}
+
+function RenderResources(course, i){
+    const res_area = document.querySelector('.resources_area');
+    res_area.querySelector('.target_name').textContent = `${course}`;
+    GetSetResData(course, i);
+}
+
+
+function RenderTargetMaterial(course, i){
+    RenderResources(course, i);
+    RenderExcersises(course);
+}
+
+
+
+
+
 onAuthStateChanged(auth, (user) => {
     if(user){
 
@@ -56,15 +170,21 @@ onAuthStateChanged(auth, (user) => {
         const oldUser = getDocs(query(collection(db, 'users'), where("uid", "==", `${user.uid}`)));
         oldUser.then((response) => {
             if(response._snapshot.docChanges.length >= 1){
-                
+                response.forEach((u) => {
+                    FetchUserLevelData(u.data());
+                })
             }
             else{
-                const setting = setDoc(doc(db, 'users', `${user.uid}`), {
+                const UserDataToSet = {
                     name : `${user.displayName}`,
                     uid : `${user.uid}`,
                     email : `${user.email}`,
                     course : `${sessionStorage.getItem("course")}`,
                     level : `${sessionStorage.getItem("level")}`
+                }
+                const setting = setDoc(doc(db, 'users', `${user.uid}`), UserDataToSet);
+                setting.then(() => {
+                    FetchUserLevelData(UserDataToSet);
                 })
             }
         }).catch((err) => {

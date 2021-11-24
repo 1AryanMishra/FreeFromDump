@@ -1,5 +1,5 @@
-import db from '../../database/firestore.js'
-import { collection, getDocs } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
+//import db from '../../database/firestore.js'
+//import { collection, getDocs } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 
 window.addEventListener('load', () => {
     if(localStorage.getItem("goal") !== null && sessionStorage.getItem("isActive") === null){

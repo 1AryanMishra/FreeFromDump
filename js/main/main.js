@@ -10,10 +10,11 @@ window.addEventListener('load', () => {
 const submit = document.getElementById("submit");
 
 const goal = document.getElementById("field");
+/* Because of error in Samsung Phones in Select Input
 const fieldsList = await getDocs(collection(db, 'fields'));
 fieldsList.forEach((f) => {
     goal.innerHTML += `<option value="${f.id}">${f.data().label}</option>`;
-})
+})*/
 
 const goal_msg = document.querySelector("#goal_msg");
 

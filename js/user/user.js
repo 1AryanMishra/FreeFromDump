@@ -1,6 +1,6 @@
 import db from '../../database/firestore.js';
 import { getAuth, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js';
-import { doc, collection, where, getDoc, getDocs, setDoc, query } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
+import { doc, collection, getDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 
 const auth = getAuth();
 
@@ -157,7 +157,7 @@ onAuthStateChanged(auth, async (user) => {
                 document.querySelector('.greet_user').style.display = 'none';
                 document.querySelector('.retry_msg').style.display = 'none';
 
-                window.open('https://mayajal.netlify.app/pages/first_page.html', '_top');
+                window.open('https://mayajal.netlify.app', '_top');
             })
             .catch((err) => {
                 document.querySelector('.sign_out_err').classList.toggle('sign_out_err_visible');
@@ -169,6 +169,6 @@ onAuthStateChanged(auth, async (user) => {
         });
     }
     else{
-        window.open('https://mayajal.netlify.app/pages/first_page.html', '_top');
+        window.open('https://mayajal.netlify.app', '_top');
     }
 })

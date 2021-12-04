@@ -53,7 +53,7 @@ function signIn(){
 }
 
 
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
     if(user){
         //Adding Greet
         document.querySelector('.sign_out').style.display = 'block';

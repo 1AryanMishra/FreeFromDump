@@ -191,9 +191,13 @@ function StartFromHere(level){
     onAuthStateChanged(auth, async (user) => {
         if(user){
             const UserDataToSet = {
+                name : user.displayName,
+                uid : user.uid,
+                email : user.email,
+                course : course,
                 level : level
             }
-            const setting = setDoc(doc(db, 'users', `${user.uid}`), UserDataToSet, { merge : true }).then(() => {
+            await setDoc(doc(db, 'users', `${user.uid}`), UserDataToSet).then(() => {
                 window.open('https://mayajal.netlify.app/pages/user.html', '_top');
             });
         }

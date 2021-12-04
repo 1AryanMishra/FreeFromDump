@@ -164,31 +164,9 @@ onAuthStateChanged(auth, async (user) => {
             })
         })
 
-        //======= User Data Fetching/Setting Processing =======
-        const oldUser = await getDocs(query(collection(db, 'users'), where("uid", "==", `${user.uid}`))).then((response) => {
-            if(response._snapshot.docChanges.length >= 1){
-                response.forEach((u) => {
-                    FetchUserLevelData(u.data());
-                })
-            }
-            else{
-                const CourseSearch = new URLSearchParams(location.search);
-                const course = CourseSearch.get('goal');
-                
-                const UserDataToSet = {
-                    name : user.displayName,
-                    uid : user.uid,
-                    email : user.email,
-                    course : course,
-                }
-                const setting = setDoc(doc(db, 'users', `${user.uid}`), UserDataToSet);
-                setting.then(() => {
-                    FetchUserLevelData(UserDataToSet);
-                })
-            }
-        }).catch((err) => {
-            console.log(err);
-        })
+        await getDoc(doc(db, 'users', `${user.uid}`)).then((response) => {
+            FetchUserLevelData(response.data());
+        });
     }
     else{
         window.open('https://mayajal.netlify.app/pages/first_page.html', '_top');

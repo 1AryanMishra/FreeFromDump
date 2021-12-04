@@ -1,6 +1,4 @@
-import db from '../../database/firestore.js';
 import { GoogleAuthProvider, signOut, getAuth, signInWithPopup, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js'
-import { collection, getDocs, where, query } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 
 const auth = getAuth();
 const signInBtns = document.querySelectorAll('.sign_in');

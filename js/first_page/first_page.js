@@ -1,5 +1,5 @@
 import db from '../../database/firestore.js'
-import { collection, limit, doc, getDoc, getDocs, query } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
+import { collection, limit, doc, setDoc, getDoc, getDocs, query } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js'
 
 
@@ -188,9 +188,14 @@ levelClass.forEach((level) => {
 
 function StartFromHere(level){
     const auth = getAuth();
-    onAuthStateChanged(auth, (user) => {
+    onAuthStateChanged(auth, async (user) => {
         if(user){
-            window.open('https://mayajal.netlify.app/pages/user.html', '_top');
+            const UserDataToSet = {
+                level : level
+            }
+            const setting = setDoc(doc(db, 'users', `${user.uid}`), UserDataToSet, { merge : true }).then(() => {
+                window.open('https://mayajal.netlify.app/pages/user.html', '_top');
+            });
         }
         else{
             document.querySelector('.sign_in_box').scrollIntoView();

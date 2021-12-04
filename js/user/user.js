@@ -4,11 +4,6 @@ import { doc, collection, where, getDoc, getDocs, setDoc, query } from "https://
 
 const auth = getAuth();
 
-if((sessionStorage.getItem('isLoggedIn') === null)){
-    sessionStorage.setItem('isLoggedIn', 1);
-}
-
-
 
 function getFirstName(name){
     var fname = '';
@@ -28,10 +23,9 @@ function getFirstName(name){
 
 
 
-function FetchUserLevelData(user){
+async function FetchUserLevelData(user){
     const targetSection = document.querySelector('.targets');
-    const UserCourses = getDocs(collection(db, 'fields', `${user.course}`, `${user.level}`));
-    UserCourses.then((c) => {
+    const UserCourses = await getDocs(collection(db, 'fields', `${user.course}`, `${user.level}`)).then((c) => {
         var courseDataToBeRendered = "";
         c.forEach((d) => {
             courseDataToBeRendered += `<div class="targetCard" id="${d.id}">${d.data().course}</div>`
@@ -116,11 +110,10 @@ function RenderResource(data){
 }
 
 
-function GetSetResData(i, user){
+async function GetSetResData(i, user){
     const res_container = document.querySelector('.target_res_container');
-    const courseData = getDocs(collection(db, 'fields', `${user.course}`, `${user.level}`, `${i}`, 'resources'));
     var course_data = '';
-    courseData.then((response) => {
+    const courseData = await getDocs(collection(db, 'fields', `${user.course}`, `${user.level}`, `${i}`, 'resources')).then((response) => {
         response.forEach((d) => {
             course_data += `${RenderResource(d.data())}`;
         })
@@ -144,7 +137,7 @@ function RenderTargetMaterial(i, user, courseName){
 
 
 
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
     if(user){
 
         //======= User Greeting =======
@@ -172,20 +165,21 @@ onAuthStateChanged(auth, (user) => {
         })
 
         //======= User Data Fetching/Setting Processing =======
-        const oldUser = getDocs(query(collection(db, 'users'), where("uid", "==", `${user.uid}`)));
-        oldUser.then((response) => {
+        const oldUser = await getDocs(query(collection(db, 'users'), where("uid", "==", `${user.uid}`))).then((response) => {
             if(response._snapshot.docChanges.length >= 1){
                 response.forEach((u) => {
                     FetchUserLevelData(u.data());
                 })
             }
             else{
+                const CourseSearch = new URLSearchParams(location.search);
+                const course = CourseSearch.get('goal');
+                
                 const UserDataToSet = {
-                    name : `${user.displayName}`,
-                    uid : `${user.uid}`,
-                    email : `${user.email}`,
-                    course : `${sessionStorage.getItem("course")}`,
-                    level : `${sessionStorage.getItem("level")}`
+                    name : user.displayName,
+                    uid : user.uid,
+                    email : user.email,
+                    course : course,
                 }
                 const setting = setDoc(doc(db, 'users', `${user.uid}`), UserDataToSet);
                 setting.then(() => {

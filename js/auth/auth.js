@@ -82,18 +82,6 @@ onAuthStateChanged(auth, async (user) => {
             })
         })
 
-        // ======= Routing To User Page if Old User, Else Still =======
-        const oldUser = await getDocs(query(collection(db, 'users'), where("uid", "==", `${user.uid}`))).then((response) => {
-            if(response._snapshot.docChanges.length >= 1){
-                window.open('https://mayajal.netlify.app/pages/user.html', '_top');
-            }
-            else{
-                //Stay On that Page and wait for Course Selection
-            }
-        }).catch((err) => {
-            console.log(err);
-        })
-
     }
     else{
         signIn();

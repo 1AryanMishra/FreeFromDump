@@ -83,12 +83,9 @@ onAuthStateChanged(auth, (user) => {
         })
 
         // ======= Routing To User Page if Old User, Else Still =======
-        const oldUser = getDocs(query(collection(db, 'users'), where("uid", "==", `${user.uid}`)));
-        oldUser.then((response) => {
+        const oldUser = await getDocs(query(collection(db, 'users'), where("uid", "==", `${user.uid}`))).then((response) => {
             if(response._snapshot.docChanges.length >= 1){
-                if((sessionStorage.getItem('isLoggedIn') === null)){
-                    window.open('https://mayajal.netlify.app/pages/user.html', '_top');
-                }
+                window.open('https://mayajal.netlify.app/pages/user.html', '_top');
             }
             else{
                 //Stay On that Page and wait for Course Selection
@@ -99,7 +96,6 @@ onAuthStateChanged(auth, (user) => {
 
     }
     else{
-        console.log("No LoggedIn User");
         signIn();
     }    
 })

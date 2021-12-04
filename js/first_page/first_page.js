@@ -2,9 +2,10 @@ import db from '../../database/firestore.js'
 import { collection, limit, doc, getDoc, getDocs, query } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js'
 
-sessionStorage.setItem("isActive", "1");
 
-const SelectedField = JSON.parse(localStorage.getItem('goal'));
+const GoalSearch = new URLSearchParams(location.search);
+const SelectedField = GoalSearch.get('goal');
+console.log(SelectedField);
 
 
 const goalDoc = doc(db, 'fields', `${SelectedField}`);
@@ -189,12 +190,9 @@ function StartFromHere(level){
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
         if(user){
-            sessionStorage.setItem("level", `${level}`);
-            sessionStorage.setItem("course", `${SelectedField}`);
             window.open('https://mayajal.netlify.app/pages/user.html', '_top');
         }
         else{
-            console.log("No Users");
             document.querySelector('.sign_in_box').scrollIntoView();
             document.querySelector('.sign_in_box').classList.add('visible');
         }

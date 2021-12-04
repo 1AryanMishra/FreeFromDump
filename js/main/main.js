@@ -1,20 +1,7 @@
-//import db from '../../database/firestore.js'
-//import { collection, getDocs } from "https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js";
-
-window.addEventListener('load', () => {
-    if(localStorage.getItem("goal") !== null && sessionStorage.getItem("isActive") === null){
-        window.open('https://mayajal.netlify.app/pages/first_page.html', '_top');
-    }
-})
-
 const submit = document.getElementById("submit");
 
 const goal = document.getElementById("field");
-/* Because of error in Samsung Phones in Select Input
-const fieldsList = await getDocs(collection(db, 'fields'));
-fieldsList.forEach((f) => {
-    goal.innerHTML += `<option value="${f.id}">${f.data().label}</option>`;
-})*/
+
 
 const goal_msg = document.querySelector("#goal_msg");
 
@@ -23,20 +10,6 @@ const pc_checkbox = document.querySelector("#pc_checkbox");
 const time_number = document.getElementById("time_number");
 const time_format = document.getElementById("time_format");
 const time_msg = document.querySelector("#time_msg");
-
-
-
-function resetForm(){
-    
-    goal_msg.textContent = "Select your Goal";
-    goal.value = "none";
-
-    pc_checkbox.checked = false;
-
-    time_number.value = "";
-    time_format.value = 'd';
-    time_msg.textContent = "Expected Time";
-}
 
 
 
@@ -72,10 +45,7 @@ function formAction(){
     }
 
     if(t == 1 && g == 1){
-        submit.href = "pages/first_page.html";
-        localStorage.clear();
-        localStorage.setItem('goal', JSON.stringify(data.goal));
-        resetForm();
+        submit.href = `pages/first_page.html?goal=${data.goal}`;
         return;
     }
 }

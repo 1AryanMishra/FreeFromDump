@@ -1,24 +1,17 @@
 .greet_user {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  -webkit-box-shadow: 0 0 1em var(--boxShadow);
-          box-shadow: 0 0 1em var(--boxShadow);
+  box-shadow: 0 0 1em var(--boxShadow);
   display: none;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+  flex-flow: row nowrap;
 }
-
 .greet_user .sign_out_err {
   display: none;
   margin: auto;
 }
-
 .greet_user .sign_out_err_visible {
   display: block;
 }
-
 .greet_user .user_dp {
   margin: 0.25em auto;
   margin-right: 0;
@@ -26,7 +19,6 @@
   border-radius: 100%;
   cursor: pointer;
 }
-
 .greet_user .username {
   margin: auto 1em;
   font-weight: bold;
@@ -34,84 +26,59 @@
 }
 
 .sign_in_box {
-  -webkit-box-shadow: 0 0 1em var(--boxShadow);
-          box-shadow: 0 0 1em var(--boxShadow);
+  box-shadow: 0 0 1em var(--boxShadow);
   border-bottom: 0.1px solid blue;
-  -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+  flex-flow: column nowrap;
   height: 0;
   visibility: hidden;
   border-radius: 100%;
 }
-
 .sign_in_box p {
-  -webkit-transition: none;
   transition: none;
   margin: 0.5em auto;
   font-size: 1.1rem;
 }
-
 .sign_in_box .login_providers_box {
-  -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
   margin: auto;
   margin-bottom: 0.5em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   max-width: 10%;
   border-radius: 100%;
-  -webkit-box-shadow: 0 0 1em var(--boxShadow) inset;
-          box-shadow: 0 0 1em var(--boxShadow) inset;
+  box-shadow: 0 0 1em var(--boxShadow) inset;
 }
-
 .sign_in_box .login_providers_box .login_provider {
-  -webkit-transition: none;
   transition: none;
   cursor: pointer;
   max-width: 100%;
 }
-
 .sign_in_box .login_providers_box .login_provider:hover {
-  -webkit-transition: none;
   transition: none;
-  -webkit-box-shadow: 0 0 1em var(--boxShadow);
-          box-shadow: 0 0 1em var(--boxShadow);
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  box-shadow: 0 0 1em var(--boxShadow);
+  transform: scale(1.2);
 }
-
 .sign_in_box .retry_msg {
   display: none;
 }
 
 .visible {
   border-radius: 6px;
-  -webkit-transition: 0.5s ease-in;
   transition: 0.5s ease-in;
   visibility: visible;
   height: 100%;
 }
 
 .sign_in {
-  visibility: hidden;
+  visibility: visible;
   cursor: pointer;
   color: var(--buttonFont);
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
   background: rgba(255, 0, 0, 0.8);
   text-align: center;
   padding: 0.4rem 1rem 0.5rem 1rem;
-  -webkit-box-shadow: 0 0 0.4em 0 var(--boxShadow);
-          box-shadow: 0 0 0.4em 0 var(--boxShadow);
+  box-shadow: 0 0 0.4em 0 var(--boxShadow);
 }
 
 .sign_out {
@@ -123,10 +90,7 @@
     max-width: 2%;
   }
   .sign_in_box {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
   }
   .sign_in_box p {
     margin: auto;
@@ -135,5 +99,4 @@
     margin: 0.5em auto;
     max-width: 4%;
   }
-}
-/*# sourceMappingURL=sign_in.css.map */
+}/*# sourceMappingURL=sign_in.css.map */
